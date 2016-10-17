@@ -1,7 +1,7 @@
 import React, { Component,PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import warning from 'warning';
+import warning from './utils/warning';
 
 import FormControlStatic from './FormControlStatic';
 // import { bsClass, getClassSet, splitBsProps } from './utils/bootstrapUtils';
@@ -23,7 +23,8 @@ const propTypes = {
 
 const defaultProps = {
   componentClass: 'input',
-  className: 'u-input'
+  className: 'u-input',
+  type: 'text'
 };
 
 const contextTypes = {

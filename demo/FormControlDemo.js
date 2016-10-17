@@ -13,11 +13,9 @@ class Demo extends Component {
 	render(){
 		return( 
 			<div>
-				<FormControl/>
+				<FormControl/>				
 				<br/>
-				<FormControl type="text" placeholder="Enter text"/> 
-				<br/>
-				<FormControl defaultValue="test" type="text" placeholder="Enter text" onChange={this.HanderChange} /> 
+				<FormControl defaultValue="FormControl test" placeholder="Enter text" onChange={this.HanderChange} /> 
             </div>
         )
 	}

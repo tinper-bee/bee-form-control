@@ -106,9 +106,7 @@
 				null,
 				_react2["default"].createElement(_src.FormControl, null),
 				_react2["default"].createElement('br', null),
-				_react2["default"].createElement(_src.FormControl, { type: 'text', placeholder: 'Enter text' }),
-				_react2["default"].createElement('br', null),
-				_react2["default"].createElement(_src.FormControl, { defaultValue: 'test', type: 'text', placeholder: 'Enter text', onChange: this.HanderChange })
+				_react2["default"].createElement(_src.FormControl, { defaultValue: 'FormControl test', placeholder: 'Enter text', onChange: this.HanderChange })
 			);
 		};
 	
@@ -191,7 +189,8 @@
 	
 	var defaultProps = {
 	  componentClass: 'input',
-	  className: 'u-input'
+	  className: 'u-input',
+	  type: 'text'
 	};
 	
 	var contextTypes = {
@@ -337,35 +336,30 @@
 	 * same logic and follow the same code paths.
 	 */
 	
-	var warning = function() {};
+	var __DEV__ = process.env.NODE_ENV !== 'production';
 	
-	if (process.env.NODE_ENV !== 'production') {
-	  warning = function(condition, format, args) {
+	var warning = function warning() {};
+	
+	if (__DEV__) {
+	  warning = function warning(condition, format, args) {
 	    var len = arguments.length;
 	    args = new Array(len > 2 ? len - 2 : 0);
 	    for (var key = 2; key < len; key++) {
 	      args[key - 2] = arguments[key];
 	    }
 	    if (format === undefined) {
-	      throw new Error(
-	        '`warning(condition, format, ...args)` requires a warning ' +
-	        'message argument'
-	      );
+	      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
 	    }
 	
-	    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
-	      throw new Error(
-	        'The warning format should be able to uniquely identify this ' +
-	        'warning. Please, use a more descriptive format than: ' + format
-	      );
+	    if (format.length < 10 || /^[s\W]*$/.test(format)) {
+	      throw new Error('The warning format should be able to uniquely identify this ' + 'warning. Please, use a more descriptive format than: ' + format);
 	    }
 	
 	    if (!condition) {
 	      var argIndex = 0;
-	      var message = 'Warning: ' +
-	        format.replace(/%s/g, function() {
-	          return args[argIndex++];
-	        });
+	      var message = 'Warning: ' + format.replace(/%s/g, function () {
+	        return args[argIndex++];
+	      });
 	      if (typeof console !== 'undefined') {
 	        console.error(message);
 	      }
@@ -373,13 +367,12 @@
 	        // This error was thrown as a convenience so that you can use this stack
 	        // to find the callsite that caused this warning to fire.
 	        throw new Error(message);
-	      } catch(x) {}
+	      } catch (x) {}
 	    }
 	  };
 	}
 	
 	module.exports = warning;
-	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ },
