@@ -16,7 +16,7 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _warning = require('warning');
+var _warning = require('./utils/warning');
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -50,7 +50,8 @@ var propTypes = {
 
 var defaultProps = {
   componentClass: 'input',
-  className: 'u-input'
+  className: 'u-input',
+  type: 'text'
 };
 
 var contextTypes = {
