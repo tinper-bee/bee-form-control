@@ -1,6 +1,6 @@
 {
- "name": "bee-formControl",
- "version": "0.0.3",
+ "name": "bee-form-control",
+ "version": "0.0.1",
  "description": "FormControl ui component for react",
  "keywords": [
   "react",
