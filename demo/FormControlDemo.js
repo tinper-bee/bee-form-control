@@ -14,8 +14,10 @@ class Demo extends Component {
 		return( 
 			<div>
 				<FormControl/>				
-				<br/>
+				<br/><br/>
 				<FormControl defaultValue="FormControl test" placeholder="Enter text" onChange={this.HanderChange} /> 
+				<br/><br/>
+				<FormControl type="checkbox" />
             </div>
         )
 	}
