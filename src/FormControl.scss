@@ -4,8 +4,6 @@
 
 // Styling for the input element.
 .u-input {
-    width: 100%;
-    height: 30px;
     padding: 4px 12px;
     background-color: #fff;
     background-image: none;
@@ -14,7 +12,6 @@
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    display: block;
     line-height: 1.42857143;
     color: #555;
     &:focus{

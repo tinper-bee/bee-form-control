@@ -106,7 +106,11 @@
 				null,
 				_react2["default"].createElement(_src.FormControl, null),
 				_react2["default"].createElement('br', null),
-				_react2["default"].createElement(_src.FormControl, { defaultValue: 'FormControl test', placeholder: 'Enter text', onChange: this.HanderChange })
+				_react2["default"].createElement('br', null),
+				_react2["default"].createElement(_src.FormControl, { defaultValue: 'FormControl test', placeholder: 'Enter text', onChange: this.HanderChange }),
+				_react2["default"].createElement('br', null),
+				_react2["default"].createElement('br', null),
+				_react2["default"].createElement(_src.FormControl, { type: 'checkbox' })
 			);
 		};
 	
