@@ -19,6 +19,7 @@ describe('测试FormControl页面', function () {
 	afterEach(function(){
 		driver.quit();
 	})
+	
 
   it('设置的默认值与浏览器显示的默认值一致', function () {
   	let mywidget,container;
