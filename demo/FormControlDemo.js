@@ -1,6 +1,5 @@
 import { FormControl } from '../src';
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
 
 class Demo extends Component {
 	constructor(props) {
@@ -18,6 +17,8 @@ class Demo extends Component {
 				<FormControl defaultValue="FormControl test" placeholder="Enter text" onChange={this.HanderChange} /> 
 				<br/><br/>
 				<FormControl type="checkbox" />
+				<br/><br/>
+				<FormControl type="radio" />
             </div>
         )
 	}

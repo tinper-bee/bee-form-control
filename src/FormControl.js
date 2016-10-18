@@ -1,7 +1,7 @@
 import React, { Component,PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import warning from './utils/warning';
+import warning from 'warning';
 
 import FormControlStatic from './FormControlStatic';
 // import { bsClass, getClassSet, splitBsProps } from './utils/bootstrapUtils';
@@ -52,10 +52,10 @@ class FormControl extends React.Component {
     );
 
     // input[type="file"] should not have .form-control.
-    let classes;
-    // if (type !== 'file') {
-    //   classes = getClassSet(bsProps);
-    // }
+    let classes={};
+    if (type !== 'file') {
+      classes[`form-control`] = true;
+    }
 
     return (
       <Component

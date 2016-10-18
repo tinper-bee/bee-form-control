@@ -1,0 +1,13 @@
+'use strict';
+
+var _FormControlDemo = require('./FormControlDemo');
+
+var _FormControlDemo2 = _interopRequireDefault(_FormControlDemo);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+_reactDom2['default'].render(React.createElement(_FormControlDemo2['default'], null), document.getElementById('tinperBeeDemo'));

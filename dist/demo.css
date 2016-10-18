@@ -2559,6 +2559,9 @@ html {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
 ::selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -2685,7 +2688,7 @@ textarea {
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
 
-@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
 
 /* ==========================================================================
@@ -4425,7 +4428,6 @@ $color-accent: $palette-pink-A200 !default;
 
 .text-break {
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   word-wrap: break-word;
@@ -5917,7 +5919,6 @@ $color-accent: $palette-pink-A200 !default;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   line-height: 1.42857143;
   color: #555; }
