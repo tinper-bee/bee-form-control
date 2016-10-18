@@ -1,46 +1,46 @@
 {
-  "name": "bee-form-group",
-  "version": "0.0.1",
-  "description": "form-group ui component for react",
-  "keywords": [
-    "react",
-    "react-component",
-    "react-form-group",
-    "iuap-design",
-    "neoui-react",
-    "form-group"
-  ],
-  "engines": {
-    "node": ">=4.0.0"
-  },
-  "homepage": "https://github.com/tinper-bee/form-group",
-  "author": "yonyou",
-  "repository": "http://github.com/tinper-bee/form-group",
-  "bugs": "https://github.com/tinper-bee/form-group/issues",
-  "license": "MIT",
-  "main": "./build/index",
-  "config": {
-    "port": 8000
-  },
-  "scripts": {
-    "dev": "bee-tools run start",
-    "build": "bee-tools run build",
-    "lint": "bee-tools run lint",
-    "test": "bee-tools run test",
-    "chrome": "bee-tools run chrome",
-    "browsers": "bee-tools run browsers",
-    "pub": "bee-tools run pub"
-  },
-  "dependencies": {
-    "bee-form-control": "0.0.1",
-    "classnames": "^2.2.5",
-    "tinper-bee-core": "latest"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "enzyme": "^2.4.1",
-    "react": "~0.14.0",
-    "react-addons-test-utils": "^15.3.2",
-    "react-dom": "~0.14.0"
-  }
+ "name": "bee-form-group",
+ "version": "0.0.2",
+ "description": "form-group ui component for react",
+ "keywords": [
+  "react",
+  "react-component",
+  "react-form-group",
+  "iuap-design",
+  "neoui-react",
+  "form-group"
+ ],
+ "engines": {
+  "node": ">=4.0.0"
+ },
+ "homepage": "https://github.com/tinper-bee/form-group",
+ "author": "yonyou",
+ "repository": "http://github.com/tinper-bee/form-group",
+ "bugs": "https://github.com/tinper-bee/form-group/issues",
+ "license": "MIT",
+ "main": "./build/index",
+ "config": {
+  "port": 8000
+ },
+ "scripts": {
+  "dev": "bee-tools run start",
+  "build": "bee-tools run build",
+  "lint": "bee-tools run lint",
+  "test": "bee-tools run test",
+  "chrome": "bee-tools run chrome",
+  "browsers": "bee-tools run browsers",
+  "pub": "bee-tools run pub"
+ },
+ "dependencies": {
+  "bee-form-control": "0.0.1",
+  "classnames": "^2.2.5",
+  "tinper-bee-core": "latest"
+ },
+ "devDependencies": {
+  "chai": "^3.5.0",
+  "enzyme": "^2.4.1",
+  "react": "~0.14.0",
+  "react-addons-test-utils": "^15.3.2",
+  "react-dom": "~0.14.0"
+ }
 }

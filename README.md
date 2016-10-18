@@ -4,7 +4,7 @@
 [![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-form-control.svg)](https://david-dm.org/tinper-bee/bee-form-control#info=devDependencies)
 
 
-react bee-form-control component for tinper-bee
+Use <FormControl> for <input>, <textarea>, and <select>.
 
 #### setup develop environment
 
