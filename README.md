@@ -3,8 +3,7 @@
 [![Build Status](https://img.shields.io/travis/tinper-bee/generator-tinper-bee/master.svg)](https://travis-ci.org/tinper-bee/bee-form-control)
 [![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-form-control.svg)](https://david-dm.org/tinper-bee/bee-form-control#info=devDependencies)
 
-
-react bee-form-control component for tinper-bee
+用 <FormControl> 来代替 <input>, <textarea>, and <select>
 
 #### setup develop environment
 
@@ -17,7 +16,7 @@ $ npm run dev
 
 ## 使用
 
-### 使用单独的bee-form-control包
+使用单独的bee-form-control包
 #### 组件引入
 先进行下载form-control包
 ```
