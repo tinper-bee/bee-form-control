@@ -3,9 +3,9 @@
 [![Build Status](https://img.shields.io/travis/tinper-bee/generator-tinper-bee/master.svg)](https://travis-ci.org/tinper-bee/bee-form-control)
 [![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-form-control.svg)](https://david-dm.org/tinper-bee/bee-form-control#info=devDependencies)
 
-用 <FormControl> 来代替 <input>, <textarea>, and <select>
+用 `<FormControl>` 来代替 `<input>`, `<textarea>`, and `<select>`
 
-#### setup develop environment
+#### 安装步骤
 
 ```sh
 $ git clone https://github.com/tinper-bee/bee-form-control
