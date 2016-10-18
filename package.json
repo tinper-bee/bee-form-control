@@ -1,22 +1,22 @@
 {
  "name": "bee-form-control",
  "version": "0.0.2",
- "description": "form-group ui component for react",
+ "description": "form-control ui component for react",
  "keywords": [
   "react",
   "react-component",
-  "react-form-group",
+  "react-form-control",
   "iuap-design",
   "neoui-react",
-  "form-group"
+  "form-control"
  ],
  "engines": {
   "node": ">=4.0.0"
  },
- "homepage": "https://github.com/tinper-bee/form-group",
+ "homepage": "https://github.com/tinper-bee/form-control",
  "author": "yonyou",
- "repository": "http://github.com/tinper-bee/form-group",
- "bugs": "https://github.com/tinper-bee/form-group/issues",
+ "repository": "http://github.com/tinper-bee/form-control",
+ "bugs": "https://github.com/tinper-bee/form-control/issues",
  "license": "MIT",
  "main": "./build/index",
  "config": {
@@ -32,7 +32,6 @@
   "pub": "bee-tools run pub"
  },
  "dependencies": {
-  "bee-form-control": "0.0.1",
   "classnames": "^2.2.5",
   "tinper-bee-core": "latest"
  },
