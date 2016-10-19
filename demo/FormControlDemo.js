@@ -1,4 +1,4 @@
-import { FormControl } from '../src';
+import FormControl from '../src';
 import React, { Component } from 'react'
 
 class Demo extends Component {
