@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import warning from 'warning';
 
-import FormControlStatic from './FormControlStatic';
 // import { bsClass, getClassSet, splitBsProps } from './utils/bootstrapUtils';
 
 const propTypes = {
@@ -72,6 +71,5 @@ FormControl.propTypes = propTypes;
 FormControl.defaultProps = defaultProps;
 FormControl.contextTypes = contextTypes;
 
-FormControl.Static = FormControlStatic;
 
 export default FormControl;
