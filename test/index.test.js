@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 import {expect} from 'chai';
 var webdriver = require('selenium-webdriver');
-import { FormControl } from '../src/index';
+import FormControl from '../src/index';
 
 describe('Enzyme Shallow', function () {
   it('FormControl should be exist', function () {
