@@ -19,13 +19,13 @@ $ npm run dev
 
 使用单独的bee-form-control包
 #### 组件引入
-先进行下载form-control包
+先进行下载bee-form-control包
 ```
 npm install --save bee-form-control
 ```
 组件调用
 ```js
-import { form-control } from 'bee-form-control';
+import form-control from 'bee-form-control';
 React.render(<div>
     <div>
         <form-control />
@@ -37,13 +37,13 @@ React.render(<div>
 </div>, document.getElementById('target'));
 ```
 #### 样式引入
-- 可以使用link引入dist目录下form-control.css
+- 可以使用link引入dist目录下bee-form-control.css
 ```
 <link rel="stylesheet" href="./node_modules/build/bee-form-control.css">
 ```
 - 可以在js中import样式
 ```js
-import "./node_modules/src/form-control.scss"
+import "./node_modules/src/FormControl.scss"
 //或是
 import "./node_modules/build/bee-form-control.css"
 ```
