@@ -25,14 +25,14 @@ npm install --save bee-form-control
 ```
 组件调用
 ```js
-import form-control from 'bee-form-control';
+import FormControl from 'bee-form-control';
 React.render(<div>
     <div>
-        <form-control />
+        <FormControl />
         <br>
-        <form-control placeholder="input placeholder" defaultValue="default value" />
+        <FormControl placeholder="input placeholder" defaultValue="default value" />
         <br/>
-        <form-control type="checkbox" />
+        <FormControl type="checkbox" />
     </div>
 </div>, document.getElementById('target'));
 ```
