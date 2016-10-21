@@ -11,6 +11,6 @@ env:
     - NPM_CONFIG_PROGRESS="false"
 
 before_install:
-  - npm install - g bee-tools
+  - npm install -g bee-tools
 
 script: npm test
