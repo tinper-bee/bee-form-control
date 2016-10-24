@@ -4,6 +4,9 @@ language: node_js
 
 node_js:
   - "6"
+  
+service_name: travis-pro
+repo_token: NNWlcx87iawV0i7U75VOzcZsGZXFhe7wY
 
 env:
   global:
@@ -14,3 +17,6 @@ before_install:
   - npm install -g bee-tools
 
 script: npm test
+
+after_script:
+    - npm run coveralls
