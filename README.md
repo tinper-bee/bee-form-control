@@ -1,6 +1,6 @@
 # bee-form-control
 [![npm version](https://img.shields.io/npm/v/bee-form-control.svg)](https://www.npmjs.com/package/bee-form-control)
-[![Build Status](https://img.shields.io/travis/tinper-bee/generator-tinper-bee/master.svg)](https://travis-ci.org/tinper-bee/bee-form-control)
+[![Build Status](https://img.shields.io/travis/tinper-bee/bee-form-control/master.svg)](https://travis-ci.org/tinper-bee/bee-form-control)
 [![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-form-control.svg)](https://david-dm.org/tinper-bee/bee-form-control#info=devDependencies)
 
 用 `<FormControl>` 来代替 `<input>`, `<textarea>`, and `<select>`
