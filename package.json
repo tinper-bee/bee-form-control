@@ -1,6 +1,6 @@
 {
  "name": "bee-form-control",
- "version": "0.0.5",
+ "version": "0.0.6",
  "description": "form-control ui component for react",
  "keywords": [
   "react",
@@ -33,6 +33,7 @@
   "coveralls": "bee-tools run coverage"
  },
  "dependencies": {
+  "bee-control-label": "0.0.4",
   "classnames": "^2.2.5",
   "tinper-bee-core": "latest",
   "warning": "^3.0.0"

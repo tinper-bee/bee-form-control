@@ -1,1 +1,0 @@
-{"version":3,"sources":["src\\index.js"],"names":["FormControl"],"mappings":";;;;;;;;;;;;;QACOA,W","file":"index.js","sourceRoot":"E:/New/tinper/react-comp/form-control","sourcesContent":["\r\nexport FormControl from './FormControl';\r\n"]}
