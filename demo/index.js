@@ -38,8 +38,8 @@ class Demo2 extends Component {
 
 }
 
-ReactDOM.render(demo1(), document.getElementById('ReactControlLabelDemo1'));
+ReactDOM.render(demo1(), document.getElementById('ReactFormControlDemo1'));
 ReactDOM.render(
 	<Demo2 />, 
-	document.getElementById('ReactControlLabelDemo2')
+	document.getElementById('ReactFormControlDemo2')
 );
