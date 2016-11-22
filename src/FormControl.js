@@ -9,8 +9,8 @@ const propTypes = {
 		PropTypes.element,
 		PropTypes.string
 	]),
-  type: React.PropTypes.string,
-  id: React.PropTypes.string,
+  type: PropTypes.string,
+  id: PropTypes.string,
 };
 
 const defaultProps = {

@@ -36,8 +36,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var propTypes = {
   componentClass: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.string]),
-  type: _react2["default"].PropTypes.string,
-  id: _react2["default"].PropTypes.string
+  type: _react.PropTypes.string,
+  id: _react.PropTypes.string
 };
 
 var defaultProps = {
