@@ -20,7 +20,6 @@ class Demo2 extends Component {
 		}
 	}
 	HanderChange () {
-		debugger;
 		let value = ReactDOM.findDOMNode(this.refs.demo2).value;
 		
 		this.setState ({value: value});

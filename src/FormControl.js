@@ -1,34 +1,24 @@
 import React, { Component,PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import warning from 'warning';
 
-// import { bsClass, getClassSet, splitBsProps } from './utils/bootstrapUtils';
 
 const propTypes = {
   componentClass: PropTypes.oneOfType([
 		PropTypes.element,
 		PropTypes.string
 	]),
-  /**
-   * Only relevant if `componentClass` is `'input'`.
-   */
   type: React.PropTypes.string,
-  /**
-   * Uses `controlId` from `<FormGroup>` if not explicitly specified.
-   */
   id: React.PropTypes.string,
 };
 
 const defaultProps = {
   componentClass: 'input',
-  className: 'u-input',
+  clsPrefix: 'u-form-control',
   type: 'text'
 };
 
-const contextTypes = {
-  $bs_formGroup: React.PropTypes.object,
-};
 
 class FormControl extends React.Component {
   render() {
@@ -40,20 +30,21 @@ class FormControl extends React.Component {
       type,
       id = controlId,
       className,
+      clsPrefix,
       ...others
     } = this.props;
 
-    // const [bsProps, elementProps] = splitBsProps(props);
 
     warning(
       controlId == null || id === controlId,
       '`controlId` is ignored on `<FormControl>` when `id` is specified.'
     );
 
-    // input[type="file"] should not have .form-control.
+    // input[type="file"] 不应该有类名 .form-control.
     let classes={};
+    let classNames;
     if (type !== 'file') {
-      classes[`form-control`] = true;
+      classNames = classnames(clsPrefix,classes);
     }
 
     return (
@@ -61,7 +52,7 @@ class FormControl extends React.Component {
         {...others}
         type={type}
         id={id}
-        className={classNames(className, classes)}
+        className={classnames(className, classNames)}
       />
     );
   }
@@ -69,7 +60,5 @@ class FormControl extends React.Component {
 
 FormControl.propTypes = propTypes;
 FormControl.defaultProps = defaultProps;
-FormControl.contextTypes = contextTypes;
-
 
 export default FormControl;
