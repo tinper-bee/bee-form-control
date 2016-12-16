@@ -12,48 +12,7 @@ const CARET = <i className="uf uf-chevronarrowdown"></i>;
 const CARETUP = <i className="uf uf-chevronarrowup"></i>;
 
 
-/**
- * @title 
- * @description 
- */
-class Demo1 extends Component {
-	render () {
-		return (
-			<div className="demo-form-control">
-	        	<FormControl placeholder="Enter text"/>			
-	        </div>
-		)
-	}
-}/**
- * @title 
- * @description 
- */
-class Demo2 extends Component {
-	constructor(props) {
-		super(props);
-		this.HanderChange = this.HanderChange.bind(this);
-		this.state = {
-			value: 'test'
-		}
-	}
-	HanderChange () {
-		let value = ReactDOM.findDOMNode(this.refs.demo2).value;
-		
-		this.setState ({value: value});
-	}
-	render(){
-		return( 
-			<div className="demo-form-control">
-
-				<FormControl ref='demo2' defaultValue='test' onChange={this.HanderChange} /> 
-
-				<span>{this.state.value}</span>
-            </div>
-        )
-	}
-
-}var DemoArray = [{"example":<Demo1 />,"title":" ","code":"/**\n * @title \n * @description \n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-form-control\">\n\t        \t<FormControl placeholder=\"Enter text\"/>\t\t\t\n\t        </div>\n\t\t)\n\t}\n}","desc":" "},{"example":<Demo2 />,"title":" ","code":"/**\n * @title \n * @description \n */\nclass Demo2 extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.HanderChange = this.HanderChange.bind(this);\n\t\tthis.state = {\n\t\t\tvalue: 'test'\n\t\t}\n\t}\n\tHanderChange () {\n\t\tlet value = ReactDOM.findDOMNode(this.refs.demo2).value;\n\t\t\n\t\tthis.setState ({value: value});\n\t}\n\trender(){\n\t\treturn( \n\t\t\t<div className=\"demo-form-control\">\n\n\t\t\t\t<FormControl ref='demo2' defaultValue='test' onChange={this.HanderChange} /> \n\n\t\t\t\t<span>{this.state.value}</span>\n            </div>\n        )\n\t}\n\n}","desc":" "}]
-
+{demolist}
 
 class Demo extends Component {
     constructor(props){

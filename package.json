@@ -44,6 +44,9 @@
   "enzyme": "^2.4.1",
   "react": "~0.14.0",
   "react-addons-test-utils": "15.3.2",
-  "react-dom": "~0.14.0"
+  "react-dom": "~0.14.0",
+  "bee-panel": "latest",
+  "bee-layout": "latest",
+  "bee-button": "latest"
  }
 }
