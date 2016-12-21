@@ -1,6 +1,6 @@
 /**
- * @title 
- * @description 
+ * @title Input 数据响应实例
+ * @description  
  */
 class Demo2 extends Component {
 	constructor(props) {

@@ -1,6 +1,6 @@
-## Checkbox
+## FormControl
 
-从选中选择多个值
+用 `<FormControl>` 来代替 `<input>`, `<textarea>`
 
 ## 代码演示
 
@@ -9,8 +9,7 @@
 |参数|说明|类型|默认值|
 |:--|:---|:--|:---|
 |className|类名|string|-|
-|color|one of: `primary` `success` `info` `error`  `warning` `dark`|string|''|
-|disabled|是否可用|bool|false|
+|type|类型(`text` `submit`,'checkbox',...详情http://www.w3school.com.cn/html5/att_input_type.asp)|string|'input'|
 
 
 

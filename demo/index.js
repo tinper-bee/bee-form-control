@@ -13,7 +13,7 @@ const CARETUP = <i className="uf uf-chevronarrowup"></i>;
 
 
 /**
- * @title 
+ * @title 常用 Input
  * @description 
  */
 class Demo1 extends Component {
@@ -25,8 +25,8 @@ class Demo1 extends Component {
 		)
 	}
 }/**
- * @title 
- * @description 
+ * @title Input 数据响应实例
+ * @description  
  */
 class Demo2 extends Component {
 	constructor(props) {
@@ -52,7 +52,7 @@ class Demo2 extends Component {
         )
 	}
 
-}var DemoArray = [{"example":<Demo1 />,"title":" ","code":"/**\n * @title \n * @description \n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-form-control\">\n\t        \t<FormControl placeholder=\"Enter text\"/>\t\t\t\n\t        </div>\n\t\t)\n\t}\n}","desc":" "},{"example":<Demo2 />,"title":" ","code":"/**\n * @title \n * @description \n */\nclass Demo2 extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.HanderChange = this.HanderChange.bind(this);\n\t\tthis.state = {\n\t\t\tvalue: 'test'\n\t\t}\n\t}\n\tHanderChange () {\n\t\tlet value = ReactDOM.findDOMNode(this.refs.demo2).value;\n\t\t\n\t\tthis.setState ({value: value});\n\t}\n\trender(){\n\t\treturn( \n\t\t\t<div className=\"demo-form-control\">\n\n\t\t\t\t<FormControl ref='demo2' defaultValue='test' onChange={this.HanderChange} /> \n\n\t\t\t\t<span>{this.state.value}</span>\n            </div>\n        )\n\t}\n\n}","desc":" "}]
+}var DemoArray = [{"example":<Demo1 />,"title":" 常用 Input","code":"/**\n * @title 常用 Input\n * @description \n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-form-control\">\n\t        \t<FormControl placeholder=\"Enter text\"/>\t\t\t\n\t        </div>\n\t\t)\n\t}\n}","desc":" "},{"example":<Demo2 />,"title":" Input 数据响应实例","code":"/**\n * @title Input 数据响应实例\n * @description  \n */\nclass Demo2 extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.HanderChange = this.HanderChange.bind(this);\n\t\tthis.state = {\n\t\t\tvalue: 'test'\n\t\t}\n\t}\n\tHanderChange () {\n\t\tlet value = ReactDOM.findDOMNode(this.refs.demo2).value;\n\t\t\n\t\tthis.setState ({value: value});\n\t}\n\trender(){\n\t\treturn( \n\t\t\t<div className=\"demo-form-control\">\n\n\t\t\t\t<FormControl ref='demo2' defaultValue='test' onChange={this.HanderChange} /> \n\n\t\t\t\t<span>{this.state.value}</span>\n            </div>\n        )\n\t}\n\n}","desc":"  "}]
 
 
 class Demo extends Component {
