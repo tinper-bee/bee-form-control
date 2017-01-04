@@ -37,13 +37,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var propTypes = {
   componentClass: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.string]),
   type: _react.PropTypes.string,
+  size: _react.PropTypes.oneOf(['sm', 'md', 'lg']),
   id: _react.PropTypes.string
 };
 
 var defaultProps = {
   componentClass: 'input',
   clsPrefix: 'u-form-control',
-  type: 'text'
+  type: 'text',
+  size: 'md'
 };
 
 var FormControl = function (_React$Component) {
@@ -65,13 +67,18 @@ var FormControl = function (_React$Component) {
         _props$id = _props.id,
         id = _props$id === undefined ? controlId : _props$id,
         className = _props.className,
+        size = _props.size,
         clsPrefix = _props.clsPrefix,
-        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'clsPrefix']);
+        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'size', 'clsPrefix']);
 
     (0, _warning2["default"])(controlId == null || id === controlId, '`controlId` is ignored on `<FormControl>` when `id` is specified.');
 
     // input[type="file"] 不应该有类名 .form-control.
     var classes = {};
+    if (size) {
+      classes['' + size] = true;
+    }
+
     var classNames = void 0;
     if (type !== 'file') {
       classNames = (0, _classnames2["default"])(clsPrefix, classes);
