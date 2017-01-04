@@ -10,13 +10,15 @@ const propTypes = {
 		PropTypes.string
 	]),
   type: PropTypes.string,
+  size: PropTypes.oneOf(['sm','md','lg']),
   id: PropTypes.string,
 };
 
 const defaultProps = {
   componentClass: 'input',
   clsPrefix: 'u-form-control',
-  type: 'text'
+  type: 'text',
+  size: 'md'
 };
 
 
@@ -30,6 +32,7 @@ class FormControl extends React.Component {
       type,
       id = controlId,
       className,
+      size,
       clsPrefix,
       ...others
     } = this.props;
@@ -42,6 +45,10 @@ class FormControl extends React.Component {
 
     // input[type="file"] 不应该有类名 .form-control.
     let classes={};
+    if(size) {
+        classes[`${size}`] = true;
+    }
+
     let classNames;
     if (type !== 'file') {
       classNames = classnames(clsPrefix,classes);

@@ -1,29 +1,11 @@
 /**
- * @title Input 数据响应实例
- * @description  
+ * @title 不可用 Input
+ * @description 
  */
 class Demo2 extends Component {
-	constructor(props) {
-		super(props);
-		this.HanderChange = this.HanderChange.bind(this);
-		this.state = {
-			value: 'test'
-		}
+	render () {
+		return (
+			<FormControl disabled placeholder="Enter text"/>	
+		)
 	}
-	HanderChange () {
-		let value = ReactDOM.findDOMNode(this.refs.demo2).value;
-		
-		this.setState ({value: value});
-	}
-	render(){
-		return( 
-			<div className="demo-form-control">
-
-				<FormControl ref='demo2' defaultValue='test' onChange={this.HanderChange} /> 
-
-				<span>{this.state.value}</span>
-            </div>
-        )
-	}
-
 }

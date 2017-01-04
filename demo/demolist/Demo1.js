@@ -1,13 +1,15 @@
 /**
- * @title 常用 Input
+ * @title 常用三种尺寸 Input
  * @description 
  */
 class Demo1 extends Component {
 	render () {
 		return (
 			<div className="demo-form-control">
-	        	<FormControl placeholder="Enter text"/>			
-	        </div>
+				<FormControl placeholder="Enter text" size="sm"/>	
+				<FormControl placeholder="Enter text"/>	
+				<FormControl disabled placeholder="Enter text" size="lg" value="test"/>			
+			</div>
 		)
 	}
 }

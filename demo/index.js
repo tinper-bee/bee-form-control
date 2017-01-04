@@ -7,52 +7,36 @@ import ReactDOM from 'react-dom';
 import FormControl from '../src';
 
 
-const CARET = <i className="uf uf-chevronarrowdown"></i>;
+const CARET = <i className="uf uf-arrow-down"></i>;
 
-const CARETUP = <i className="uf uf-chevronarrowup"></i>;
+const CARETUP = <i className="uf uf-arrow-up"></i>;
 
 
 /**
- * @title 常用 Input
+ * @title 常用三种尺寸 Input
  * @description 
  */
 class Demo1 extends Component {
 	render () {
 		return (
 			<div className="demo-form-control">
-	        	<FormControl placeholder="Enter text"/>			
-	        </div>
+				<FormControl placeholder="Enter text" size="sm"/>	
+				<FormControl placeholder="Enter text"/>	
+				<FormControl disabled placeholder="Enter text" size="lg" value="test"/>			
+			</div>
 		)
 	}
 }/**
- * @title Input 数据响应实例
- * @description  
+ * @title 不可用 Input
+ * @description 
  */
 class Demo2 extends Component {
-	constructor(props) {
-		super(props);
-		this.HanderChange = this.HanderChange.bind(this);
-		this.state = {
-			value: 'test'
-		}
+	render () {
+		return (
+			<FormControl disabled placeholder="Enter text"/>	
+		)
 	}
-	HanderChange () {
-		let value = ReactDOM.findDOMNode(this.refs.demo2).value;
-		
-		this.setState ({value: value});
-	}
-	render(){
-		return( 
-			<div className="demo-form-control">
-
-				<FormControl ref='demo2' defaultValue='test' onChange={this.HanderChange} /> 
-
-				<span>{this.state.value}</span>
-            </div>
-        )
-	}
-
-}var DemoArray = [{"example":<Demo1 />,"title":" 常用 Input","code":"/**\n * @title 常用 Input\n * @description \n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-form-control\">\n\t        \t<FormControl placeholder=\"Enter text\"/>\t\t\t\n\t        </div>\n\t\t)\n\t}\n}","desc":" "},{"example":<Demo2 />,"title":" Input 数据响应实例","code":"/**\n * @title Input 数据响应实例\n * @description  \n */\nclass Demo2 extends Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tthis.HanderChange = this.HanderChange.bind(this);\n\t\tthis.state = {\n\t\t\tvalue: 'test'\n\t\t}\n\t}\n\tHanderChange () {\n\t\tlet value = ReactDOM.findDOMNode(this.refs.demo2).value;\n\t\t\n\t\tthis.setState ({value: value});\n\t}\n\trender(){\n\t\treturn( \n\t\t\t<div className=\"demo-form-control\">\n\n\t\t\t\t<FormControl ref='demo2' defaultValue='test' onChange={this.HanderChange} /> \n\n\t\t\t\t<span>{this.state.value}</span>\n            </div>\n        )\n\t}\n\n}","desc":"  "}]
+}var DemoArray = [{"example":<Demo1 />,"title":" 常用三种尺寸 Input","code":"/**\n * @title 常用三种尺寸 Input\n * @description \n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-form-control\">\n\t\t\t\t<FormControl placeholder=\"Enter text\" size=\"sm\"/>\t\n\t\t\t\t<FormControl placeholder=\"Enter text\"/>\t\n\t\t\t\t<FormControl disabled placeholder=\"Enter text\" size=\"lg\" value=\"test\"/>\t\t\t\n\t\t\t</div>\n\t\t)\n\t}\n}","desc":" "},{"example":<Demo2 />,"title":" 不可用 Input","code":"/**\n * @title 不可用 Input\n * @description \n */\nclass Demo2 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<FormControl disabled placeholder=\"Enter text\"/>\t\n\t\t)\n\t}\n}","desc":" "}]
 
 
 class Demo extends Component {
