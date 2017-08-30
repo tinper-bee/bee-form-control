@@ -2,7 +2,11 @@
  * @title 常用三种尺寸 Input
  * @description 
  */
-class Demo1 extends Component {
+
+import React, { Component } from 'react';
+import FormControl from '../../src';
+
+export default class Demo1 extends Component {
 	render () {
 		return (
 			<div className="demo-form-control">
