@@ -12,31 +12,7 @@ const CARET = <i className="uf uf-arrow-down"></i>;
 const CARETUP = <i className="uf uf-arrow-up"></i>;
 
 
-/**
- * @title 常用三种尺寸 Input
- * @description 
- */
-class Demo1 extends Component {
-	render () {
-		return (
-			<div className="demo-form-control">
-				<FormControl placeholder="Enter text" size="sm"/>	
-				<FormControl placeholder="Enter text"/>	
-				<FormControl placeholder="Enter text" size="lg"/>			
-			</div>
-		)
-	}
-}/**
- * @title 不可用 Input
- * @description 
- */
-class Demo2 extends Component {
-	render () {
-		return (
-			<FormControl disabled placeholder="Enter text"/>	
-		)
-	}
-}var DemoArray = [{"example":<Demo1 />,"title":" 常用三种尺寸 Input","code":"/**\n * @title 常用三种尺寸 Input\n * @description \n */\nclass Demo1 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-form-control\">\n\t\t\t\t<FormControl placeholder=\"Enter text\" size=\"sm\"/>\t\n\t\t\t\t<FormControl placeholder=\"Enter text\"/>\t\n\t\t\t\t<FormControl placeholder=\"Enter text\" size=\"lg\"/>\t\t\t\n\t\t\t</div>\n\t\t)\n\t}\n}","desc":" "},{"example":<Demo2 />,"title":" 不可用 Input","code":"/**\n * @title 不可用 Input\n * @description \n */\nclass Demo2 extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<FormControl disabled placeholder=\"Enter text\"/>\t\n\t\t)\n\t}\n}","desc":" "}]
+var Demo1 = require("./demolist/Demo1");var Demo2 = require("./demolist/Demo2");var DemoArray = [{"example":<Demo1 />,"title":" 常用三种尺寸 Input","code":"/**\n * @title 常用三种尺寸 Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport FormControl from 'tinper-bee';\n\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"demo-form-control\">\n\t\t\t\t<FormControl placeholder=\"Enter text\" size=\"sm\"/>\t\n\t\t\t\t<FormControl placeholder=\"Enter text\"/>\t\n\t\t\t\t<FormControl placeholder=\"Enter text\" size=\"lg\"/>\t\t\t\n\t\t\t</div>\n\t\t)\n\t}\n}","desc":" "},{"example":<Demo2 />,"title":" 不可用 Input","code":"/**\n * @title 不可用 Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport FormControl from 'tinper-bee';\n\n\n\trender () {\n\t\treturn (\n\t\t\t<FormControl disabled placeholder=\"Enter text\"/>\t\n\t\t)\n\t}\n}","desc":" "}]
 
 
 class Demo extends Component {
