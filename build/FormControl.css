@@ -671,3 +671,19 @@
 
 .uf-search:before {
   content: "\e603"; }
+
+.u-input-affix-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%; }
+
+.u-input-affix-wrapper .u-input-prefix, .u-input-affix-wrapper .u-input-suffix {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2;
+  line-height: 0;
+  right: 7px;
+  color: rgba(0, 0, 0, 0.65); }

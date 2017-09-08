@@ -18,9 +18,9 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _warning = require('warning');
+var _beeIcon = require('bee-icon');
 
-var _warning2 = _interopRequireDefault(_warning);
+var _beeIcon2 = _interopRequireDefault(_beeIcon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -51,32 +51,47 @@ var defaultProps = {
 var FormControl = function (_React$Component) {
   _inherits(FormControl, _React$Component);
 
-  function FormControl() {
+  function FormControl(props) {
     _classCallCheck(this, FormControl);
 
-    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+    _this.onChange = function (e) {
+      _this.setState({ value: e, showSearch: false });
+    };
+
+    _this.clearValue = function () {
+      debugger;
+      _reactDom2["default"].findDOMNode(_this.refs.inputValue).value = "";
+      _this.refs.inputValue.focus();
+      _this.setState({ showSearch: true });
+    };
+
+    _this.state = {
+      showSearch: true
+    };
+    return _this;
   }
 
   FormControl.prototype.render = function render() {
-    var formGroup = this.context.$bs_formGroup;
-    var controlId = formGroup && formGroup.controlId;
-
     var _props = this.props,
         Component = _props.componentClass,
         type = _props.type,
-        _props$id = _props.id,
-        id = _props$id === undefined ? controlId : _props$id,
+        id = _props.id,
         className = _props.className,
         size = _props.size,
         clsPrefix = _props.clsPrefix,
         others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'size', 'clsPrefix']);
 
-    (0, _warning2["default"])(controlId == null || id === controlId, '`controlId` is ignored on `<FormControl>` when `id` is specified.');
-
     // input[type="file"] 不应该有类名 .form-control.
+
+
     var classes = {};
     if (size) {
       classes['' + size] = true;
+    }
+    if (type == "search") {
+      classes['u-input-search'] = true;
     }
 
     var classNames = void 0;
@@ -84,9 +99,31 @@ var FormControl = function (_React$Component) {
       classNames = (0, _classnames2["default"])(clsPrefix, classes);
     }
 
+    if (type == "search") {
+      console.log(this.state.showSearch);
+      return _react2["default"].createElement(
+        'span',
+        _extends({ className: 'u-input-search u-input-affix-wrapper' }, others),
+        _react2["default"].createElement(Component, {
+          ref: 'inputValue',
+          type: type,
+          onChange: this.onChange,
+          id: id,
+          className: (0, _classnames2["default"])(className, classNames)
+        }),
+        _react2["default"].createElement(
+          'span',
+          { className: 'u-input-suffix' },
+          this.state.showSearch && _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search' }),
+          !this.state.showSearch && _react2["default"].createElement(_beeIcon2["default"], { onClick: this.clearValue, type: 'uf-close-c' })
+        )
+      );
+    }
+
     return _react2["default"].createElement(Component, _extends({}, others, {
       type: type,
       id: id,
+      onChange: this.onChange,
       className: (0, _classnames2["default"])(className, classNames)
     }));
   };

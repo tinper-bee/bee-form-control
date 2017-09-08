@@ -1,8 +1,7 @@
 import React, { Component,PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import warning from 'warning';
-
+import Icon from 'bee-icon';
 
 const propTypes = {
   componentClass: PropTypes.oneOfType([
@@ -23,14 +22,33 @@ const defaultProps = {
 
 
 class FormControl extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          showSearch: true
+      }
+  }
+
+
+  onChange = (e) => {
+    this.setState({value:e,showSearch:false});
+    
+  }
+
+  clearValue = () => {
+    debugger;
+    ReactDOM.findDOMNode(this.refs.inputValue).value= "";
+    this.refs.inputValue.focus();
+    this.setState({showSearch:true});
+    
+  }
+
   render() {
-    const formGroup = this.context.$bs_formGroup;
-    const controlId = formGroup && formGroup.controlId;
 
     const {
       componentClass: Component,
       type,
-      id = controlId,
+      id,
       className,
       size,
       clsPrefix,
@@ -38,15 +56,13 @@ class FormControl extends React.Component {
     } = this.props;
 
 
-    warning(
-      controlId == null || id === controlId,
-      '`controlId` is ignored on `<FormControl>` when `id` is specified.'
-    );
-
     // input[type="file"] 不应该有类名 .form-control.
     let classes={};
     if(size) {
         classes[`${size}`] = true;
+    }
+    if(type=="search") {
+        classes[`u-input-search`] = true;
     }
 
     let classNames;
@@ -54,11 +70,31 @@ class FormControl extends React.Component {
       classNames = classnames(clsPrefix,classes);
     }
 
+    if(type=="search") {
+      console.log(this.state.showSearch);
+      return (
+        <span className="u-input-search u-input-affix-wrapper" {...others}>
+          <Component
+              ref="inputValue"
+              type={type}
+              onChange={this.onChange}
+              id={id}
+              className={classnames(className, classNames)}
+          />
+          <span className="u-input-suffix">
+            {this.state.showSearch && <Icon type="uf-search" />}
+            {!this.state.showSearch && <Icon onClick={this.clearValue}  type="uf-close-c" />}
+          </span>
+        </span>
+      );
+    }
+
     return (
       <Component
         {...others}
         type={type}
         id={id}
+        onChange={this.onChange}
         className={classnames(className, classNames)}
       />
     );
