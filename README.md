@@ -54,4 +54,4 @@ import "./node_modules/build/bee-form-control.css"
 ## API
 |参数|说明|类型|默认值|
 |---|----|---|------|
-|type|类型(`text` `submit`,'checkbox',...详情http://www.w3school.com.cn/html5/att_input_type.asp)|string|'input'|
+|type|类型(`text`,`search`, `submit`,'checkbox',...详情http://www.w3school.com.cn/html5/att_input_type.asp)|string|'input'|

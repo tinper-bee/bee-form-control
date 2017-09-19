@@ -31,12 +31,15 @@ class FormControl extends React.Component {
 
 
   onChange = (e) => {
-    this.setState({value:e,showSearch:false});
-    
+    let value = ReactDOM.findDOMNode(this.refs.inputValue).value;
+    const {onChange} = this.props;
+    this.setState({value:value,showSearch:false});
+    if(onChange) {
+      onChange(value);
+    }
   }
 
   clearValue = () => {
-    debugger;
     ReactDOM.findDOMNode(this.refs.inputValue).value= "";
     this.refs.inputValue.focus();
     this.setState({showSearch:true});
@@ -92,6 +95,7 @@ class FormControl extends React.Component {
     return (
       <Component
         {...others}
+        ref="inputValue"
         type={type}
         id={id}
         onChange={this.onChange}
