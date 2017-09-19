@@ -57,11 +57,16 @@ var FormControl = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
     _this.onChange = function (e) {
-      _this.setState({ value: e, showSearch: false });
+      var value = _reactDom2["default"].findDOMNode(_this.refs.inputValue).value;
+      var onChange = _this.props.onChange;
+
+      _this.setState({ value: value, showSearch: false });
+      if (onChange) {
+        onChange(value);
+      }
     };
 
     _this.clearValue = function () {
-      debugger;
       _reactDom2["default"].findDOMNode(_this.refs.inputValue).value = "";
       _this.refs.inputValue.focus();
       _this.setState({ showSearch: true });
@@ -121,6 +126,7 @@ var FormControl = function (_React$Component) {
     }
 
     return _react2["default"].createElement(Component, _extends({}, others, {
+      ref: 'inputValue',
       type: type,
       id: id,
       onChange: this.onChange,
