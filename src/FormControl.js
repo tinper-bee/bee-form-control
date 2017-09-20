@@ -33,7 +33,7 @@ class FormControl extends React.Component {
   onChange = (e) => {
     let value = ReactDOM.findDOMNode(this.refs.inputValue).value;
     const {onChange} = this.props;
-    this.setState({value:value,showSearch:false});
+    this.setState({value:value,showSearch:false,showSearch:value==""});
     if(onChange) {
       onChange(value);
     }
@@ -74,7 +74,7 @@ class FormControl extends React.Component {
     }
 
     if(type=="search") {
-      console.log(this.state.showSearch);
+
       return (
         <span className="u-input-search u-input-affix-wrapper" {...others}>
           <Component

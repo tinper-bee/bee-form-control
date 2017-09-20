@@ -28,6 +28,8 @@ function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaul
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -60,7 +62,7 @@ var FormControl = function (_React$Component) {
       var value = _reactDom2["default"].findDOMNode(_this.refs.inputValue).value;
       var onChange = _this.props.onChange;
 
-      _this.setState({ value: value, showSearch: false });
+      _this.setState(_defineProperty({ value: value, showSearch: false }, 'showSearch', value == ""));
       if (onChange) {
         onChange(value);
       }
@@ -105,7 +107,7 @@ var FormControl = function (_React$Component) {
     }
 
     if (type == "search") {
-      console.log(this.state.showSearch);
+
       return _react2["default"].createElement(
         'span',
         _extends({ className: 'u-input-search u-input-affix-wrapper' }, others),
