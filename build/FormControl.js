@@ -47,6 +47,7 @@ var defaultProps = {
   componentClass: 'input',
   clsPrefix: 'u-form-control',
   type: 'text',
+  defaultValue: "",
   size: 'md'
 };
 
@@ -75,10 +76,19 @@ var FormControl = function (_React$Component) {
     };
 
     _this.state = {
-      showSearch: true
+      showSearch: true,
+      value: 'value' in props ? props.value : props.defaultValue
     };
     return _this;
   }
+
+  FormControl.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProp) {
+    if (nextProp.defaultValue !== this.state.value) {
+      this.setState({
+        value: nextProp.defaultValue
+      });
+    }
+  };
 
   FormControl.prototype.render = function render() {
     var _props = this.props,
@@ -86,9 +96,11 @@ var FormControl = function (_React$Component) {
         type = _props.type,
         id = _props.id,
         className = _props.className,
+        defaultValue = _props.defaultValue,
+        value = _props.value,
         size = _props.size,
         clsPrefix = _props.clsPrefix,
-        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'size', 'clsPrefix']);
+        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'defaultValue', 'value', 'size', 'clsPrefix']);
 
     // input[type="file"] 不应该有类名 .form-control.
 
@@ -115,6 +127,8 @@ var FormControl = function (_React$Component) {
           ref: 'inputValue',
           type: type,
           onChange: this.onChange,
+          defaultValue: defaultValue,
+          value: value,
           id: id,
           className: (0, _classnames2["default"])(className, classNames)
         }),
@@ -130,6 +144,8 @@ var FormControl = function (_React$Component) {
     return _react2["default"].createElement(Component, _extends({}, others, {
       ref: 'inputValue',
       type: type,
+      defaultValue: defaultValue,
+      value: value,
       id: id,
       onChange: this.onChange,
       className: (0, _classnames2["default"])(className, classNames)

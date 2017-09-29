@@ -17,6 +17,7 @@ const defaultProps = {
   componentClass: 'input',
   clsPrefix: 'u-form-control',
   type: 'text',
+  defaultValue: "",
   size: 'md'
 };
 
@@ -25,10 +26,19 @@ class FormControl extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          showSearch: true
+          showSearch: true,
+          value: 'value' in props ? props.value : props.defaultValue
       }
   }
 
+  componentWillReceiveProps(nextProp) {
+      if(nextProp.defaultValue !== this.state.value)
+      {
+          this.setState({
+              value: nextProp.defaultValue
+          });
+      }
+    }
 
   onChange = (e) => {
     let value = ReactDOM.findDOMNode(this.refs.inputValue).value;
@@ -53,6 +63,8 @@ class FormControl extends React.Component {
       type,
       id,
       className,
+      defaultValue,
+      value,
       size,
       clsPrefix,
       ...others
@@ -81,6 +93,8 @@ class FormControl extends React.Component {
               ref="inputValue"
               type={type}
               onChange={this.onChange}
+              defaultValue={defaultValue}
+              value={value}
               id={id}
               className={classnames(className, classNames)}
           />
@@ -97,6 +111,8 @@ class FormControl extends React.Component {
         {...others}
         ref="inputValue"
         type={type}
+        defaultValue={defaultValue}
+        value={value}
         id={id}
         onChange={this.onChange}
         className={classnames(className, classNames)}
