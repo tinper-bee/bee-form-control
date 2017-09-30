@@ -1,24 +1,34 @@
 /**
- * @title 不可用 Input
+ * @title 可控 Input
  * @description 
  */
 
 import React, { Component } from 'react';
+import Button from 'bee-button';
 import FormControl from '../../src';
 
 export default class Demo2 extends Component {
 	constructor(props) {
       super(props);
       this.state = {
-          formValue: "test"
+          value: "test"
       }
   	}
-	onChange = (value) => {
-		console.log(value);
+	onChange = (e) => {
+		this.setState({value:e});
 	}
+
+	onHander = () => {
+		this.setState({value:"eee"})
+	}
+
 	render () {
 		return (
-			<FormControl placeholder="Enter text" defaultValue={this.state.formValue} onChange={this.onChange}/>	
+			<div>
+				<Button onClick={this.onHander}>外界控制</Button>
+				<FormControl value={this.state.value} onChange={this.onChange}/>	
+			</div>
+			
 		)
 	}
 }

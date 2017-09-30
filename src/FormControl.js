@@ -1,7 +1,8 @@
-import React, { Component,PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Icon from 'bee-icon';
+import PropTypes from  'prop-types';
 
 const propTypes = {
   componentClass: PropTypes.oneOfType([
@@ -17,7 +18,6 @@ const defaultProps = {
   componentClass: 'input',
   clsPrefix: 'u-form-control',
   type: 'text',
-  defaultValue: "",
   size: 'md'
 };
 
@@ -27,21 +27,18 @@ class FormControl extends React.Component {
       super(props);
       this.state = {
           showSearch: true,
-          value: 'value' in props ? props.value : props.defaultValue
+          value: props.value || ""
       }
   }
 
   componentWillReceiveProps(nextProp) {
-      if(nextProp.defaultValue !== this.state.value)
-      {
-          this.setState({
-              value: nextProp.defaultValue
-          });
-      }
+    if(nextProp.value !== this.state.value) {
+      this.setState({value: nextProp.value});
     }
+  }
 
   onChange = (e) => {
-    let value = ReactDOM.findDOMNode(this.refs.inputValue).value;
+    let value = e.target.value;
     const {onChange} = this.props;
     this.setState({value:value,showSearch:false,showSearch:value==""});
     if(onChange) {
@@ -50,21 +47,16 @@ class FormControl extends React.Component {
   }
 
   clearValue = () => {
-    ReactDOM.findDOMNode(this.refs.inputValue).value= "";
-    this.refs.inputValue.focus();
     this.setState({showSearch:true});
-    
+
   }
 
   render() {
-
     const {
       componentClass: Component,
       type,
       id,
       className,
-      defaultValue,
-      value,
       size,
       clsPrefix,
       ...others
@@ -88,13 +80,12 @@ class FormControl extends React.Component {
     if(type=="search") {
 
       return (
-        <span className="u-input-search u-input-affix-wrapper" {...others}>
+        <span className="u-input-search u-input-affix-wrapper">
           <Component
-              ref="inputValue"
+              {...others}
               type={type}
               onChange={this.onChange}
-              defaultValue={defaultValue}
-              value={value}
+              value={this.state.value}
               id={id}
               className={classnames(className, classNames)}
           />
@@ -109,11 +100,9 @@ class FormControl extends React.Component {
     return (
       <Component
         {...others}
-        ref="inputValue"
         type={type}
-        defaultValue={defaultValue}
-        value={value}
         id={id}
+        value= {this.state.value}
         onChange={this.onChange}
         className={classnames(className, classNames)}
       />

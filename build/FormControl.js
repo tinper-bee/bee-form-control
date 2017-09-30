@@ -22,6 +22,10 @@ var _beeIcon = require('bee-icon');
 
 var _beeIcon2 = _interopRequireDefault(_beeIcon);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -37,17 +41,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 var propTypes = {
-  componentClass: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.string]),
-  type: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['sm', 'md', 'lg']),
-  id: _react.PropTypes.string
+  componentClass: _propTypes2["default"].oneOfType([_propTypes2["default"].element, _propTypes2["default"].string]),
+  type: _propTypes2["default"].string,
+  size: _propTypes2["default"].oneOf(['sm', 'md', 'lg']),
+  id: _propTypes2["default"].string
 };
 
 var defaultProps = {
   componentClass: 'input',
   clsPrefix: 'u-form-control',
   type: 'text',
-  defaultValue: "",
   size: 'md'
 };
 
@@ -60,7 +63,7 @@ var FormControl = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
     _this.onChange = function (e) {
-      var value = _reactDom2["default"].findDOMNode(_this.refs.inputValue).value;
+      var value = e.target.value;
       var onChange = _this.props.onChange;
 
       _this.setState(_defineProperty({ value: value, showSearch: false }, 'showSearch', value == ""));
@@ -70,23 +73,19 @@ var FormControl = function (_React$Component) {
     };
 
     _this.clearValue = function () {
-      _reactDom2["default"].findDOMNode(_this.refs.inputValue).value = "";
-      _this.refs.inputValue.focus();
       _this.setState({ showSearch: true });
     };
 
     _this.state = {
       showSearch: true,
-      value: 'value' in props ? props.value : props.defaultValue
+      value: props.value || ""
     };
     return _this;
   }
 
   FormControl.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProp) {
-    if (nextProp.defaultValue !== this.state.value) {
-      this.setState({
-        value: nextProp.defaultValue
-      });
+    if (nextProp.value !== this.state.value) {
+      this.setState({ value: nextProp.value });
     }
   };
 
@@ -96,11 +95,9 @@ var FormControl = function (_React$Component) {
         type = _props.type,
         id = _props.id,
         className = _props.className,
-        defaultValue = _props.defaultValue,
-        value = _props.value,
         size = _props.size,
         clsPrefix = _props.clsPrefix,
-        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'defaultValue', 'value', 'size', 'clsPrefix']);
+        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'size', 'clsPrefix']);
 
     // input[type="file"] 不应该有类名 .form-control.
 
@@ -122,16 +119,14 @@ var FormControl = function (_React$Component) {
 
       return _react2["default"].createElement(
         'span',
-        _extends({ className: 'u-input-search u-input-affix-wrapper' }, others),
-        _react2["default"].createElement(Component, {
-          ref: 'inputValue',
+        { className: 'u-input-search u-input-affix-wrapper' },
+        _react2["default"].createElement(Component, _extends({}, others, {
           type: type,
           onChange: this.onChange,
-          defaultValue: defaultValue,
-          value: value,
+          value: this.state.value,
           id: id,
           className: (0, _classnames2["default"])(className, classNames)
-        }),
+        })),
         _react2["default"].createElement(
           'span',
           { className: 'u-input-suffix' },
@@ -142,11 +137,9 @@ var FormControl = function (_React$Component) {
     }
 
     return _react2["default"].createElement(Component, _extends({}, others, {
-      ref: 'inputValue',
       type: type,
-      defaultValue: defaultValue,
-      value: value,
       id: id,
+      value: this.state.value,
       onChange: this.onChange,
       className: (0, _classnames2["default"])(className, classNames)
     }));

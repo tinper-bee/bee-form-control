@@ -28,11 +28,7 @@ npm install --save bee-form-control
 import FormControl from 'bee-form-control';
 React.render(<div>
     <div>
-        <FormControl />
-        <br>
-        <FormControl placeholder="input placeholder" defaultValue="default value" />
-        <br/>
-        <FormControl type="checkbox" />
+        <FormControl placeholder="input placeholder" ref="test" />
     </div>
 </div>, document.getElementById('target'));
 ```
@@ -54,4 +50,6 @@ import "./node_modules/build/bee-form-control.css"
 ## API
 |参数|说明|类型|默认值|
 |---|----|---|------|
+|className|类名|string|-|
 |type|类型(`text`,`search`, `submit`,'checkbox',...详情http://www.w3school.com.cn/html5/att_input_type.asp)|string|'input'|
+|value|默认定义的input值|any|-|
