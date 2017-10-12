@@ -23,12 +23,14 @@ const defaultProps = {
 
 
 class FormControl extends React.Component {
+
   constructor(props) {
       super(props);
       this.state = {
           showSearch: true,
           value: props.value || ""
       }
+      this.input = {};
   }
 
   componentWillReceiveProps(nextProp) {
@@ -61,8 +63,6 @@ class FormControl extends React.Component {
       clsPrefix,
       ...others
     } = this.props;
-
-
     // input[type="file"] 不应该有类名 .form-control.
     let classes={};
     if(size) {
@@ -102,6 +102,7 @@ class FormControl extends React.Component {
         {...others}
         type={type}
         id={id}
+        ref = {(el) => this.input = el }
         value= {this.state.value}
         onChange={this.onChange}
         className={classnames(className, classNames)}
