@@ -1,6 +1,6 @@
 /**
- * @title 设置文本框焦点事件autoFocus 属性
- * @description 设置文本框焦点事件autoFocus 属性
+ * @title 设置文本框焦点事件 autoFocus 属性
+ * @description 设置文本框焦点事件 autoFocus 属性
  */
 
 import React, { Component } from 'react';
