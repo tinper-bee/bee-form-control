@@ -14,10 +14,11 @@ export default class Demo2 extends Component {
           value: "test"
       }
   	}
+  	
 	onChange = (e) => {
 		this.setState({value:e});
 	}
-
+ 
 	onHander = () => {
 		this.setState({value:"eee"})
 	}

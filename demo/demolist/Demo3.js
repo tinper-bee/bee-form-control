@@ -8,7 +8,7 @@ import Button from 'bee-button';
 import FormControl from '../../src';
 
 class Demo3 extends Component {
-
+       
     constructor(props) {
         super(props);
         this.state = {
@@ -16,10 +16,10 @@ class Demo3 extends Component {
         }
         
     }
-   
-	onHander = () => {
 
-		this.textInput.input.focus();
+	onHander = () => {
+        
+        this.textInput.input.focus();
 		// this.refs.test.input.focus();
 	}
 

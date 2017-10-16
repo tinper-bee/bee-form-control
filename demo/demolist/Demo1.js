@@ -8,6 +8,7 @@ import Button from 'bee-button';
 import FormControl from '../../src';
 
 export default class Demo2 extends Component {
+	
 	constructor(props) {
       super(props);
       this.state = {
