@@ -80,6 +80,7 @@ var FormControl = function (_React$Component) {
       showSearch: true,
       value: props.value || ""
     };
+    _this.input = {};
     return _this;
   }
 
@@ -90,6 +91,8 @@ var FormControl = function (_React$Component) {
   };
 
   FormControl.prototype.render = function render() {
+    var _this2 = this;
+
     var _props = this.props,
         Component = _props.componentClass,
         type = _props.type,
@@ -98,7 +101,6 @@ var FormControl = function (_React$Component) {
         size = _props.size,
         clsPrefix = _props.clsPrefix,
         others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'size', 'clsPrefix']);
-
     // input[type="file"] 不应该有类名 .form-control.
 
 
@@ -139,6 +141,9 @@ var FormControl = function (_React$Component) {
     return _react2["default"].createElement(Component, _extends({}, others, {
       type: type,
       id: id,
+      ref: function ref(el) {
+        return _this2.input = el;
+      },
       value: this.state.value,
       onChange: this.onChange,
       className: (0, _classnames2["default"])(className, classNames)
