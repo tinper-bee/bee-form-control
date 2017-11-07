@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Icon from 'bee-icon';
 import PropTypes from  'prop-types';
@@ -28,7 +27,7 @@ class FormControl extends React.Component {
       super(props);
       this.state = {
           showSearch: true,
-          value: props.value || ""
+          value: props.value == null ? "" : props.value
       }
       this.input = {};
   }
@@ -42,7 +41,10 @@ class FormControl extends React.Component {
   onChange = (e) => {
     let value = e.target.value;
     const {onChange} = this.props;
-    this.setState({value:value,showSearch:false,showSearch:value==""});
+    this.setState({
+        value:value,
+        showSearch: value == null || value === ""
+    });
     if(onChange) {
       onChange(value);
     }
@@ -68,7 +70,7 @@ class FormControl extends React.Component {
     if(size) {
         classes[`${size}`] = true;
     }
-    if(type=="search") {
+    if(type === "search") {
         classes[`u-input-search`] = true;
     }
 
@@ -77,7 +79,7 @@ class FormControl extends React.Component {
       classNames = classnames(clsPrefix,classes);
     }
 
-    if(type=="search") {
+    if(type === "search") {
 
       return (
         <span className="u-input-search u-input-affix-wrapper">

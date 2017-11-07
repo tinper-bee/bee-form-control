@@ -10,10 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -31,8 +27,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -66,7 +60,10 @@ var FormControl = function (_React$Component) {
       var value = e.target.value;
       var onChange = _this.props.onChange;
 
-      _this.setState(_defineProperty({ value: value, showSearch: false }, 'showSearch', value == ""));
+      _this.setState({
+        value: value,
+        showSearch: value == null || value === ""
+      });
       if (onChange) {
         onChange(value);
       }
@@ -78,7 +75,7 @@ var FormControl = function (_React$Component) {
 
     _this.state = {
       showSearch: true,
-      value: props.value || ""
+      value: props.value == null ? "" : props.value
     };
     _this.input = {};
     return _this;
@@ -108,7 +105,7 @@ var FormControl = function (_React$Component) {
     if (size) {
       classes['' + size] = true;
     }
-    if (type == "search") {
+    if (type === "search") {
       classes['u-input-search'] = true;
     }
 
@@ -117,7 +114,7 @@ var FormControl = function (_React$Component) {
       classNames = (0, _classnames2["default"])(clsPrefix, classes);
     }
 
-    if (type == "search") {
+    if (type === "search") {
 
       return _react2["default"].createElement(
         'span',
