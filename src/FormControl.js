@@ -9,8 +9,7 @@ const propTypes = {
 		PropTypes.string
 	]),
   type: PropTypes.string,
-  size: PropTypes.oneOf(['sm','md','lg']),
-  id: PropTypes.string,
+  size: PropTypes.oneOf(['sm','md','lg'])
 };
 
 const defaultProps = {
@@ -38,7 +37,7 @@ class FormControl extends React.Component {
     }
   }
 
-  onChange = (e) => {
+    handleChange = (e) => {
     let value = e.target.value;
     const {onChange} = this.props;
     this.setState({
@@ -59,10 +58,10 @@ class FormControl extends React.Component {
     const {
       componentClass: Component,
       type,
-      id,
       className,
       size,
       clsPrefix,
+      onChange,
       ...others
     } = this.props;
     // input[type="file"] 不应该有类名 .form-control.
@@ -86,9 +85,9 @@ class FormControl extends React.Component {
           <Component
               {...others}
               type={type}
-              onChange={this.onChange}
+              ref = {(el) => this.input = el }
+              onChange={this.handleChange}
               value={this.state.value}
-              id={id}
               className={classnames(className, classNames)}
           />
           <span className="u-input-suffix">
@@ -103,10 +102,9 @@ class FormControl extends React.Component {
       <Component
         {...others}
         type={type}
-        id={id}
         ref = {(el) => this.input = el }
         value= {this.state.value}
-        onChange={this.onChange}
+        onChange={this.handleChange}
         className={classnames(className, classNames)}
       />
     );

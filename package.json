@@ -1,6 +1,6 @@
 {
  "name": "bee-form-control",
- "version": "1.0.3",
+ "version": "1.0.4",
  "description": "form-control ui component for react",
  "keywords": [
   "react",
@@ -20,7 +20,10 @@
  "license": "MIT",
  "main": "./build/index",
  "config": {
-  "port": 8000
+  "port": 8000,
+  "commitizen": {
+   "path": "./node_modules/cz-conventional-changelog"
+  }
  },
  "scripts": {
   "dev": "bee-tools run start",
@@ -33,10 +36,8 @@
   "coveralls": "bee-tools run coverage"
  },
  "dependencies": {
-  "bee-icon": "latest",
+  "bee-icon": "^1.0.3",
   "classnames": "^2.2.5",
-  "console-polyfill": "^0.2.3",
-  "es5-shim": "^4.5.9",
   "tinper-bee-core": "latest",
   "warning": "^3.0.0"
  },
@@ -46,11 +47,14 @@
   "prop-types": "15.6.0"
  },
  "devDependencies": {
-  "chai": "^3.5.0",
-  "enzyme": "^2.4.1",
-  "react-addons-test-utils": "15.3.2",
-  "bee-panel": "latest",
+  "bee-button": "latest",
   "bee-layout": "latest",
-  "bee-button": "latest"
+  "bee-panel": "latest",
+  "chai": "^3.5.0",
+  "console-polyfill": "^0.2.3",
+  "cz-conventional-changelog": "^2.1.0",
+  "enzyme": "^2.4.1",
+  "es5-shim": "^4.5.9",
+  "react-addons-test-utils": "15.3.2"
  }
 }

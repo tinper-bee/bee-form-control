@@ -37,8 +37,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var propTypes = {
   componentClass: _propTypes2["default"].oneOfType([_propTypes2["default"].element, _propTypes2["default"].string]),
   type: _propTypes2["default"].string,
-  size: _propTypes2["default"].oneOf(['sm', 'md', 'lg']),
-  id: _propTypes2["default"].string
+  size: _propTypes2["default"].oneOf(['sm', 'md', 'lg'])
 };
 
 var defaultProps = {
@@ -56,7 +55,7 @@ var FormControl = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
-    _this.onChange = function (e) {
+    _this.handleChange = function (e) {
       var value = e.target.value;
       var onChange = _this.props.onChange;
 
@@ -93,11 +92,11 @@ var FormControl = function (_React$Component) {
     var _props = this.props,
         Component = _props.componentClass,
         type = _props.type,
-        id = _props.id,
         className = _props.className,
         size = _props.size,
         clsPrefix = _props.clsPrefix,
-        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'size', 'clsPrefix']);
+        onChange = _props.onChange,
+        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange']);
     // input[type="file"] 不应该有类名 .form-control.
 
 
@@ -121,9 +120,11 @@ var FormControl = function (_React$Component) {
         { className: 'u-input-search u-input-affix-wrapper' },
         _react2["default"].createElement(Component, _extends({}, others, {
           type: type,
-          onChange: this.onChange,
+          ref: function ref(el) {
+            return _this2.input = el;
+          },
+          onChange: this.handleChange,
           value: this.state.value,
-          id: id,
           className: (0, _classnames2["default"])(className, classNames)
         })),
         _react2["default"].createElement(
@@ -137,12 +138,11 @@ var FormControl = function (_React$Component) {
 
     return _react2["default"].createElement(Component, _extends({}, others, {
       type: type,
-      id: id,
       ref: function ref(el) {
         return _this2.input = el;
       },
       value: this.state.value,
-      onChange: this.onChange,
+      onChange: this.handleChange,
       className: (0, _classnames2["default"])(className, classNames)
     }));
   };
