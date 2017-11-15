@@ -1,6 +1,10 @@
-|时间|说明|修复版本|
-|---|----|---|
-|2017-8-29|修改示例|0.1.19|
-|2017-9-6|添加搜索input type="search|0.1.20|
-|2017-9-19|钩子函数添加|0.1.21|
-|2017-9-20|search input  当内容清空，显示搜索icon|0.1.23|
+<a name="1.0.4"></a>
+## 1.0.4 (2017-11-15)
+
+
+### Bug Fixes
+
+* **bee-form-control:** change dependebcies ([ff09bc3](https://github.com/tinper-bee/form-control/commit/ff09bc3))
+
+
+
