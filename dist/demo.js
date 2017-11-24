@@ -80,7 +80,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(109);var Demo2 = __webpack_require__(110);var Demo3 = __webpack_require__(111);var Demo4 = __webpack_require__(112);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\t\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"sm\"/>\t\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"lg\"/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n  \t\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n \n\tonHander = () => {\n\t\tthis.setState({value:\"eee\"})\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<Button onClick={this.onHander}>外界控制</Button>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄 ", "code": "/**\n * @title 获取Input对象句柄 \n * @description 获取对象句柄，两种方式。\n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo3 extends Component {\n       \n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n\n\tonHander = () => {\n        \n        this.textInput.input.focus();\n\t\t// this.refs.test.input.focus();\n\t}\n\n    render() {\n        return (\n            <div className=\"wraper\">\n            \t<Button onClick={this.onHander}>获取input对象句柄</Button>\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref={(input) => { this.textInput = input; }} />\t\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref=\"test\" />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n \n    render() {\n        return (\n            <div className=\"wraper\"> \n\t\t\t\t<FormControl autoFocus value={this.state.value}  />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性" }];
+	var Demo1 = __webpack_require__(109);var Demo2 = __webpack_require__(110);var Demo3 = __webpack_require__(111);var Demo4 = __webpack_require__(112);var Demo5 = __webpack_require__(113);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\t\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"sm\"/>\t\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"lg\"/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n  \t\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n \n\tonHander = () => {\n\t\tthis.setState({value:\"eee\"})\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<Button onClick={this.onHander}>外界控制</Button>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄 ", "code": "/**\n * @title 获取Input对象句柄 \n * @description 获取对象句柄，两种方式。\n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo3 extends Component {\n       \n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n\n\tonHander = () => {\n        \n        this.textInput.input.focus();\n\t\t// this.refs.test.input.focus();\n\t}\n\n    render() {\n        return (\n            <div className=\"wraper\">\n            \t<Button onClick={this.onHander}>获取input对象句柄</Button>\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref={(input) => { this.textInput = input; }} />\t\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref=\"test\" />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n \n    render() {\n        return (\n            <div className=\"wraper\"> \n\t\t\t\t<FormControl autoFocus value={this.state.value}  />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\t\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n\n\tonSearch = (value) => {\n\t\tconsole.log(\"搜索\"+value);\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<FormControl value={this.state.value} onSearch={this.onSearch} onChange={this.onChange} type=\"search\"/>\t\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -7851,7 +7851,8 @@
 	  componentClass: _propTypes2['default'].oneOfType([_propTypes2['default'].element, _propTypes2['default'].string]),
 	  type: _propTypes2['default'].string,
 	  size: _propTypes2['default'].oneOf(['sm', 'md', 'lg']),
-	  id: _propTypes2['default'].string
+	  onSearch: _propTypes2['default'].func,
+	  onChange: _propTypes2['default'].func
 	};
 	
 	var defaultProps = {
@@ -7869,7 +7870,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 	
-	    _this.onChange = function (e) {
+	    _this.handleChange = function (e) {
 	      var value = e.target.value;
 	      var onChange = _this.props.onChange;
 	
@@ -7883,13 +7884,29 @@
 	    };
 	
 	    _this.clearValue = function () {
-	      _this.setState({ showSearch: true });
+	      var onChange = _this.props.onChange;
+	
+	      _this.setState({ showSearch: true, value: "" });
+	      if (onChange) {
+	        onChange("");
+	      }
+	    };
+	
+	    _this.handleKeyDown = function (e) {
+	      var onSearch = _this.props.onSearch;
+	
+	      if (e.keyCode == 13 && _this.props.type == "search") {
+	        if (onSearch) {
+	          onSearch(_this.state.value);
+	        }
+	      }
 	    };
 	
 	    _this.state = {
 	      showSearch: true,
 	      value: props.value == null ? "" : props.value
 	    };
+	    console.log(props.onSearch1);
 	    _this.input = {};
 	    return _this;
 	  }
@@ -7906,11 +7923,12 @@
 	    var _props = this.props,
 	        Component = _props.componentClass,
 	        type = _props.type,
-	        id = _props.id,
 	        className = _props.className,
 	        size = _props.size,
 	        clsPrefix = _props.clsPrefix,
-	        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'id', 'className', 'size', 'clsPrefix']);
+	        onChange = _props.onChange,
+	        onSearch = _props.onSearch,
+	        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange', 'onSearch']);
 	    // input[type="file"] 不应该有类名 .form-control.
 	
 	
@@ -7934,9 +7952,12 @@
 	        { className: 'u-input-search u-input-affix-wrapper' },
 	        _react2['default'].createElement(Component, _extends({}, others, {
 	          type: type,
-	          onChange: this.onChange,
+	          ref: function ref(el) {
+	            return _this2.input = el;
+	          },
+	          onChange: this.handleChange,
 	          value: this.state.value,
-	          id: id,
+	          onKeyDown: this.handleKeyDown,
 	          className: (0, _classnames2['default'])(className, classNames)
 	        })),
 	        _react2['default'].createElement(
@@ -7950,12 +7971,11 @@
 	
 	    return _react2['default'].createElement(Component, _extends({}, others, {
 	      type: type,
-	      id: id,
 	      ref: function ref(el) {
 	        return _this2.input = el;
 	      },
 	      value: this.state.value,
-	      onChange: this.onChange,
+	      onChange: this.handleChange,
 	      className: (0, _classnames2['default'])(className, classNames)
 	    }));
 	  };
@@ -8102,11 +8122,11 @@
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 	
-	var Demo2 = function (_Component) {
-		_inherits(Demo2, _Component);
+	var Demo1 = function (_Component) {
+		_inherits(Demo1, _Component);
 	
-		function Demo2(props) {
-			_classCallCheck(this, Demo2);
+		function Demo1(props) {
+			_classCallCheck(this, Demo1);
 	
 			var _this = _possibleConstructorReturn(this, _Component.call(this, props));
 	
@@ -8120,7 +8140,7 @@
 			return _this;
 		}
 	
-		Demo2.prototype.render = function render() {
+		Demo1.prototype.render = function render() {
 			return _react2['default'].createElement(
 				'div',
 				{ className: 'wraper' },
@@ -8130,10 +8150,10 @@
 			);
 		};
 	
-		return Demo2;
+		return Demo1;
 	}(_react.Component);
 	
-	exports['default'] = Demo2;
+	exports['default'] = Demo1;
 	module.exports = exports['default'];
 
 /***/ }),
@@ -8354,6 +8374,77 @@
 	}(_react.Component);
 	
 	exports['default'] = Demo4;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _beeButton = __webpack_require__(103);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
+	var _src = __webpack_require__(105);
+	
+	var _src2 = _interopRequireDefault(_src);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 不同size Input
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	var Demo5 = function (_Component) {
+		_inherits(Demo5, _Component);
+	
+		function Demo5(props) {
+			_classCallCheck(this, Demo5);
+	
+			var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+	
+			_this.onChange = function (e) {
+				_this.setState({ value: e });
+			};
+	
+			_this.onSearch = function (value) {
+				console.log("搜索" + value);
+			};
+	
+			_this.state = {
+				value: "test"
+			};
+			return _this;
+		}
+	
+		Demo5.prototype.render = function render() {
+			return _react2['default'].createElement(
+				'div',
+				{ className: 'wraper' },
+				_react2['default'].createElement(_src2['default'], { value: this.state.value, onSearch: this.onSearch, onChange: this.onChange, type: 'search' })
+			);
+		};
+	
+		return Demo5;
+	}(_react.Component);
+	
+	exports['default'] = Demo5;
 	module.exports = exports['default'];
 
 /***/ })

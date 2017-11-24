@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import Button from 'bee-button';
 import FormControl from '../../src';
 
-export default class Demo1 extends Component {
+export default class Demo5 extends Component {
 	
 	constructor(props) {
       super(props);
@@ -19,12 +19,14 @@ export default class Demo1 extends Component {
 		this.setState({value:e});
 	}
 
+	onSearch = (value) => {
+		console.log("搜索"+value);
+	}
+
 	render () {
 		return (
 			<div className="wraper">
-				<FormControl value={this.state.value} onChange={this.onChange} size="sm"/>	
-				<FormControl value={this.state.value} onChange={this.onChange}/>
-				<FormControl value={this.state.value} onChange={this.onChange} size="lg"/>	
+				<FormControl value={this.state.value} onSearch={this.onSearch} onChange={this.onChange} type="search"/>		
 			</div>
 			
 		)

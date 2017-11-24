@@ -9,7 +9,9 @@ const propTypes = {
 		PropTypes.string
 	]),
   type: PropTypes.string,
-  size: PropTypes.oneOf(['sm','md','lg'])
+  size: PropTypes.oneOf(['sm','md','lg']),
+  onSearch: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 const defaultProps = {
@@ -28,6 +30,7 @@ class FormControl extends React.Component {
           showSearch: true,
           value: props.value == null ? "" : props.value
       }
+      console.log(props.onSearch1);
       this.input = {};
   }
 
@@ -50,8 +53,21 @@ class FormControl extends React.Component {
   }
 
   clearValue = () => {
-    this.setState({showSearch:true});
+    const {onChange} = this.props;
+    this.setState({showSearch:true,value:""});
+    if(onChange) {
+      onChange("");
+    }
 
+  }
+
+  handleKeyDown = (e) => {
+    const {onSearch} = this.props;
+    if(e.keyCode == 13 && this.props.type=="search") {
+      if(onSearch) {
+        onSearch(this.state.value);
+      }
+    } 
   }
 
   render() {
@@ -62,6 +78,7 @@ class FormControl extends React.Component {
       size,
       clsPrefix,
       onChange,
+      onSearch,
       ...others
     } = this.props;
     // input[type="file"] 不应该有类名 .form-control.
@@ -88,6 +105,7 @@ class FormControl extends React.Component {
               ref = {(el) => this.input = el }
               onChange={this.handleChange}
               value={this.state.value}
+              onKeyDown={this.handleKeyDown}
               className={classnames(className, classNames)}
           />
           <span className="u-input-suffix">
