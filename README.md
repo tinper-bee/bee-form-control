@@ -53,3 +53,6 @@ import "./node_modules/build/bee-form-control.css"
 |className|类名|string|-|
 |type|类型(`text`,`search`, `submit`,'checkbox',...详情http://www.w3school.com.cn/html5/att_input_type.asp)|string|'input'|
 |value|默认定义的input值|any|-|
+|componentClass|默认定义的元素类型|string|'input'|
+|onChange|input值发生改变触发的回调|func|-|
+|onSearch|input type="search"前提下回车触发的回调 多用于搜索|func|-|
