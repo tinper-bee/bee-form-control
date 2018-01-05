@@ -7,7 +7,7 @@
   width: 100%;
   height: 30px;
   cursor: text;
-  font-size: 1.4rem;
+  font-size: 14px;
   line-height: 1.5;
   color: #424242;
   background-color: #fff;
@@ -27,10 +27,10 @@
 
 .u-form-control.lg {
   height: 38px;
-  font-size: 1.4rem; }
+  font-size: 14px; }
 
 .u-form-control.sm {
-  font-size: 1.2rem;
+  font-size: 12px;
   height: 24px; }
 
 .u-input-search-wrapper {
