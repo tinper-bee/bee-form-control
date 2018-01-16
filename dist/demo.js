@@ -62,10 +62,6 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _src = __webpack_require__(105);
-	
-	var _src2 = _interopRequireDefault(_src);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -80,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(109);var Demo2 = __webpack_require__(110);var Demo3 = __webpack_require__(111);var Demo4 = __webpack_require__(112);var Demo5 = __webpack_require__(113);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\t\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"sm\"/>\t\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"lg\"/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n  \t\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n \n\tonHander = () => {\n\t\tthis.setState({value:\"eee\"})\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t<Button onClick={this.onHander}>外界控制</Button>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄 ", "code": "/**\n * @title 获取Input对象句柄 \n * @description 获取对象句柄，两种方式。\n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo3 extends Component {\n       \n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n\n\tonHander = () => {\n        \n        this.textInput.input.focus();\n\t\t// this.refs.test.input.focus();\n\t}\n\n    render() {\n        return (\n            <div className=\"wraper\">\n            \t<Button onClick={this.onHander}>获取input对象句柄</Button>\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref={(input) => { this.textInput = input; }} />\t\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref=\"test\" />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n \n    render() {\n        return (\n            <div className=\"wraper\"> \n\t\t\t\t<FormControl autoFocus value={this.state.value}  />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n\t\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n\n\tonSearch = (value) => {\n\t\tconsole.log(\"搜索\"+value);\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<FormControl value={this.state.value} onSearch={this.onSearch} onChange={this.onChange} type=\"search\"/>\t\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " " }];
+	var Demo1 = __webpack_require__(105);var Demo2 = __webpack_require__(110);var Demo3 = __webpack_require__(111);var Demo4 = __webpack_require__(112);var Demo5 = __webpack_require__(113);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n\t\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"sm\"/>\t\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange} size=\"lg\"/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " ", "scss_code": ".wraper {\n    padding-bottom: 20px;\n    display: block;\n}\n\n.wraper input {\n    margin-top: 10px;\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n  \t\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n \n\tonHander = () => {\n\t\tthis.setState({value:\"eee\"})\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<Button onClick={this.onHander}>外界控制</Button>\n\t\t\t\t<FormControl value={this.state.value} onChange={this.onChange}/>\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " ", "scss_code": ".wraper {\n    padding-bottom: 20px;\n    display: block;\n}\n\n.wraper input {\n    margin-top: 10px;\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄 ", "code": "/**\n * @title 获取Input对象句柄 \n * @description 获取对象句柄，两种方式。\n */\n\nimport React, { Component } from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo3 extends Component {\n       \n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n\n\tonHander = () => {\n        \n        this.textInput.input.focus();\n\t\t// this.refs.test.input.focus();\n\t}\n\n    render() {\n        return (\n            <div className=\"wraper\">\n            \t<Button onClick={this.onHander}>获取input对象句柄</Button>\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref={(input) => { this.textInput = input; }} />\t\n\t\t\t\t\n\t\t\t\t<FormControl value={this.state.value} ref=\"test\" />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".wraper {\n    padding-bottom: 20px;\n    display: block;\n}\n\n.wraper input {\n    margin-top: 10px;\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, { Component } from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n        \n    }\n \n    render() {\n        return (\n            <div className=\"wraper\"> \n\t\t\t\t<FormControl autoFocus value={this.state.value}  />\t\n\t\t\t</div>\n\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".wraper {\n    padding-bottom: 20px;\n    display: block;\n}\n\n.wraper input {\n    margin-top: 10px;\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description \n */\n\nimport React, { Component } from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n\t\n\tconstructor(props) {\n      super(props);\n      this.state = {\n          value: \"test\"\n      }\n  \t}\n\tonChange = (e) => {\n\t\tthis.setState({value:e});\n\t}\n\n\tonSearch = (value) => {\n\t\tconsole.log(\"搜索\"+value);\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div className=\"wraper\">\n\t\t\t\t<FormControl value={this.state.value} onSearch={this.onSearch} onChange={this.onChange} type=\"search\"/>\t\t\n\t\t\t</div>\n\t\t\t\n\t\t)\n\t}\n}", "desc": " ", "scss_code": ".wraper {\n    padding-bottom: 20px;\n    display: block;\n}\n\n.wraper input {\n    margin-top: 10px;\n}" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -106,16 +102,22 @@
 	            title = _props.title,
 	            example = _props.example,
 	            code = _props.code,
-	            desc = _props.desc;
+	            desc = _props.desc,
+	            scss_code = _props.scss_code;
 	
 	        var caret = this.state.open ? CARETUP : CARET;
 	        var text = this.state.open ? "隐藏代码" : "查看代码";
 	
-	        var footer = _react2['default'].createElement(
-	            _beeButton2['default'],
-	            { shape: 'block', onClick: this.handleClick },
-	            caret,
-	            text
+	        var header = _react2['default'].createElement(
+	            'div',
+	            null,
+	            example,
+	            _react2['default'].createElement(
+	                _beeButton2['default'],
+	                { style: { "marginTop": "10px" }, shape: 'block', onClick: this.handleClick },
+	                caret,
+	                text
+	            )
 	        );
 	        return _react2['default'].createElement(
 	            _beeLayout.Col,
@@ -132,7 +134,7 @@
 	            ),
 	            _react2['default'].createElement(
 	                _beePanel.Panel,
-	                { collapsible: true, expanded: this.state.open, colors: 'bordered', header: example, footer: footer, footerStyle: { padding: 0, borderColor: "transparent" } },
+	                { collapsible: true, headerContent: true, expanded: this.state.open, colors: 'bordered', header: header, footerStyle: { padding: 0 } },
 	                _react2['default'].createElement(
 	                    'pre',
 	                    null,
@@ -141,7 +143,16 @@
 	                        { className: 'hljs javascript' },
 	                        code
 	                    )
-	                )
+	                ),
+	                !!scss_code ? _react2['default'].createElement(
+	                    'pre',
+	                    null,
+	                    _react2['default'].createElement(
+	                        'code',
+	                        { className: 'hljs css' },
+	                        scss_code
+	                    )
+	                ) : null
 	            )
 	        );
 	    };
@@ -164,7 +175,7 @@
 	            null,
 	            DemoArray.map(function (child, index) {
 	
-	                return _react2['default'].createElement(Demo, { example: child.example, title: child.title, code: child.code, desc: child.desc, key: index });
+	                return _react2['default'].createElement(Demo, { example: child.example, title: child.title, code: child.code, scss_code: child.scss_code, desc: child.desc, key: index });
 	            })
 	        );
 	    };
@@ -565,7 +576,7 @@
 	  /**
 	   * You can use a custom element for this component
 	   */
-	  componentClass: _propTypes2["default"].oneOfType([_propTypes2["default"].element, _propTypes2["default"].string])
+	  componentClass: _propTypes2["default"].oneOf([_propTypes2["default"].element, _propTypes2["default"].string])
 	};
 	
 	var defaultProps = {
@@ -7661,6 +7672,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 	
+	console.log(_propTypes2["default"]);
 	var propTypes = {
 	    /**
 	     * @title 尺寸
@@ -7795,10 +7807,79 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _beeButton = __webpack_require__(103);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
+	var _src = __webpack_require__(106);
+	
+	var _src2 = _interopRequireDefault(_src);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 不同size Input
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	var Demo1 = function (_Component) {
+		_inherits(Demo1, _Component);
+	
+		function Demo1(props) {
+			_classCallCheck(this, Demo1);
+	
+			var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+	
+			_this.onChange = function (e) {
+				_this.setState({ value: e });
+			};
+	
+			_this.state = {
+				value: "test"
+			};
+			return _this;
+		}
+	
+		Demo1.prototype.render = function render() {
+			return _react2['default'].createElement(
+				'div',
+				{ className: 'wraper' },
+				_react2['default'].createElement(_src2['default'], { value: this.state.value, onChange: this.onChange, size: 'sm' }),
+				_react2['default'].createElement(_src2['default'], { value: this.state.value, onChange: this.onChange }),
+				_react2['default'].createElement(_src2['default'], { value: this.state.value, onChange: this.onChange, size: 'lg' })
+			);
+		};
+	
+		return Demo1;
+	}(_react.Component);
+	
+	exports['default'] = Demo1;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
-	var _FormControl = __webpack_require__(106);
+	var _FormControl = __webpack_require__(107);
 	
 	var _FormControl2 = _interopRequireDefault(_FormControl);
 
@@ -7808,7 +7889,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7827,7 +7908,7 @@
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _beeIcon = __webpack_require__(107);
+	var _beeIcon = __webpack_require__(108);
 	
 	var _beeIcon2 = _interopRequireDefault(_beeIcon);
 	
@@ -7990,7 +8071,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7999,7 +8080,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(108);
+	var _Icon = __webpack_require__(109);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -8009,7 +8090,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -8082,78 +8163,9 @@
 	}(_react.Component);
 	
 	Icon.defaultProps = defaultProps;
-	Icon.propTypes = propTypes;
+	Icon.PropTypes = _propTypes2["default"];
 	
 	exports["default"] = Icon;
-	module.exports = exports['default'];
-
-/***/ }),
-/* 109 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(4);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _beeButton = __webpack_require__(103);
-	
-	var _beeButton2 = _interopRequireDefault(_beeButton);
-	
-	var _src = __webpack_require__(105);
-	
-	var _src2 = _interopRequireDefault(_src);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 不同size Input
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-	
-	var Demo1 = function (_Component) {
-		_inherits(Demo1, _Component);
-	
-		function Demo1(props) {
-			_classCallCheck(this, Demo1);
-	
-			var _this = _possibleConstructorReturn(this, _Component.call(this, props));
-	
-			_this.onChange = function (e) {
-				_this.setState({ value: e });
-			};
-	
-			_this.state = {
-				value: "test"
-			};
-			return _this;
-		}
-	
-		Demo1.prototype.render = function render() {
-			return _react2['default'].createElement(
-				'div',
-				{ className: 'wraper' },
-				_react2['default'].createElement(_src2['default'], { value: this.state.value, onChange: this.onChange, size: 'sm' }),
-				_react2['default'].createElement(_src2['default'], { value: this.state.value, onChange: this.onChange }),
-				_react2['default'].createElement(_src2['default'], { value: this.state.value, onChange: this.onChange, size: 'lg' })
-			);
-		};
-	
-		return Demo1;
-	}(_react.Component);
-	
-	exports['default'] = Demo1;
 	module.exports = exports['default'];
 
 /***/ }),
@@ -8174,7 +8186,7 @@
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -8216,7 +8228,7 @@
 		Demo2.prototype.render = function render() {
 			return _react2['default'].createElement(
 				'div',
-				null,
+				{ className: 'wraper' },
 				_react2['default'].createElement(
 					_beeButton2['default'],
 					{ onClick: this.onHander },
@@ -8250,7 +8262,7 @@
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -8330,7 +8342,7 @@
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -8394,7 +8406,7 @@
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	

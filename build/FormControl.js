@@ -37,7 +37,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var propTypes = {
   componentClass: _propTypes2["default"].oneOfType([_propTypes2["default"].element, _propTypes2["default"].string]),
   type: _propTypes2["default"].string,
-  size: _propTypes2["default"].oneOf(['sm', 'md', 'lg'])
+  size: _propTypes2["default"].oneOf(['sm', 'md', 'lg']),
+  onSearch: _propTypes2["default"].func,
+  onChange: _propTypes2["default"].func
 };
 
 var defaultProps = {
@@ -69,13 +71,29 @@ var FormControl = function (_React$Component) {
     };
 
     _this.clearValue = function () {
-      _this.setState({ showSearch: true });
+      var onChange = _this.props.onChange;
+
+      _this.setState({ showSearch: true, value: "" });
+      if (onChange) {
+        onChange("");
+      }
+    };
+
+    _this.handleKeyDown = function (e) {
+      var onSearch = _this.props.onSearch;
+
+      if (e.keyCode == 13 && _this.props.type == "search") {
+        if (onSearch) {
+          onSearch(_this.state.value);
+        }
+      }
     };
 
     _this.state = {
       showSearch: true,
       value: props.value == null ? "" : props.value
     };
+    console.log(props.onSearch1);
     _this.input = {};
     return _this;
   }
@@ -96,7 +114,8 @@ var FormControl = function (_React$Component) {
         size = _props.size,
         clsPrefix = _props.clsPrefix,
         onChange = _props.onChange,
-        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange']);
+        onSearch = _props.onSearch,
+        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange', 'onSearch']);
     // input[type="file"] 不应该有类名 .form-control.
 
 
@@ -125,6 +144,7 @@ var FormControl = function (_React$Component) {
           },
           onChange: this.handleChange,
           value: this.state.value,
+          onKeyDown: this.handleKeyDown,
           className: (0, _classnames2["default"])(className, classNames)
         })),
         _react2["default"].createElement(

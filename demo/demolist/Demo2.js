@@ -25,7 +25,7 @@ export default class Demo2 extends Component {
 
 	render () {
 		return (
-			<div>
+			<div className="wraper">
 				<Button onClick={this.onHander}>外界控制</Button>
 				<FormControl value={this.state.value} onChange={this.onChange}/>	
 			</div>

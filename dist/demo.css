@@ -5298,8 +5298,37 @@ a, .mdl-accordion, .mdl-button, .mdl-card, .mdl-checkbox, .mdl-dropdown-menu,
   .u-panel-group .u-panel-heading + .u-panel-collapse > .list-group, .u-panel-group .u-panel-group .u-panel-heading + .u-panel-collapse > .u-panel-body {
     border-top: 1px solid #ddd; }
 
-/* FormGroup */
+/*  IMAGES  */
+/* 默认颜色 */
+/* 客户化 */
+/* 波纹效果 */
+/*贝塞尔曲线动画 */
+/* 阴影 */
+/* ==========  文本字体  ========== */
+/* 控件 */
+/* 不同背景下对应的文字颜色 */
+/* UButton */
+/* UText */
 /*  Navlayout  */
+/* gridlayout */
+/* menu */
+/* Alert */
+/* Checkbox */
+/*  Radio  */
+/* Switch  */
+/* loading */
+/* datetimepicker */
+/* message */
+/* DATA TABLE */
+/* tooltip*/
+/* 进度条 */
+/* ==========  Content Tabs  ========== */
+/* CARD */
+/* Card dimensions */
+/* Cover image */
+/* ==========  Card  ========== */
+/* ============ Forms ============*/
+/* BADGE */
 .u-container {
   margin-right: auto;
   margin-left: auto;
@@ -6242,7 +6271,32 @@ input.u-button[type="submit"] {
 .wraper input {
   margin-top: 10px; }
 
-input {
+.wraper {
+  padding-bottom: 20px;
+  display: block; }
+
+.wraper input {
+  margin-top: 10px; }
+
+.wraper {
+  padding-bottom: 20px;
+  display: block; }
+
+.wraper input {
+  margin-top: 10px; }
+
+.wraper {
+  padding-bottom: 20px;
+  display: block; }
+
+.wraper input {
+  margin-top: 10px; }
+
+.wraper {
+  padding-bottom: 20px;
+  display: block; }
+
+.wraper input {
   margin-top: 10px; }
 
 /*# sourceMappingURL=demo.css.map */
