@@ -1,3 +1,4 @@
+
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/tinper-bee/form-control/compare/1.0.5...1.0.6) (2018-01-05)
 
