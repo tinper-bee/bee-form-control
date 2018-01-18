@@ -27,7 +27,7 @@ class FormControl extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showSearch: true,
+            showSearch: !props.value,
             value: props.value == null ? "" : props.value
         }
         this.input = {};
@@ -40,8 +40,8 @@ class FormControl extends React.Component {
     }
 
     handleSearchChange = (e) => {
-        let value = e.target.value;
         const {onChange} = this.props;
+        const value = this.input.value;
         this.setState({
             value: value,
             showSearch: value == null || value === ""
@@ -53,7 +53,7 @@ class FormControl extends React.Component {
 
     handleChange = (e) => {
         const {onChange} = this.props;
-        let value = e.target.value;
+        let value = this.input.value;
 
         if (onChange) {
             onChange(value);
@@ -71,10 +71,10 @@ class FormControl extends React.Component {
     }
 
     handleKeyDown = (e) => {
-        const {onSearch} = this.props;
-        if (e.keyCode === 13 && this.props.type === "search") {
+        const {onSearch,value} = this.props;
+        if (e.keyCode === 13 && type === "search") {
             if (onSearch) {
-                onSearch(this.state.value);
+                onSearch(value);
             }
         }
     }
@@ -141,13 +141,12 @@ class FormControl extends React.Component {
                         type={type}
                         ref={(el) => this.input = el }
                         onChange={this.handleSearchChange}
-                        value={this.state.value}
+                        value={value}
                         onKeyDown={this.handleKeyDown}
                         className={classnames(className, clsPrefix, classes)}
                     />
                     <div className={`${clsPrefix}-suffix`}>
-                        {this.state.showSearch && <Icon type="uf-search"/>}
-                        {!this.state.showSearch && <Icon onClick={this.clearValue} type="uf-close-c"/>}
+                        {this.state.showSearch ? <Icon type="uf-search"/>:<Icon onClick={this.clearValue} type="uf-close-c"/>}
                     </div>
                 </div>
             );
