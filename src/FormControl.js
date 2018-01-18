@@ -47,7 +47,7 @@ class FormControl extends React.Component {
             showSearch: value == null || value === ""
         });
         if (onChange) {
-            onChange(value);
+            onChange(value,e);
         }
     }
 
@@ -56,7 +56,7 @@ class FormControl extends React.Component {
         let value = this.input.value;
 
         if (onChange) {
-            onChange(value);
+            onChange(value,e);
         }
     }
 
