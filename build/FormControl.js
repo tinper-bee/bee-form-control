@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -35,139 +35,175 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 var propTypes = {
-  componentClass: _propTypes2["default"].oneOfType([_propTypes2["default"].element, _propTypes2["default"].string]),
-  type: _propTypes2["default"].string,
-  size: _propTypes2["default"].oneOf(['sm', 'md', 'lg']),
-  onSearch: _propTypes2["default"].func,
-  onChange: _propTypes2["default"].func
+    componentClass: _propTypes2["default"].oneOfType([_propTypes2["default"].element, _propTypes2["default"].string]),
+    type: _propTypes2["default"].string,
+    size: _propTypes2["default"].oneOf(['sm', 'md', 'lg']),
+    onSearch: _propTypes2["default"].func,
+    onChange: _propTypes2["default"].func
 };
 
 var defaultProps = {
-  componentClass: 'input',
-  clsPrefix: 'u-form-control',
-  type: 'text',
-  size: 'md'
+    componentClass: 'input',
+    clsPrefix: 'u-form-control',
+    type: 'text',
+    size: 'md'
 };
 
 var FormControl = function (_React$Component) {
-  _inherits(FormControl, _React$Component);
+    _inherits(FormControl, _React$Component);
 
-  function FormControl(props) {
-    _classCallCheck(this, FormControl);
+    function FormControl(props) {
+        _classCallCheck(this, FormControl);
 
-    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+        var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
-    _this.handleChange = function (e) {
-      var value = e.target.value;
-      var onChange = _this.props.onChange;
+        _this.handleSearchChange = function (e) {
+            var onChange = _this.props.onChange;
 
-      _this.setState({
-        value: value,
-        showSearch: value == null || value === ""
-      });
-      if (onChange) {
-        onChange(value);
-      }
-    };
+            var value = _this.input.value;
+            _this.setState({
+                value: value,
+                showSearch: value == null || value === ""
+            });
+            if (onChange) {
+                onChange(value, e);
+            }
+        };
 
-    _this.clearValue = function () {
-      var onChange = _this.props.onChange;
+        _this.handleChange = function (e) {
+            var onChange = _this.props.onChange;
 
-      _this.setState({ showSearch: true, value: "" });
-      if (onChange) {
-        onChange("");
-      }
-    };
+            var value = _this.input.value;
 
-    _this.handleKeyDown = function (e) {
-      var onSearch = _this.props.onSearch;
+            if (onChange) {
+                onChange(value, e);
+            }
+        };
 
-      if (e.keyCode == 13 && _this.props.type == "search") {
-        if (onSearch) {
-          onSearch(_this.state.value);
+        _this.clearValue = function () {
+            var onChange = _this.props.onChange;
+
+            _this.setState({ showSearch: true, value: "" });
+            if (onChange) {
+                onChange("");
+            }
+            _this.input.focus();
+        };
+
+        _this.handleKeyDown = function (e) {
+            var _this$props = _this.props,
+                onSearch = _this$props.onSearch,
+                value = _this$props.value;
+
+            if (e.keyCode === 13 && type === "search") {
+                if (onSearch) {
+                    onSearch(value);
+                }
+            }
+        };
+
+        _this.renderInput = function () {
+            var _this$props2 = _this.props,
+                Component = _this$props2.componentClass,
+                type = _this$props2.type,
+                className = _this$props2.className,
+                size = _this$props2.size,
+                clsPrefix = _this$props2.clsPrefix,
+                value = _this$props2.value,
+                onChange = _this$props2.onChange,
+                onSearch = _this$props2.onSearch,
+                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch']);
+            // input[type="file"] 不应该有类名 .form-control.
+
+
+            var classes = {};
+            if (size) {
+                classes['' + size] = true;
+            }
+
+            var classNames = void 0;
+            if (type !== 'file') {
+                classNames = (0, _classnames2["default"])(clsPrefix, classes);
+            }
+
+            return _react2["default"].createElement(Component, _extends({}, others, {
+                type: type,
+                ref: function ref(el) {
+                    return _this.input = el;
+                },
+                value: value,
+                onChange: _this.handleChange,
+                className: (0, _classnames2["default"])(className, classNames)
+            }));
+        };
+
+        _this.renderSearch = function () {
+            var _this$props3 = _this.props,
+                Component = _this$props3.componentClass,
+                type = _this$props3.type,
+                className = _this$props3.className,
+                size = _this$props3.size,
+                clsPrefix = _this$props3.clsPrefix,
+                value = _this$props3.value,
+                onChange = _this$props3.onChange,
+                onSearch = _this$props3.onSearch,
+                others = _objectWithoutProperties(_this$props3, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch']);
+            // input[type="file"] 不应该有类名 .form-control.
+
+
+            var classes = {};
+            if (size) {
+                classes['' + size] = true;
+            }
+            classes[clsPrefix + '-search'] = true;
+
+            if (type === "search") {
+                return _react2["default"].createElement(
+                    'div',
+                    { className: (0, _classnames2["default"])(clsPrefix + '-search', clsPrefix + '-affix-wrapper', className) },
+                    _react2["default"].createElement(Component, _extends({}, others, {
+                        type: type,
+                        ref: function ref(el) {
+                            return _this.input = el;
+                        },
+                        onChange: _this.handleSearchChange,
+                        value: value,
+                        onKeyDown: _this.handleKeyDown,
+                        className: (0, _classnames2["default"])(className, clsPrefix, classes)
+                    })),
+                    _react2["default"].createElement(
+                        'div',
+                        { className: clsPrefix + '-suffix' },
+                        _this.state.showSearch ? _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search' }) : _react2["default"].createElement(_beeIcon2["default"], { onClick: _this.clearValue, type: 'uf-close-c' })
+                    )
+                );
+            }
+        };
+
+        _this.state = {
+            showSearch: !props.value,
+            value: props.value == null ? "" : props.value
+        };
+        _this.input = {};
+        return _this;
+    }
+
+    FormControl.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProp) {
+        if (nextProp.value !== this.state.value) {
+            this.setState({ value: nextProp.value });
         }
-      }
     };
 
-    _this.state = {
-      showSearch: true,
-      value: props.value == null ? "" : props.value
+    FormControl.prototype.render = function render() {
+
+        if (this.props.type === "search") {
+            return this.renderSearch();
+        }
+
+        return this.renderInput();
     };
-    console.log(props.onSearch1);
-    _this.input = {};
-    return _this;
-  }
 
-  FormControl.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProp) {
-    if (nextProp.value !== this.state.value) {
-      this.setState({ value: nextProp.value });
-    }
-  };
-
-  FormControl.prototype.render = function render() {
-    var _this2 = this;
-
-    var _props = this.props,
-        Component = _props.componentClass,
-        type = _props.type,
-        className = _props.className,
-        size = _props.size,
-        clsPrefix = _props.clsPrefix,
-        onChange = _props.onChange,
-        onSearch = _props.onSearch,
-        others = _objectWithoutProperties(_props, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange', 'onSearch']);
-    // input[type="file"] 不应该有类名 .form-control.
-
-
-    var classes = {};
-    if (size) {
-      classes['' + size] = true;
-    }
-    if (type === "search") {
-      classes['u-input-search'] = true;
-    }
-
-    var classNames = void 0;
-    if (type !== 'file') {
-      classNames = (0, _classnames2["default"])(clsPrefix, classes);
-    }
-
-    if (type === "search") {
-
-      return _react2["default"].createElement(
-        'span',
-        { className: 'u-input-search u-input-affix-wrapper' },
-        _react2["default"].createElement(Component, _extends({}, others, {
-          type: type,
-          ref: function ref(el) {
-            return _this2.input = el;
-          },
-          onChange: this.handleChange,
-          value: this.state.value,
-          onKeyDown: this.handleKeyDown,
-          className: (0, _classnames2["default"])(className, classNames)
-        })),
-        _react2["default"].createElement(
-          'span',
-          { className: 'u-input-suffix' },
-          this.state.showSearch && _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search' }),
-          !this.state.showSearch && _react2["default"].createElement(_beeIcon2["default"], { onClick: this.clearValue, type: 'uf-close-c' })
-        )
-      );
-    }
-
-    return _react2["default"].createElement(Component, _extends({}, others, {
-      type: type,
-      ref: function ref(el) {
-        return _this2.input = el;
-      },
-      value: this.state.value,
-      onChange: this.handleChange,
-      className: (0, _classnames2["default"])(className, classNames)
-    }));
-  };
-
-  return FormControl;
+    return FormControl;
 }(_react2["default"].Component);
 
 FormControl.propTypes = propTypes;
