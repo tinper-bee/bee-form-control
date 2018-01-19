@@ -5916,7 +5916,6 @@ a, .mdl-accordion, .mdl-button, .mdl-card, .mdl-checkbox, .mdl-dropdown-menu,
   position: relative;
   min-width: 72px;
   padding: 5px 13px;
-  padding: 5px 13px \9;
   display: inline-block;
   font-family: "Open Sans", "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-size: 14px;
@@ -5955,11 +5954,9 @@ input.u-button[type="submit"] {
   border-radius: 50%;
   font-size: 14px;
   height: 38px;
-  height: 38px \9;
   margin: auto;
   min-width: 38px;
   width: 38px;
-  width: 38px \9;
   padding: 0;
   line-height: normal;
   border: 1px solid rgb(224,224,224); }

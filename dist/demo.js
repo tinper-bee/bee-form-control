@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(64);var Demo2 = __webpack_require__(69);var Demo3 = __webpack_require__(70);var Demo4 = __webpack_require__(71);var Demo5 = __webpack_require__(72);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (e) => {\n        this.setState({value: e});\n    }\n\n    render() {\n        return (\n            <div className=\"demo1\">\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"sm\"\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"lg\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo1 {\n    padding-bottom: 20px;\n    display: block;\n    .demo1-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"我是这样\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onHander = () => {\n        this.setState({value: \"我改变了\"})\n    }\n\n    render() {\n        return (\n            <div className=\"demo2\">\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\n                <FormControl className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo2 {\n    padding-bottom: 20px;\n    display: block;\n    .demo2-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\n * @title 获取Input对象句柄\n * @description 获取对象句柄，两种方式。\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo3 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onHander = () => {\n        this.textInput.input.focus();\n    }\n\n    render() {\n        return (\n            <div className=\"demo3\">\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\n\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref={(input) => {this.textInput = input}}\n                />\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref=\"test\"\n                />\n            </div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\n    padding-bottom: 20px;\n    display: block;\n    .demo3-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    render() {\n        return (\n            <div className=\"demo4\">\n                <FormControl\n                    className=\"demo4-input\"\n                    autoFocus\n                    value={this.state.value}\n                />\n            </div>\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\n    padding-bottom: 20px;\n    display: block;\n    .demo4-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\n * @title 搜索框\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(\"搜索\" + value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo5\">\n                <FormControl\n                    className=\"demo5-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    type=\"search\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能", "scss_code": ".demo5 {\n    padding-bottom: 20px;\n    display: block;\n    .demo5-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }];
+	var Demo1 = __webpack_require__(64);var Demo2 = __webpack_require__(69);var Demo3 = __webpack_require__(70);var Demo4 = __webpack_require__(71);var Demo5 = __webpack_require__(72);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (e) => {\n        this.setState({value: e});\n    }\n\n    render() {\n        return (\n            <div className=\"demo1\">\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"sm\"\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"lg\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": "" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"我是这样\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onHander = () => {\n        this.setState({value: \"我改变了\"})\n    }\n\n    render() {\n        return (\n            <div className=\"demo2\">\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\n                <FormControl className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\n            </div>\n\n        )\n    }\n}", "desc": "" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\n * @title 获取Input对象句柄\n * @description 获取对象句柄，两种方式。\n */\n\nimport React, {Component} from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo3 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onHander = () => {\n        this.textInput.input.focus();\n    }\n\n    render() {\n        return (\n            <div className=\"demo3\">\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\n\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref={(input) => {this.textInput = input}}\n                />\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref=\"test\"\n                />\n            </div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, {Component} from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    render() {\n        return (\n            <div className=\"demo4\">\n                <FormControl\n                    className=\"demo4-input\"\n                    autoFocus\n                    value={this.state.value}\n                />\n            </div>\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\n * @title 搜索框\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能\n */\n\nimport React, {Component} from 'react';\nimport Button from 'bee-button';\nimport FormControl from 'bee-form-control';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(\"搜索\" + value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo5\">\n                <FormControl\n                    className=\"demo5-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    type=\"search\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -4597,12 +4597,18 @@
 	      elFuturePos = (0, _getElFuturePos2['default'])(elRegion, refNodeRegion, points, offset, targetOffset);
 	      _utils2['default'].mix(newElRegion, elFuturePos);
 	    }
-	
-	    // 检查反下后的位置是否可以放下了
-	    // 如果仍然放不下只有指定了可以调整当前方向才调整
-	    newOverflowCfg.adjustX = overflow.adjustX && isFailX(elFuturePos, elRegion, visibleRect);
-	
-	    newOverflowCfg.adjustY = overflow.adjustY && isFailY(elFuturePos, elRegion, visibleRect);
+	    var isStillFailX = isFailX(elFuturePos, elRegion, visibleRect);
+	    var isStillFailY = isFailY(elFuturePos, elRegion, visibleRect);
+	    // 检查反下后的位置是否可以放下了，如果仍然放不下：
+	    // 1. 复原修改过的定位参数
+	    if (isStillFailX || isStillFailY) {
+	      points = align.points;
+	      offset = align.offset || [0, 0];
+	      targetOffset = align.targetOffset || [0, 0];
+	    }
+	    // 2. 只有指定了可以调整当前方向才调整
+	    newOverflowCfg.adjustX = overflow.adjustX && isStillFailX;
+	    newOverflowCfg.adjustY = overflow.adjustY && isStillFailY;
 	
 	    // 确实要调整，甚至可能会调整高度宽度
 	    if (newOverflowCfg.adjustX || newOverflowCfg.adjustY) {
@@ -6093,15 +6099,16 @@
 	     * @title <button> 的 type
 	     * @veIgnore
 	     */
-	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset'])
+	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset']),
+	    isSubmit: _propTypes2["default"].bool //是否作为form的提交按钮
 	};
 	
 	var defaultProps = {
 	    disabled: false,
 	    htmlType: 'button',
 	    clsPrefix: 'u-button',
-	    bordered: false
-	
+	    bordered: false,
+	    isSubmit: false
 	};
 	
 	var sizeMap = {
@@ -6148,7 +6155,8 @@
 	            children = _props.children,
 	            htmlType = _props.htmlType,
 	            clsPrefix = _props.clsPrefix,
-	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix']);
+	            isSubmit = _props.isSubmit,
+	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix', 'isSubmit']);
 	
 	        var clsObj = {};
 	        if (className) {
@@ -6352,25 +6360,25 @@
 	        var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 	
 	        _this.handleSearchChange = function (e) {
-	            var value = e.target.value;
 	            var onChange = _this.props.onChange;
 	
+	            var value = _this.input.value;
 	            _this.setState({
 	                value: value,
 	                showSearch: value == null || value === ""
 	            });
 	            if (onChange) {
-	                onChange(value);
+	                onChange(value, e);
 	            }
 	        };
 	
 	        _this.handleChange = function (e) {
 	            var onChange = _this.props.onChange;
 	
-	            var value = e.target.value;
+	            var value = _this.input.value;
 	
 	            if (onChange) {
-	                onChange(value);
+	                onChange(value, e);
 	            }
 	        };
 	
@@ -6385,26 +6393,28 @@
 	        };
 	
 	        _this.handleKeyDown = function (e) {
-	            var onSearch = _this.props.onSearch;
+	            var _this$props = _this.props,
+	                onSearch = _this$props.onSearch,
+	                value = _this$props.value;
 	
-	            if (e.keyCode === 13 && _this.props.type === "search") {
+	            if (e.keyCode === 13 && type === "search") {
 	                if (onSearch) {
-	                    onSearch(_this.state.value);
+	                    onSearch(value);
 	                }
 	            }
 	        };
 	
 	        _this.renderInput = function () {
-	            var _this$props = _this.props,
-	                Component = _this$props.componentClass,
-	                type = _this$props.type,
-	                className = _this$props.className,
-	                size = _this$props.size,
-	                clsPrefix = _this$props.clsPrefix,
-	                value = _this$props.value,
-	                onChange = _this$props.onChange,
-	                onSearch = _this$props.onSearch,
-	                others = _objectWithoutProperties(_this$props, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch']);
+	            var _this$props2 = _this.props,
+	                Component = _this$props2.componentClass,
+	                type = _this$props2.type,
+	                className = _this$props2.className,
+	                size = _this$props2.size,
+	                clsPrefix = _this$props2.clsPrefix,
+	                value = _this$props2.value,
+	                onChange = _this$props2.onChange,
+	                onSearch = _this$props2.onSearch,
+	                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch']);
 	            // input[type="file"] 不应该有类名 .form-control.
 	
 	
@@ -6430,16 +6440,16 @@
 	        };
 	
 	        _this.renderSearch = function () {
-	            var _this$props2 = _this.props,
-	                Component = _this$props2.componentClass,
-	                type = _this$props2.type,
-	                className = _this$props2.className,
-	                size = _this$props2.size,
-	                clsPrefix = _this$props2.clsPrefix,
-	                value = _this$props2.value,
-	                onChange = _this$props2.onChange,
-	                onSearch = _this$props2.onSearch,
-	                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch']);
+	            var _this$props3 = _this.props,
+	                Component = _this$props3.componentClass,
+	                type = _this$props3.type,
+	                className = _this$props3.className,
+	                size = _this$props3.size,
+	                clsPrefix = _this$props3.clsPrefix,
+	                value = _this$props3.value,
+	                onChange = _this$props3.onChange,
+	                onSearch = _this$props3.onSearch,
+	                others = _objectWithoutProperties(_this$props3, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch']);
 	            // input[type="file"] 不应该有类名 .form-control.
 	
 	
@@ -6459,22 +6469,21 @@
 	                            return _this.input = el;
 	                        },
 	                        onChange: _this.handleSearchChange,
-	                        value: _this.state.value,
+	                        value: value,
 	                        onKeyDown: _this.handleKeyDown,
 	                        className: (0, _classnames2['default'])(className, clsPrefix, classes)
 	                    })),
 	                    _react2['default'].createElement(
 	                        'div',
 	                        { className: clsPrefix + '-suffix' },
-	                        _this.state.showSearch && _react2['default'].createElement(_beeIcon2['default'], { type: 'uf-search' }),
-	                        !_this.state.showSearch && _react2['default'].createElement(_beeIcon2['default'], { onClick: _this.clearValue, type: 'uf-close-c' })
+	                        _this.state.showSearch ? _react2['default'].createElement(_beeIcon2['default'], { type: 'uf-search' }) : _react2['default'].createElement(_beeIcon2['default'], { onClick: _this.clearValue, type: 'uf-close-c' })
 	                    )
 	                );
 	            }
 	        };
 	
 	        _this.state = {
-	            showSearch: true,
+	            showSearch: !props.value,
 	            value: props.value == null ? "" : props.value
 	        };
 	        _this.input = {};
