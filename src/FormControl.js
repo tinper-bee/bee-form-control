@@ -71,7 +71,7 @@ class FormControl extends React.Component {
     }
 
     handleKeyDown = (e) => {
-        const {onSearch,value} = this.props;
+        const {onSearch, value, type} = this.props;
         if (e.keyCode === 13 && type === "search") {
             if (onSearch) {
                 onSearch(value);
