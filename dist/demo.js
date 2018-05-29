@@ -4597,18 +4597,12 @@
 	      elFuturePos = (0, _getElFuturePos2['default'])(elRegion, refNodeRegion, points, offset, targetOffset);
 	      _utils2['default'].mix(newElRegion, elFuturePos);
 	    }
-	    var isStillFailX = isFailX(elFuturePos, elRegion, visibleRect);
-	    var isStillFailY = isFailY(elFuturePos, elRegion, visibleRect);
-	    // 检查反下后的位置是否可以放下了，如果仍然放不下：
-	    // 1. 复原修改过的定位参数
-	    if (isStillFailX || isStillFailY) {
-	      points = align.points;
-	      offset = align.offset || [0, 0];
-	      targetOffset = align.targetOffset || [0, 0];
-	    }
-	    // 2. 只有指定了可以调整当前方向才调整
-	    newOverflowCfg.adjustX = overflow.adjustX && isStillFailX;
-	    newOverflowCfg.adjustY = overflow.adjustY && isStillFailY;
+	
+	    // 检查反下后的位置是否可以放下了
+	    // 如果仍然放不下只有指定了可以调整当前方向才调整
+	    newOverflowCfg.adjustX = overflow.adjustX && isFailX(elFuturePos, elRegion, visibleRect);
+	
+	    newOverflowCfg.adjustY = overflow.adjustY && isFailY(elFuturePos, elRegion, visibleRect);
 	
 	    // 确实要调整，甚至可能会调整高度宽度
 	    if (newOverflowCfg.adjustX || newOverflowCfg.adjustY) {
@@ -6099,16 +6093,15 @@
 	     * @title <button> 的 type
 	     * @veIgnore
 	     */
-	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset']),
-	    isSubmit: _propTypes2["default"].bool //是否作为form的提交按钮
+	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset'])
 	};
 	
 	var defaultProps = {
 	    disabled: false,
 	    htmlType: 'button',
 	    clsPrefix: 'u-button',
-	    bordered: false,
-	    isSubmit: false
+	    bordered: false
+	
 	};
 	
 	var sizeMap = {
@@ -6155,8 +6148,7 @@
 	            children = _props.children,
 	            htmlType = _props.htmlType,
 	            clsPrefix = _props.clsPrefix,
-	            isSubmit = _props.isSubmit,
-	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix', 'isSubmit']);
+	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix']);
 	
 	        var clsObj = {};
 	        if (className) {
