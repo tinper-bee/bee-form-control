@@ -6469,7 +6469,7 @@
 	                    _react2['default'].createElement(
 	                        'div',
 	                        { className: clsPrefix + '-suffix' },
-	                        _this.state.showSearch ? _react2['default'].createElement(_beeIcon2['default'], { type: 'uf-search' }) : _react2['default'].createElement(_beeIcon2['default'], { onClick: _this.clearValue, type: 'uf-close-c' })
+	                        _this.state.showSearch || others.disabled ? _react2['default'].createElement(_beeIcon2['default'], { type: 'uf-search' }) : _react2['default'].createElement(_beeIcon2['default'], { onClick: _this.clearValue, type: 'uf-close-c' })
 	                    )
 	                );
 	            }

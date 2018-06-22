@@ -146,7 +146,11 @@ class FormControl extends React.Component {
                         className={classnames(className, clsPrefix, classes)}
                     />
                     <div className={`${clsPrefix}-suffix`}>
-                        {this.state.showSearch ? <Icon type="uf-search"/>:<Icon onClick={this.clearValue} type="uf-close-c"/>}
+                        {
+                            this.state.showSearch || others.disabled
+                            ? <Icon type="uf-search"/>
+                            : <Icon onClick={this.clearValue} type="uf-close-c"/>
+                        }
                     </div>
                 </div>
             );
