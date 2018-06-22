@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/tinper-bee/form-control/compare/v1.0.10...v1.1.0) (2018-06-22)
+
+
+### Features
+
+* **bee-form-control:** 支持onBlur ([7b7c4c8](https://github.com/tinper-bee/form-control/commit/7b7c4c8))
+
+
+
 <a name="1.0.10"></a>
 ## [1.0.10](https://github.com/tinper-bee/form-control/compare/v1.0.9...v1.0.10) (2018-06-22)
 
