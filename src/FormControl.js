@@ -11,7 +11,8 @@ const propTypes = {
     type: PropTypes.string,
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     onSearch: PropTypes.func,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
 };
 
 const defaultProps = {
@@ -79,6 +80,15 @@ class FormControl extends React.Component {
         }
     }
 
+    handleBlur = (e) => {
+        const { value } = this.state;
+        const { onBlur } = this.props;
+
+        if(onBlur){
+            onBlur(value, e);
+        }
+    }
+
     renderInput = () => {
         const {
             componentClass: Component,
@@ -89,6 +99,7 @@ class FormControl extends React.Component {
             value,
             onChange,
             onSearch,
+            onBlur,
             ...others
         } = this.props;
         // input[type="file"] 不应该有类名 .form-control.
@@ -109,6 +120,7 @@ class FormControl extends React.Component {
                 ref={(el) => this.input = el }
                 value={value}
                 onChange={this.handleChange}
+                onBlur={this.handleBlur}
                 className={classnames(className, classNames)}
             />
         );
@@ -124,6 +136,7 @@ class FormControl extends React.Component {
             value,
             onChange,
             onSearch,
+            onBlur,
             ...others
         } = this.props;
         // input[type="file"] 不应该有类名 .form-control.
@@ -143,6 +156,7 @@ class FormControl extends React.Component {
                         onChange={this.handleSearchChange}
                         value={value}
                         onKeyDown={this.handleKeyDown}
+                        onBlur={this.handleBlur}
                         className={classnames(className, clsPrefix, classes)}
                     />
                     <div className={`${clsPrefix}-suffix`}>
