@@ -50,7 +50,7 @@
 	
 	var _beePanel = __webpack_require__(8);
 	
-	var _beeButton = __webpack_require__(62);
+	var _beeButton = __webpack_require__(65);
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(64);var Demo2 = __webpack_require__(69);var Demo3 = __webpack_require__(70);var Demo4 = __webpack_require__(71);var Demo5 = __webpack_require__(72);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (v) => {\n        this.setState({value: v});\n    }\n    onBlur = (v) => {\n        console.log(v);\n    }\n\n    render() {\n        return (\n            <div className=\"demo1\">\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    onBlur={this.onBlur}\n                    size=\"sm\"\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"lg\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo1 {\n    padding-bottom: 20px;\n    display: block;\n    .demo1-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"我是这样\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onHander = () => {\n        this.setState({value: \"我改变了\"})\n    }\n\n    render() {\n        return (\n            <div className=\"demo2\">\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\n                <FormControl className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo2 {\n    padding-bottom: 20px;\n    display: block;\n    .demo2-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\n * @title 获取Input对象句柄\n * @description 获取对象句柄，两种方式。\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo3 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onHander = () => {\n        this.textInput.input.focus();\n    }\n\n    render() {\n        return (\n            <div className=\"demo3\">\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\n\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref={(input) => {this.textInput = input}}\n                />\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref=\"test\"\n                />\n            </div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\n    padding-bottom: 20px;\n    display: block;\n    .demo3-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    render() {\n        return (\n            <div className=\"demo4\">\n                <FormControl\n                    className=\"demo4-input\"\n                    autoFocus\n                    value={this.state.value}\n                />\n            </div>\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\n    padding-bottom: 20px;\n    display: block;\n    .demo4-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\n * @title 搜索框\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(\"搜索\" + value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo5\">\n                <FormControl\n                    className=\"demo5-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    type=\"search\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能", "scss_code": ".demo5 {\n    padding-bottom: 20px;\n    display: block;\n    .demo5-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }];
+	var Demo1 = __webpack_require__(67);var Demo2 = __webpack_require__(72);var Demo3 = __webpack_require__(73);var Demo4 = __webpack_require__(74);var Demo5 = __webpack_require__(75);var Demo6 = __webpack_require__(76);var Demo7 = __webpack_require__(77);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (v) => {\n        this.setState({value: v});\n    }\n    onBlur = (v) => {\n        console.log(v);\n    }\n\n    render() {\n        return (\n            <div className=\"demo1\">\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    onBlur={this.onBlur}\n                    size=\"sm\"\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"lg\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo1 {\n    padding-bottom: 20px;\n    display: block;\n    .demo1-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"我是这样\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onHander = () => {\n        this.setState({value: \"我改变了\"})\n    }\n\n    render() {\n        return (\n            <div className=\"demo2\">\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\n                <FormControl className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo2 {\n    padding-bottom: 20px;\n    display: block;\n    .demo2-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\n * @title 获取Input对象句柄\n * @description 获取对象句柄，两种方式。\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo3 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onHander = () => {\n        this.textInput.input.focus();\n    }\n\n    render() {\n        return (\n            <div className=\"demo3\">\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\n\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref={(input) => {this.textInput = input}}\n                />\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref=\"test\"\n                />\n            </div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\n    padding-bottom: 20px;\n    display: block;\n    .demo3-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    render() {\n        return (\n            <div className=\"demo4\">\n                <FormControl\n                    className=\"demo4-input\"\n                    autoFocus\n                    value={this.state.value}\n                />\n            </div>\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\n    padding-bottom: 20px;\n    display: block;\n    .demo4-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\n * @title 搜索框\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(\"搜索\" + value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo5\">\n                <FormControl\n                    className=\"demo5-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    type=\"search\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能", "scss_code": ".demo5 {\n    padding-bottom: 20px;\n    display: block;\n    .demo5-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo6, null), "title": " 清空按钮", "code": "/**\n * @title 清空按钮\n * @description 通过设置showClose={true}属性，让FormControl组件有清空功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo6\">\n                <FormControl\n                    className=\"demo6-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    showClose={true}\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置showClose={true}属性，让FormControl组件有清空功能", "scss_code": ".demo6 {\n    padding-bottom: 20px;\n    display: block;\n    .demo6-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo7, null), "title": " 清空按钮", "code": "/**\n * @title 清空按钮\n * @description 通过设置showClose={true}属性，让FormControl组件有清空功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Tooltip, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo7\">\n                <Tooltip trigger=\"click\" \n                inverse rootClose placement=\"bottom\" \n                overlay={this.state.value}>\n                    <FormControl\n                        className=\"demo7-input\"\n                        value={this.state.value}\n                        onSearch={this.onSearch}\n                        onChange={this.onChange}\n                    />\n\t\t\t\t</Tooltip>\n               \n            </div>\n\n        )\n    }\n}", "desc": " 通过设置showClose={true}属性，让FormControl组件有清空功能", "scss_code": "@import '../../node_modules/bee-tooltip/src/Tooltip.scss';\n.demo7 {\n    padding-bottom: 20px;\n    display: block;\n    .demo7-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -388,7 +388,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
+	  Copyright (c) 2017 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
 	*/
@@ -410,8 +410,11 @@
 	
 				if (argType === 'string' || argType === 'number') {
 					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
+				} else if (Array.isArray(arg) && arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
 				} else if (argType === 'object') {
 					for (var key in arg) {
 						if (hasOwn.call(arg, key) && arg[key]) {
@@ -425,6 +428,7 @@
 		}
 	
 		if (typeof module !== 'undefined' && module.exports) {
+			classNames.default = classNames;
 			module.exports = classNames;
 		} else if (true) {
 			// register as 'classnames', consistent with npm package name
@@ -639,7 +643,7 @@
 	
 	var _Panel3 = _interopRequireDefault(_Panel2);
 	
-	var _PanelGroup2 = __webpack_require__(61);
+	var _PanelGroup2 = __webpack_require__(64);
 	
 	var _PanelGroup3 = _interopRequireDefault(_PanelGroup2);
 	
@@ -961,7 +965,7 @@
 	
 	var _Collapse3 = _interopRequireDefault(_Collapse2);
 	
-	var _Fade2 = __webpack_require__(60);
+	var _Fade2 = __webpack_require__(63);
 	
 	var _Fade3 = _interopRequireDefault(_Fade2);
 	
@@ -4431,28 +4435,100 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.alignPoint = exports.alignElement = undefined;
 	
-	var _utils = __webpack_require__(51);
+	var _alignElement = __webpack_require__(51);
 	
-	var _utils2 = _interopRequireDefault(_utils);
+	var _alignElement2 = _interopRequireDefault(_alignElement);
 	
-	var _getOffsetParent = __webpack_require__(53);
+	var _alignPoint = __webpack_require__(62);
+	
+	var _alignPoint2 = _interopRequireDefault(_alignPoint);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	exports.alignElement = _alignElement2['default'];
+	exports.alignPoint = _alignPoint2['default'];
+	exports['default'] = _alignElement2['default'];
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _align = __webpack_require__(52);
+	
+	var _align2 = _interopRequireDefault(_align);
+	
+	var _getOffsetParent = __webpack_require__(56);
 	
 	var _getOffsetParent2 = _interopRequireDefault(_getOffsetParent);
 	
-	var _getVisibleRectForElement = __webpack_require__(54);
+	var _getVisibleRectForElement = __webpack_require__(55);
 	
 	var _getVisibleRectForElement2 = _interopRequireDefault(_getVisibleRectForElement);
 	
-	var _adjustForViewport = __webpack_require__(56);
-	
-	var _adjustForViewport2 = _interopRequireDefault(_adjustForViewport);
-	
-	var _getRegion = __webpack_require__(57);
+	var _getRegion = __webpack_require__(59);
 	
 	var _getRegion2 = _interopRequireDefault(_getRegion);
 	
-	var _getElFuturePos = __webpack_require__(58);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function isOutOfVisibleRect(target) {
+	  var visibleRect = (0, _getVisibleRectForElement2['default'])(target);
+	  var targetRegion = (0, _getRegion2['default'])(target);
+	
+	  return !visibleRect || targetRegion.left + targetRegion.width <= visibleRect.left || targetRegion.top + targetRegion.height <= visibleRect.top || targetRegion.left >= visibleRect.right || targetRegion.top >= visibleRect.bottom;
+	}
+	
+	function alignElement(el, refNode, align) {
+	  var target = align.target || refNode;
+	  var refNodeRegion = (0, _getRegion2['default'])(target);
+	
+	  var isTargetNotOutOfVisible = !isOutOfVisibleRect(target);
+	
+	  return (0, _align2['default'])(el, refNodeRegion, align, isTargetNotOutOfVisible);
+	}
+	
+	alignElement.__getOffsetParent = _getOffsetParent2['default'];
+	
+	alignElement.__getVisibleRectForElement = _getVisibleRectForElement2['default'];
+	
+	exports['default'] = alignElement;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _utils = __webpack_require__(53);
+	
+	var _utils2 = _interopRequireDefault(_utils);
+	
+	var _getVisibleRectForElement = __webpack_require__(55);
+	
+	var _getVisibleRectForElement2 = _interopRequireDefault(_getVisibleRectForElement);
+	
+	var _adjustForViewport = __webpack_require__(58);
+	
+	var _adjustForViewport2 = _interopRequireDefault(_adjustForViewport);
+	
+	var _getRegion = __webpack_require__(59);
+	
+	var _getRegion2 = _interopRequireDefault(_getRegion);
+	
+	var _getElFuturePos = __webpack_require__(60);
 	
 	var _getElFuturePos2 = _interopRequireDefault(_getElFuturePos);
 	
@@ -4460,14 +4536,12 @@
 	
 	// http://yiminghe.iteye.com/blog/1124720
 	
-	/**
-	 * align dom node flexibly
-	 * @author yiminghe@gmail.com
-	 */
-	
 	function isFailX(elFuturePos, elRegion, visibleRect) {
 	  return elFuturePos.left < visibleRect.left || elFuturePos.left + elRegion.width > visibleRect.right;
-	}
+	} /**
+	   * align dom node flexibly
+	   * @author yiminghe@gmail.com
+	   */
 	
 	function isFailY(elFuturePos, elRegion, visibleRect) {
 	  return elFuturePos.top < visibleRect.top || elFuturePos.top + elRegion.height > visibleRect.bottom;
@@ -4479,13 +4553,6 @@
 	
 	function isCompleteFailY(elFuturePos, elRegion, visibleRect) {
 	  return elFuturePos.top > visibleRect.bottom || elFuturePos.top + elRegion.height < visibleRect.top;
-	}
-	
-	function isOutOfVisibleRect(target) {
-	  var visibleRect = (0, _getVisibleRectForElement2['default'])(target);
-	  var targetRegion = (0, _getRegion2['default'])(target);
-	
-	  return !visibleRect || targetRegion.left + targetRegion.width <= visibleRect.left || targetRegion.top + targetRegion.height <= visibleRect.top || targetRegion.left >= visibleRect.right || targetRegion.top >= visibleRect.bottom;
 	}
 	
 	function flip(points, reg, map) {
@@ -4518,12 +4585,16 @@
 	  offset[1] = convertOffset(offset[1], el.height);
 	}
 	
-	function domAlign(el, refNode, align) {
+	/**
+	 * @param el
+	 * @param tgtRegion 参照节点所占的区域: { left, top, width, height }
+	 * @param align
+	 */
+	function doAlign(el, tgtRegion, align, isTgtRegionVisible) {
 	  var points = align.points;
 	  var offset = align.offset || [0, 0];
 	  var targetOffset = align.targetOffset || [0, 0];
 	  var overflow = align.overflow;
-	  var target = align.target || refNode;
 	  var source = align.source || el;
 	  offset = [].concat(offset);
 	  targetOffset = [].concat(targetOffset);
@@ -4534,20 +4605,16 @@
 	  var visibleRect = (0, _getVisibleRectForElement2['default'])(source);
 	  // 当前节点所占的区域, left/top/width/height
 	  var elRegion = (0, _getRegion2['default'])(source);
-	  // 参照节点所占的区域, left/top/width/height
-	  var refNodeRegion = (0, _getRegion2['default'])(target);
 	  // 将 offset 转换成数值，支持百分比
 	  normalizeOffset(offset, elRegion);
-	  normalizeOffset(targetOffset, refNodeRegion);
+	  normalizeOffset(targetOffset, tgtRegion);
 	  // 当前节点将要被放置的位置
-	  var elFuturePos = (0, _getElFuturePos2['default'])(elRegion, refNodeRegion, points, offset, targetOffset);
+	  var elFuturePos = (0, _getElFuturePos2['default'])(elRegion, tgtRegion, points, offset, targetOffset);
 	  // 当前节点将要所处的区域
 	  var newElRegion = _utils2['default'].merge(elRegion, elFuturePos);
 	
-	  var isTargetNotOutOfVisible = !isOutOfVisibleRect(target);
-	
 	  // 如果可视区域不能完全放置当前节点时允许调整
-	  if (visibleRect && (overflow.adjustX || overflow.adjustY) && isTargetNotOutOfVisible) {
+	  if (visibleRect && (overflow.adjustX || overflow.adjustY) && isTgtRegionVisible) {
 	    if (overflow.adjustX) {
 	      // 如果横向不能放下
 	      if (isFailX(elFuturePos, elRegion, visibleRect)) {
@@ -4559,7 +4626,7 @@
 	        // 偏移量也反下
 	        var newOffset = flipOffset(offset, 0);
 	        var newTargetOffset = flipOffset(targetOffset, 0);
-	        var newElFuturePos = (0, _getElFuturePos2['default'])(elRegion, refNodeRegion, newPoints, newOffset, newTargetOffset);
+	        var newElFuturePos = (0, _getElFuturePos2['default'])(elRegion, tgtRegion, newPoints, newOffset, newTargetOffset);
 	
 	        if (!isCompleteFailX(newElFuturePos, elRegion, visibleRect)) {
 	          fail = 1;
@@ -4581,7 +4648,7 @@
 	        // 偏移量也反下
 	        var _newOffset = flipOffset(offset, 1);
 	        var _newTargetOffset = flipOffset(targetOffset, 1);
-	        var _newElFuturePos = (0, _getElFuturePos2['default'])(elRegion, refNodeRegion, _newPoints, _newOffset, _newTargetOffset);
+	        var _newElFuturePos = (0, _getElFuturePos2['default'])(elRegion, tgtRegion, _newPoints, _newOffset, _newTargetOffset);
 	
 	        if (!isCompleteFailY(_newElFuturePos, elRegion, visibleRect)) {
 	          fail = 1;
@@ -4594,15 +4661,21 @@
 	
 	    // 如果失败，重新计算当前节点将要被放置的位置
 	    if (fail) {
-	      elFuturePos = (0, _getElFuturePos2['default'])(elRegion, refNodeRegion, points, offset, targetOffset);
+	      elFuturePos = (0, _getElFuturePos2['default'])(elRegion, tgtRegion, points, offset, targetOffset);
 	      _utils2['default'].mix(newElRegion, elFuturePos);
 	    }
-	
-	    // 检查反下后的位置是否可以放下了
-	    // 如果仍然放不下只有指定了可以调整当前方向才调整
-	    newOverflowCfg.adjustX = overflow.adjustX && isFailX(elFuturePos, elRegion, visibleRect);
-	
-	    newOverflowCfg.adjustY = overflow.adjustY && isFailY(elFuturePos, elRegion, visibleRect);
+	    var isStillFailX = isFailX(elFuturePos, elRegion, visibleRect);
+	    var isStillFailY = isFailY(elFuturePos, elRegion, visibleRect);
+	    // 检查反下后的位置是否可以放下了，如果仍然放不下：
+	    // 1. 复原修改过的定位参数
+	    if (isStillFailX || isStillFailY) {
+	      points = align.points;
+	      offset = align.offset || [0, 0];
+	      targetOffset = align.targetOffset || [0, 0];
+	    }
+	    // 2. 只有指定了可以调整当前方向才调整
+	    newOverflowCfg.adjustX = overflow.adjustX && isStillFailX;
+	    newOverflowCfg.adjustY = overflow.adjustY && isStillFailY;
 	
 	    // 确实要调整，甚至可能会调整高度宽度
 	    if (newOverflowCfg.adjustX || newOverflowCfg.adjustY) {
@@ -4628,7 +4701,8 @@
 	  }, {
 	    useCssRight: align.useCssRight,
 	    useCssBottom: align.useCssBottom,
-	    useCssTransform: align.useCssTransform
+	    useCssTransform: align.useCssTransform,
+	    ignoreShake: align.ignoreShake
 	  });
 	
 	  return {
@@ -4639,11 +4713,7 @@
 	  };
 	}
 	
-	domAlign.__getOffsetParent = _getOffsetParent2['default'];
-	
-	domAlign.__getVisibleRectForElement = _getVisibleRectForElement2['default'];
-	
-	exports['default'] = domAlign;
+	exports['default'] = doAlign;
 	/**
 	 *  2012-04-26 yiminghe@gmail.com
 	 *   - 优化智能对齐算法
@@ -4656,7 +4726,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4667,7 +4737,7 @@
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
-	var _propertyUtils = __webpack_require__(52);
+	var _propertyUtils = __webpack_require__(54);
 	
 	var RE_NUM = /[\-+]?(?:\d*\.|)\d+(?:[eE][\-+]?\d+|)/.source;
 	
@@ -4964,6 +5034,19 @@
 	}
 	
 	function setOffset(elem, offset, option) {
+	  if (option.ignoreShake) {
+	    var oriOffset = getOffset(elem);
+	
+	    var oLeft = oriOffset.left.toFixed(0);
+	    var oTop = oriOffset.top.toFixed(0);
+	    var tLeft = offset.left.toFixed(0);
+	    var tTop = offset.top.toFixed(0);
+	
+	    if (oLeft === tLeft && oTop === tTop) {
+	      return;
+	    }
+	  }
+	
 	  if (option.useCssRight || option.useCssBottom) {
 	    setLeftTop(elem, offset, option);
 	  } else if (option.useCssTransform && (0, _propertyUtils.getTransformName)() in document.body.style) {
@@ -5238,7 +5321,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5353,7 +5436,7 @@
 	}
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5362,76 +5445,15 @@
 	  value: true
 	});
 	
-	var _utils = __webpack_require__(51);
+	var _utils = __webpack_require__(53);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	/**
-	 * 得到会导致元素显示不全的祖先元素
-	 */
-	
-	function getOffsetParent(element) {
-	  if (_utils2['default'].isWindow(element) || element.nodeType === 9) {
-	    return null;
-	  }
-	  // ie 这个也不是完全可行
-	  /*
-	   <div style="width: 50px;height: 100px;overflow: hidden">
-	   <div style="width: 50px;height: 100px;position: relative;" id="d6">
-	   元素 6 高 100px 宽 50px<br/>
-	   </div>
-	   </div>
-	   */
-	  // element.offsetParent does the right thing in ie7 and below. Return parent with layout!
-	  //  In other browsers it only includes elements with position absolute, relative or
-	  // fixed, not elements with overflow set to auto or scroll.
-	  //        if (UA.ie && ieMode < 8) {
-	  //            return element.offsetParent;
-	  //        }
-	  // 统一的 offsetParent 方法
-	  var doc = _utils2['default'].getDocument(element);
-	  var body = doc.body;
-	  var parent = void 0;
-	  var positionStyle = _utils2['default'].css(element, 'position');
-	  var skipStatic = positionStyle === 'fixed' || positionStyle === 'absolute';
-	
-	  if (!skipStatic) {
-	    return element.nodeName.toLowerCase() === 'html' ? null : element.parentNode;
-	  }
-	
-	  for (parent = element.parentNode; parent && parent !== body; parent = parent.parentNode) {
-	    positionStyle = _utils2['default'].css(parent, 'position');
-	    if (positionStyle !== 'static') {
-	      return parent;
-	    }
-	  }
-	  return null;
-	}
-	
-	exports['default'] = getOffsetParent;
-	module.exports = exports['default'];
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _utils = __webpack_require__(51);
-	
-	var _utils2 = _interopRequireDefault(_utils);
-	
-	var _getOffsetParent = __webpack_require__(53);
+	var _getOffsetParent = __webpack_require__(56);
 	
 	var _getOffsetParent2 = _interopRequireDefault(_getOffsetParent);
 	
-	var _isAncestorFixed = __webpack_require__(55);
+	var _isAncestorFixed = __webpack_require__(57);
 	
 	var _isAncestorFixed2 = _interopRequireDefault(_isAncestorFixed);
 	
@@ -5524,7 +5546,68 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 55 */
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _utils = __webpack_require__(53);
+	
+	var _utils2 = _interopRequireDefault(_utils);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	/**
+	 * 得到会导致元素显示不全的祖先元素
+	 */
+	
+	function getOffsetParent(element) {
+	  if (_utils2['default'].isWindow(element) || element.nodeType === 9) {
+	    return null;
+	  }
+	  // ie 这个也不是完全可行
+	  /*
+	   <div style="width: 50px;height: 100px;overflow: hidden">
+	   <div style="width: 50px;height: 100px;position: relative;" id="d6">
+	   元素 6 高 100px 宽 50px<br/>
+	   </div>
+	   </div>
+	   */
+	  // element.offsetParent does the right thing in ie7 and below. Return parent with layout!
+	  //  In other browsers it only includes elements with position absolute, relative or
+	  // fixed, not elements with overflow set to auto or scroll.
+	  //        if (UA.ie && ieMode < 8) {
+	  //            return element.offsetParent;
+	  //        }
+	  // 统一的 offsetParent 方法
+	  var doc = _utils2['default'].getDocument(element);
+	  var body = doc.body;
+	  var parent = void 0;
+	  var positionStyle = _utils2['default'].css(element, 'position');
+	  var skipStatic = positionStyle === 'fixed' || positionStyle === 'absolute';
+	
+	  if (!skipStatic) {
+	    return element.nodeName.toLowerCase() === 'html' ? null : element.parentNode;
+	  }
+	
+	  for (parent = element.parentNode; parent && parent !== body; parent = parent.parentNode) {
+	    positionStyle = _utils2['default'].css(parent, 'position');
+	    if (positionStyle !== 'static') {
+	      return parent;
+	    }
+	  }
+	  return null;
+	}
+	
+	exports['default'] = getOffsetParent;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5534,7 +5617,7 @@
 	});
 	exports['default'] = isAncestorFixed;
 	
-	var _utils = __webpack_require__(51);
+	var _utils = __webpack_require__(53);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -5559,7 +5642,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5568,7 +5651,7 @@
 	  value: true
 	});
 	
-	var _utils = __webpack_require__(51);
+	var _utils = __webpack_require__(53);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -5619,7 +5702,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5628,7 +5711,7 @@
 	  value: true
 	});
 	
-	var _utils = __webpack_require__(51);
+	var _utils = __webpack_require__(53);
 	
 	var _utils2 = _interopRequireDefault(_utils);
 	
@@ -5660,7 +5743,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5669,7 +5752,7 @@
 	  value: true
 	});
 	
-	var _getAlignOffset = __webpack_require__(59);
+	var _getAlignOffset = __webpack_require__(61);
 	
 	var _getAlignOffset2 = _interopRequireDefault(_getAlignOffset);
 	
@@ -5690,7 +5773,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -5733,7 +5816,76 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 60 */
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _utils = __webpack_require__(53);
+	
+	var _utils2 = _interopRequireDefault(_utils);
+	
+	var _align = __webpack_require__(52);
+	
+	var _align2 = _interopRequireDefault(_align);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	/**
+	 * `tgtPoint`: { pageX, pageY } or { clientX, clientY }.
+	 * If client position provided, will internal convert to page position.
+	 */
+	
+	function alignPoint(el, tgtPoint, align) {
+	  var pageX = void 0;
+	  var pageY = void 0;
+	
+	  var doc = _utils2['default'].getDocument(el);
+	  var win = doc.defaultView || doc.parentWindow;
+	
+	  var scrollX = _utils2['default'].getWindowScrollLeft(win);
+	  var scrollY = _utils2['default'].getWindowScrollTop(win);
+	  var viewportWidth = _utils2['default'].viewportWidth(win);
+	  var viewportHeight = _utils2['default'].viewportHeight(win);
+	
+	  if ('pageX' in tgtPoint) {
+	    pageX = tgtPoint.pageX;
+	  } else {
+	    pageX = scrollX + tgtPoint.clientX;
+	  }
+	
+	  if ('pageY' in tgtPoint) {
+	    pageY = tgtPoint.pageY;
+	  } else {
+	    pageY = scrollY + tgtPoint.clientY;
+	  }
+	
+	  var tgtRegion = {
+	    left: pageX,
+	    top: pageY,
+	    width: 0,
+	    height: 0
+	  };
+	
+	  var pointInView = pageX >= 0 && pageX <= scrollX + viewportWidth && pageY >= 0 && pageY <= scrollY + viewportHeight;
+	
+	  // Provide default target point
+	  var points = [align.points[0], 'cc'];
+	
+	  return (0, _align2['default'])(el, tgtRegion, _extends({}, align, { points: points }), pointInView);
+	}
+	
+	exports['default'] = alignPoint;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -5854,7 +6006,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 61 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6001,7 +6153,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 62 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6010,7 +6162,7 @@
 	  value: true
 	});
 	
-	var _Button = __webpack_require__(63);
+	var _Button = __webpack_require__(66);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
@@ -6020,7 +6172,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 63 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6093,15 +6245,16 @@
 	     * @title <button> 的 type
 	     * @veIgnore
 	     */
-	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset'])
+	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset']),
+	    isSubmit: _propTypes2["default"].bool //是否作为form的提交按钮
 	};
 	
 	var defaultProps = {
 	    disabled: false,
 	    htmlType: 'button',
 	    clsPrefix: 'u-button',
-	    bordered: false
-	
+	    bordered: false,
+	    isSubmit: false
 	};
 	
 	var sizeMap = {
@@ -6148,7 +6301,8 @@
 	            children = _props.children,
 	            htmlType = _props.htmlType,
 	            clsPrefix = _props.clsPrefix,
-	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix']);
+	            isSubmit = _props.isSubmit,
+	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix', 'isSubmit']);
 	
 	        var clsObj = {};
 	        if (className) {
@@ -6187,7 +6341,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 64 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6200,11 +6354,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _beeButton = __webpack_require__(62);
+	var _beeButton = __webpack_require__(65);
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(65);
+	var _src = __webpack_require__(68);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -6275,7 +6429,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 65 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6284,17 +6438,17 @@
 	  value: true
 	});
 	
-	var _FormControl = __webpack_require__(66);
+	var _FormControl = __webpack_require__(69);
 	
 	var _FormControl2 = _interopRequireDefault(_FormControl);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
+	
 	exports['default'] = _FormControl2['default'];
 	module.exports = exports['default'];
 
 /***/ }),
-/* 66 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6313,7 +6467,7 @@
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _beeIcon = __webpack_require__(67);
+	var _beeIcon = __webpack_require__(70);
 	
 	var _beeIcon2 = _interopRequireDefault(_beeIcon);
 	
@@ -6339,14 +6493,18 @@
 	    size: _propTypes2['default'].oneOf(['sm', 'md', 'lg']),
 	    onSearch: _propTypes2['default'].func,
 	    onChange: _propTypes2['default'].func,
-	    onBlur: _propTypes2['default'].func
+	    onBlur: _propTypes2['default'].func,
+	    showClose: _propTypes2['default'].bool,
+	    showPop: _propTypes2['default'].bool
 	};
 	
 	var defaultProps = {
 	    componentClass: 'input',
 	    clsPrefix: 'u-form-control',
 	    type: 'text',
-	    size: 'md'
+	    size: 'md',
+	    showClose: false,
+	    showPop: false
 	};
 	
 	var FormControl = function (_React$Component) {
@@ -6374,7 +6532,9 @@
 	            var onChange = _this.props.onChange;
 	
 	            var value = _this.input.value;
-	
+	            _this.setState({
+	                showClose: true
+	            });
 	            if (onChange) {
 	                onChange(value, e);
 	            }
@@ -6383,7 +6543,11 @@
 	        _this.clearValue = function () {
 	            var onChange = _this.props.onChange;
 	
-	            _this.setState({ showSearch: true, value: "" });
+	            _this.setState({
+	                showSearch: true,
+	                value: "",
+	                showClose: false
+	            });
 	            if (onChange) {
 	                onChange("");
 	            }
@@ -6413,6 +6577,19 @@
 	            }
 	        };
 	
+	        _this.handleFocus = function (e) {
+	            var value = _this.state.value;
+	            var onFocus = _this.props.onFocus;
+	
+	            if (onFocus) {
+	                onFocus(value, e);
+	            }
+	        };
+	
+	        _this.handleClick = function (e) {
+	            alert();
+	        };
+	
 	        _this.renderInput = function () {
 	            var _this$props2 = _this.props,
 	                Component = _this$props2.componentClass,
@@ -6438,7 +6615,26 @@
 	                classNames = (0, _classnames2['default'])(clsPrefix, classes);
 	            }
 	
-	            return _react2['default'].createElement(Component, _extends({}, others, {
+	            return _this.props.showClose ? _react2['default'].createElement(
+	                'div',
+	                { className: (0, _classnames2['default'])(clsPrefix + '-close', clsPrefix + '-affix-wrapper', className) },
+	                _react2['default'].createElement(Component, _extends({}, others, {
+	                    type: type,
+	                    ref: function ref(el) {
+	                        return _this.input = el;
+	                    },
+	                    value: value,
+	                    onChange: _this.handleChange,
+	                    onBlur: _this.handleBlur,
+	                    onFocus: _this.handleFocus,
+	                    className: (0, _classnames2['default'])(className, classNames)
+	                })),
+	                _react2['default'].createElement(
+	                    'div',
+	                    { className: clsPrefix + '-suffix' },
+	                    _this.state.showClose ? _react2['default'].createElement(_beeIcon2['default'], { onClick: _this.clearValue, type: 'uf-close-c' }) : ''
+	                )
+	            ) : _react2['default'].createElement(Component, _extends({}, others, {
 	                type: type,
 	                ref: function ref(el) {
 	                    return _this.input = el;
@@ -6497,7 +6693,8 @@
 	
 	        _this.state = {
 	            showSearch: !props.value,
-	            value: props.value == null ? "" : props.value
+	            value: props.value == null ? "" : props.value,
+	            showClose: false
 	        };
 	        _this.input = {};
 	        return _this;
@@ -6528,7 +6725,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 67 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6537,7 +6734,7 @@
 	  value: true
 	});
 	
-	var _Icon = __webpack_require__(68);
+	var _Icon = __webpack_require__(71);
 	
 	var _Icon2 = _interopRequireDefault(_Icon);
 	
@@ -6547,7 +6744,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 68 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6626,7 +6823,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 69 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6639,11 +6836,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _beeButton = __webpack_require__(62);
+	var _beeButton = __webpack_require__(65);
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(65);
+	var _src = __webpack_require__(68);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -6702,7 +6899,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 70 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6715,11 +6912,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _beeButton = __webpack_require__(62);
+	var _beeButton = __webpack_require__(65);
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(65);
+	var _src = __webpack_require__(68);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -6787,7 +6984,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 71 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6800,11 +6997,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _beeButton = __webpack_require__(62);
+	var _beeButton = __webpack_require__(65);
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(65);
+	var _src = __webpack_require__(68);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -6854,7 +7051,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 72 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6867,11 +7064,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _beeButton = __webpack_require__(62);
+	var _beeButton = __webpack_require__(65);
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _src = __webpack_require__(65);
+	var _src = __webpack_require__(68);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -6928,6 +7125,2751 @@
 	}(_react.Component);
 	
 	exports['default'] = Demo5;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _beeButton = __webpack_require__(65);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
+	var _src = __webpack_require__(68);
+	
+	var _src2 = _interopRequireDefault(_src);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 清空按钮
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 通过设置showClose={true}属性，让FormControl组件有清空功能
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	var Demo6 = function (_Component) {
+	    _inherits(Demo6, _Component);
+	
+	    function Demo6(props) {
+	        _classCallCheck(this, Demo6);
+	
+	        var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+	
+	        _this.onChange = function (value) {
+	            _this.setState({ value: value });
+	        };
+	
+	        _this.onSearch = function (value) {
+	            console.log(value);
+	        };
+	
+	        _this.state = {
+	            value: "test"
+	        };
+	        return _this;
+	    }
+	
+	    Demo6.prototype.render = function render() {
+	        return _react2['default'].createElement(
+	            'div',
+	            { className: 'demo6' },
+	            _react2['default'].createElement(_src2['default'], {
+	                className: 'demo6-input',
+	                value: this.state.value,
+	                onSearch: this.onSearch,
+	                onChange: this.onChange,
+	                showClose: true
+	            })
+	        );
+	    };
+	
+	    return Demo6;
+	}(_react.Component);
+	
+	exports['default'] = Demo6;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _beeButton = __webpack_require__(65);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
+	var _src = __webpack_require__(68);
+	
+	var _src2 = _interopRequireDefault(_src);
+	
+	var _beeTooltip = __webpack_require__(78);
+	
+	var _beeTooltip2 = _interopRequireDefault(_beeTooltip);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 清空按钮
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 通过设置showClose={true}属性，让FormControl组件有清空功能
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	var Demo6 = function (_Component) {
+	    _inherits(Demo6, _Component);
+	
+	    function Demo6(props) {
+	        _classCallCheck(this, Demo6);
+	
+	        var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+	
+	        _this.onChange = function (value) {
+	            _this.setState({ value: value });
+	        };
+	
+	        _this.onSearch = function (value) {
+	            console.log(value);
+	        };
+	
+	        _this.state = {
+	            value: "test"
+	        };
+	        return _this;
+	    }
+	
+	    Demo6.prototype.render = function render() {
+	        return _react2['default'].createElement(
+	            'div',
+	            { className: 'demo7' },
+	            _react2['default'].createElement(
+	                _beeTooltip2['default'],
+	                { trigger: 'click',
+	                    inverse: true, rootClose: true, placement: 'bottom',
+	                    overlay: this.state.value },
+	                _react2['default'].createElement(_src2['default'], {
+	                    className: 'demo7-input',
+	                    value: this.state.value,
+	                    onSearch: this.onSearch,
+	                    onChange: this.onChange
+	                })
+	            )
+	        );
+	    };
+	
+	    return Demo6;
+	}(_react.Component);
+	
+	exports['default'] = Demo6;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _Tooltip = __webpack_require__(79);
+	
+	var _Tooltip2 = _interopRequireDefault(_Tooltip);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	exports["default"] = _Tooltip2["default"];
+	module.exports = exports['default'];
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _OverlayTrigger = __webpack_require__(80);
+	
+	var _OverlayTrigger2 = _interopRequireDefault(_OverlayTrigger);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var propTypes = {
+	    /**
+	     * @required
+	     */
+	    id: _propTypes2["default"].oneOfType([_propTypes2["default"].string, _propTypes2["default"].number]),
+	    inverse: _propTypes2["default"].bool,
+	    /**
+	     * 相对目标元素显示上下左右的位置
+	     */
+	    placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
+	
+	    /**
+	     * 绝对定位上边距.
+	     */
+	    positionTop: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string]),
+	    /**
+	     * 绝对定位左边距
+	     */
+	    positionLeft: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string]),
+	
+	    /**
+	     * 与目标Top的距离
+	     */
+	    arrowOffsetTop: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string]),
+	    /**
+	     * 与目标Left的距离
+	     */
+	    arrowOffsetLeft: _propTypes2["default"].oneOfType([_propTypes2["default"].number, _propTypes2["default"].string])
+	};
+	
+	var defaultProps = {
+	    placement: 'right',
+	    clsPrefix: 'u-tooltip'
+	};
+	
+	var Tooltip = function (_React$Component) {
+	    _inherits(Tooltip, _React$Component);
+	
+	    function Tooltip() {
+	        _classCallCheck(this, Tooltip);
+	
+	        return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+	    }
+	
+	    Tooltip.prototype.render = function render() {
+	        var _classes;
+	
+	        var _props = this.props,
+	            placement = _props.placement,
+	            positionTop = _props.positionTop,
+	            positionLeft = _props.positionLeft,
+	            arrowOffsetTop = _props.arrowOffsetTop,
+	            arrowOffsetLeft = _props.arrowOffsetLeft,
+	            className = _props.className,
+	            style = _props.style,
+	            children = _props.children,
+	            clsPrefix = _props.clsPrefix,
+	            overlay = _props.overlay,
+	            inverse = _props.inverse,
+	            others = _objectWithoutProperties(_props, ['placement', 'positionTop', 'positionLeft', 'arrowOffsetTop', 'arrowOffsetLeft', 'className', 'style', 'children', 'clsPrefix', 'overlay', 'inverse']);
+	
+	        var classes = (_classes = {}, _defineProperty(_classes, placement, true), _defineProperty(_classes, 'inverse', inverse), _classes);
+	
+	        var outerStyle = _extends({
+	            top: positionTop,
+	            left: positionLeft
+	        }, style);
+	
+	        var arrowStyle = {
+	            top: arrowOffsetTop,
+	            left: arrowOffsetLeft
+	        };
+	
+	        var classNames = (0, _classnames2["default"])(clsPrefix, classes);
+	
+	        var overlayNode = _react2["default"].createElement(
+	            'div',
+	            {
+	                className: (0, _classnames2["default"])(className, classNames),
+	                style: outerStyle
+	            },
+	            _react2["default"].createElement('div', { className: 'tooltip-arrow', style: arrowStyle }),
+	            _react2["default"].createElement(
+	                'div',
+	                { className: 'tooltip-inner' },
+	                overlay
+	            )
+	        );
+	
+	        return _react2["default"].createElement(
+	            _OverlayTrigger2["default"],
+	            _extends({ placement: placement }, others, { overlay: overlayNode }),
+	            children
+	        );
+	    };
+	
+	    return Tooltip;
+	}(_react2["default"].Component);
+	
+	Tooltip.propTypes = propTypes;
+	Tooltip.defaultProps = defaultProps;
+	
+	exports["default"] = Tooltip;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _contains = __webpack_require__(81);
+	
+	var _contains2 = _interopRequireDefault(_contains);
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _warning = __webpack_require__(31);
+	
+	var _warning2 = _interopRequireDefault(_warning);
+	
+	var _Portal = __webpack_require__(82);
+	
+	var _Portal2 = _interopRequireDefault(_Portal);
+	
+	var _Overlay = __webpack_require__(86);
+	
+	var _Overlay2 = _interopRequireDefault(_Overlay);
+	
+	var _createChainedFunction = __webpack_require__(101);
+	
+	var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var isReact16 = _reactDom2["default"].createPortal !== undefined;
+	var createPortal = isReact16 ? _reactDom2["default"].createPortal : _reactDom2["default"].unstable_renderSubtreeIntoContainer;
+	
+	/**
+	 * 检查值是属于这个值，还是等于这个值
+	 *
+	 * @param {string} one
+	 * @param {string|array} of
+	 * @returns {boolean}
+	 */
+	function isOneOf(one, of) {
+	    if (Array.isArray(of)) {
+	        return of.indexOf(one) >= 0;
+	    }
+	    return one === of;
+	}
+	
+	var triggerType = _propTypes2["default"].oneOf(['click', 'hover', 'focus']);
+	
+	var propTypes = _extends({}, _Portal2["default"].propTypes, _Overlay2["default"].propTypes, {
+	
+	    /**
+	     * 指定哪些操作或操作触发叠加层可见性
+	     */
+	    trigger: _propTypes2["default"].oneOfType([triggerType, _propTypes2["default"].arrayOf(triggerType)]),
+	
+	    /**
+	     * 显示和隐藏覆盖一旦触发的毫秒延迟量
+	     */
+	    delay: _propTypes2["default"].number,
+	    /**
+	     * 触发后显示叠加层之前的延迟毫秒
+	     */
+	    delayShow: _propTypes2["default"].number,
+	    /**
+	     * 触发后隐藏叠加层的延迟毫秒
+	     */
+	    delayHide: _propTypes2["default"].number,
+	
+	    // FIXME: This should be `defaultShow`.
+	    /**
+	     * 覆盖的初始可见性状态。对于更细微的可见性控制，请考虑直接使用覆盖组件。
+	     */
+	    defaultOverlayShown: _propTypes2["default"].bool,
+	
+	    /**
+	     * 要覆盖在目标旁边的元素或文本。
+	     */
+	    overlay: _propTypes2["default"].node.isRequired,
+	
+	    /**
+	     * @private
+	     */
+	    onBlur: _propTypes2["default"].func,
+	    /**
+	     * @private
+	     */
+	    onClick: _propTypes2["default"].func,
+	    /**
+	     * @private
+	     */
+	    onFocus: _propTypes2["default"].func,
+	    /**
+	     * @private
+	     */
+	    onMouseOut: _propTypes2["default"].func,
+	    /**
+	     * @private
+	     */
+	    onMouseOver: _propTypes2["default"].func,
+	
+	    // Overridden props from `<Overlay>`.
+	    /**
+	     * @private
+	     */
+	    target: _propTypes2["default"].oneOf([null]),
+	    /**
+	     * @private
+	     */
+	    onHide: _propTypes2["default"].oneOf([null]),
+	    /**
+	     * @private
+	     */
+	    show: _propTypes2["default"].oneOf([null])
+	});
+	
+	var defaultProps = {
+	    defaultOverlayShown: false,
+	    trigger: ['hover', 'focus']
+	};
+	
+	var OverlayTrigger = function (_Component) {
+	    _inherits(OverlayTrigger, _Component);
+	
+	    function OverlayTrigger(props, context) {
+	        _classCallCheck(this, OverlayTrigger);
+	
+	        var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
+	
+	        _this.handleToggle = _this.handleToggle.bind(_this);
+	        _this.handleDelayedShow = _this.handleDelayedShow.bind(_this);
+	        _this.handleDelayedHide = _this.handleDelayedHide.bind(_this);
+	        _this.handleHide = _this.handleHide.bind(_this);
+	        _this.makeOverlay = _this.makeOverlay.bind(_this);
+	
+	        _this.handleMouseOver = function (e) {
+	            return _this.handleMouseOverOut(_this.handleDelayedShow, e);
+	        };
+	        _this.handleMouseOut = function (e) {
+	            return _this.handleMouseOverOut(_this.handleDelayedHide, e);
+	        };
+	
+	        _this._mountNode = null;
+	
+	        _this.state = {
+	            show: props.defaultOverlayShown
+	        };
+	        return _this;
+	    }
+	
+	    OverlayTrigger.prototype.componentDidMount = function componentDidMount() {
+	        this._mountNode = document.createElement('div');
+	        !isReact16 && this.renderOverlay();
+	    };
+	
+	    OverlayTrigger.prototype.componentDidUpdate = function componentDidUpdate() {
+	        !isReact16 && this.renderOverlay();
+	    };
+	
+	    OverlayTrigger.prototype.componentWillUnmount = function componentWillUnmount() {
+	        !isReact16 && _reactDom2["default"].unmountComponentAtNode(this._mountNode);
+	        this._mountNode = null;
+	
+	        clearTimeout(this._hoverShowDelay);
+	        clearTimeout(this._hoverHideDelay);
+	    };
+	
+	    OverlayTrigger.prototype.handleToggle = function handleToggle() {
+	        if (this.state.show) {
+	            this.hide();
+	        } else {
+	            this.show();
+	        }
+	    };
+	
+	    OverlayTrigger.prototype.handleDelayedShow = function handleDelayedShow() {
+	        var _this2 = this;
+	
+	        if (this._hoverHideDelay != null) {
+	            clearTimeout(this._hoverHideDelay);
+	            this._hoverHideDelay = null;
+	            return;
+	        }
+	
+	        if (this.state.show || this._hoverShowDelay != null) {
+	            return;
+	        }
+	
+	        var delay = this.props.delayShow != null ? this.props.delayShow : this.props.delay;
+	
+	        if (!delay) {
+	            this.show();
+	            return;
+	        }
+	
+	        this._hoverShowDelay = setTimeout(function () {
+	            _this2._hoverShowDelay = null;
+	            _this2.show();
+	        }, delay);
+	    };
+	
+	    OverlayTrigger.prototype.handleDelayedHide = function handleDelayedHide() {
+	        var _this3 = this;
+	
+	        if (this._hoverShowDelay != null) {
+	            clearTimeout(this._hoverShowDelay);
+	            this._hoverShowDelay = null;
+	            return;
+	        }
+	
+	        if (!this.state.show || this._hoverHideDelay != null) {
+	            return;
+	        }
+	
+	        var delay = this.props.delayHide != null ? this.props.delayHide : this.props.delay;
+	
+	        if (!delay) {
+	            this.hide();
+	            return;
+	        }
+	
+	        this._hoverHideDelay = setTimeout(function () {
+	            _this3._hoverHideDelay = null;
+	            _this3.hide();
+	        }, delay);
+	    };
+	
+	    // 简单实现mouseEnter和mouseLeave。
+	    // React的内置版本是有问题的：https://github.com/facebook/react/issues/4251
+	    //在触发器被禁用的情况下，mouseOut / Over可能导致闪烁
+	    //从一个子元素移动到另一个子元素。
+	
+	
+	    OverlayTrigger.prototype.handleMouseOverOut = function handleMouseOverOut(handler, e) {
+	        var target = e.currentTarget;
+	        var related = e.relatedTarget || e.nativeEvent.toElement;
+	
+	        if (!related || related !== target && !(0, _contains2["default"])(target, related)) {
+	            handler(e);
+	        }
+	    };
+	
+	    OverlayTrigger.prototype.handleHide = function handleHide() {
+	        this.hide();
+	    };
+	
+	    OverlayTrigger.prototype.show = function show() {
+	        this.setState({ show: true });
+	    };
+	
+	    OverlayTrigger.prototype.hide = function hide() {
+	        this.setState({ show: false });
+	    };
+	
+	    OverlayTrigger.prototype.makeOverlay = function makeOverlay(overlay, props) {
+	        return _react2["default"].createElement(
+	            _Overlay2["default"],
+	            _extends({}, props, {
+	                show: this.state.show,
+	                onHide: this.handleHide,
+	                target: this
+	            }),
+	            overlay
+	        );
+	    };
+	
+	    OverlayTrigger.prototype.renderOverlay = function renderOverlay() {
+	        _reactDom2["default"].unstable_renderSubtreeIntoContainer(this, this._overlay, this._mountNode);
+	    };
+	
+	    OverlayTrigger.prototype.render = function render() {
+	        var _props = this.props,
+	            trigger = _props.trigger,
+	            overlay = _props.overlay,
+	            children = _props.children,
+	            onBlur = _props.onBlur,
+	            onClick = _props.onClick,
+	            onFocus = _props.onFocus,
+	            onMouseOut = _props.onMouseOut,
+	            onMouseOver = _props.onMouseOver,
+	            props = _objectWithoutProperties(_props, ['trigger', 'overlay', 'children', 'onBlur', 'onClick', 'onFocus', 'onMouseOut', 'onMouseOver']);
+	
+	        delete props.delay;
+	        delete props.delayShow;
+	        delete props.delayHide;
+	        delete props.defaultOverlayShown;
+	
+	        var child = _react2["default"].Children.only(children);
+	        var childProps = child.props;
+	
+	        var triggerProps = {
+	            'aria-describedby': overlay.props.id
+	        };
+	
+	        // FIXME: 这里用于传递这个组件上的处理程序的逻辑是不一致的。我们不应该通过任何这些道具。
+	
+	        triggerProps.onClick = (0, _createChainedFunction2["default"])(childProps.onClick, onClick);
+	
+	        if (isOneOf('click', trigger)) {
+	            triggerProps.onClick = (0, _createChainedFunction2["default"])(triggerProps.onClick, this.handleToggle);
+	        }
+	
+	        if (isOneOf('hover', trigger)) {
+	            (0, _warning2["default"])(!(trigger === 'hover'), '[react-bootstrap] Specifying only the `"hover"` trigger limits the ' + 'visibility of the overlay to just mouse users. Consider also ' + 'including the `"focus"` trigger so that touch and keyboard only ' + 'users can see the overlay as well.');
+	
+	            triggerProps.onMouseOver = (0, _createChainedFunction2["default"])(childProps.onMouseOver, onMouseOver, this.handleMouseOver);
+	            triggerProps.onMouseOut = (0, _createChainedFunction2["default"])(childProps.onMouseOut, onMouseOut, this.handleMouseOut);
+	        }
+	
+	        if (isOneOf('focus', trigger)) {
+	            triggerProps.onFocus = (0, _createChainedFunction2["default"])(childProps.onFocus, onFocus, this.handleDelayedShow);
+	            triggerProps.onBlur = (0, _createChainedFunction2["default"])(childProps.onBlur, onBlur, this.handleDelayedHide);
+	        }
+	
+	        this._overlay = this.makeOverlay(overlay, props);
+	
+	        if (!isReact16) {
+	            return (0, _react.cloneElement)(child, triggerProps);
+	        }
+	        triggerProps.key = 'overlay';
+	
+	        var portal = _react2["default"].createElement(
+	            _Portal2["default"],
+	            {
+	                key: 'portal',
+	                container: props.container },
+	            this._overlay
+	        );
+	
+	        return [(0, _react.cloneElement)(child, triggerProps), portal];
+	    };
+	
+	    return OverlayTrigger;
+	}(_react.Component);
+	
+	OverlayTrigger.propTypes = propTypes;
+	OverlayTrigger.defaultProps = defaultProps;
+	
+	exports["default"] = OverlayTrigger;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _inDOM = __webpack_require__(14);
+	
+	var _inDOM2 = _interopRequireDefault(_inDOM);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function () {
+	  // HTML DOM and SVG DOM may have different support levels,
+	  // so we need to check on context instead of a document root element.
+	  return _inDOM2.default ? function (context, node) {
+	    if (context.contains) {
+	      return context.contains(node);
+	    } else if (context.compareDocumentPosition) {
+	      return context === node || !!(context.compareDocumentPosition(node) & 16);
+	    } else {
+	      return fallback(context, node);
+	    }
+	  } : fallback;
+	}();
+	
+	function fallback(context, node) {
+	  if (node) do {
+	    if (node === context) return true;
+	  } while (node = node.parentNode);
+	
+	  return false;
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _ownerDocument = __webpack_require__(83);
+	
+	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	var _getContainer = __webpack_require__(85);
+	
+	var _getContainer2 = _interopRequireDefault(_getContainer);
+	
+	var _tinperBeeCore = __webpack_require__(26);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var isReact16 = _reactDom2["default"].createPortal !== undefined;
+	var createPortal = isReact16 ? _reactDom2["default"].createPortal : _reactDom2["default"].unstable_renderSubtreeIntoContainer;
+	
+	var propTypes = {
+	  /**
+	   * 存放子组件的容器
+	   */
+	  container: _propTypes2["default"].oneOfType([_tinperBeeCore.componentOrElement, _propTypes2["default"].func])
+	};
+	
+	var defaultProps = {};
+	
+	/**
+	 * Portal组件是将子组件渲染
+	 */
+	
+	var Portal = function (_Component) {
+	  _inherits(Portal, _Component);
+	
+	  function Portal(props) {
+	    _classCallCheck(this, Portal);
+	
+	    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+	
+	    _this.getMountNode = _this.getMountNode.bind(_this);
+	    _this.getOverlayDOMNode = _this.getOverlayDOMNode.bind(_this);
+	    _this.mountOverlayTarget = _this.mountOverlayTarget.bind(_this);
+	    _this.unmountOverlayTarget = _this.unmountOverlayTarget.bind(_this);
+	    _this.renderOverlay = _this.renderOverlay.bind(_this);
+	    _this.unrenderOverlay = _this.unrenderOverlay.bind(_this);
+	
+	    _this.overlayTarget = isReact16 ? document.createElement('div') : null;
+	    return _this;
+	  }
+	
+	  Portal.prototype.componentDidMount = function componentDidMount() {
+	    if (isReact16) {
+	      this.portalContainerNode = (0, _getContainer2["default"])(this.props.container, (0, _ownerDocument2["default"])(this).body);
+	      this.portalContainerNode.appendChild(this.overlayTarget);
+	    } else {
+	      this.renderOverlay();
+	    }
+	
+	    this.mounted = true;
+	  };
+	
+	  Portal.prototype.componentDidUpdate = function componentDidUpdate() {
+	    if (isReact16) {
+	      var overlay = !this.props.children ? null : _react2["default"].Children.only(this.props.children);
+	      if (overlay === null) {
+	        this.unrenderOverlay();
+	        this.unmountOverlayTarget();
+	      } else {}
+	    } else {
+	      this.renderOverlay();
+	    }
+	  };
+	  //this._overlayTarget为当前的要添加的子组件， this._portalContainerNode要添加组件的容器元素
+	
+	
+	  Portal.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+	    if (this.overlayTarget && nextProps.container !== this.props.container) {
+	      this.portalContainerNode.removeChild(this.overlayTarget);
+	      this.portalContainerNode = (0, _getContainer2["default"])(nextProps.container, (0, _ownerDocument2["default"])(this).body);
+	      this.portalContainerNode.appendChild(this.overlayTarget);
+	    }
+	  };
+	
+	  Portal.prototype.componentWillUnmount = function componentWillUnmount() {
+	    this.unrenderOverlay();
+	    this.unmountOverlayTarget();
+	
+	    this.mounted = false;
+	  };
+	
+	  Portal.prototype.getMountNode = function getMountNode() {
+	    return this.overlayTarget;
+	  };
+	
+	  Portal.prototype.getOverlayDOMNode = function getOverlayDOMNode() {
+	    if (!this.mounted) {
+	      throw new Error('getOverlayDOMNode(): A component must be mounted to have a DOM node.');
+	    }
+	
+	    if (this.overlayInstance) {
+	      return _reactDom2["default"].findDOMNode(this.overlayInstance);
+	    }
+	
+	    return null;
+	  };
+	
+	  /**
+	   * 如果要添加的子组件不存在，就将div添加到要添加容器的DOM中；
+	   */
+	
+	  Portal.prototype.mountOverlayTarget = function mountOverlayTarget() {
+	    if (!this.overlayTarget) {
+	      this.overlayTarget = document.createElement('div');
+	      this.portalContainerNode = (0, _getContainer2["default"])(this.props.container, (0, _ownerDocument2["default"])(this).body);
+	      this.portalContainerNode.appendChild(this.overlayTarget);
+	    }
+	  };
+	  /**
+	   * 将要添加的子元素从容器中移除，并把变量置为null
+	   */
+	
+	
+	  Portal.prototype.unmountOverlayTarget = function unmountOverlayTarget() {
+	    if (this.overlayTarget) {
+	      this.portalContainerNode.removeChild(this.overlayTarget);
+	      this.overlayTarget = null;
+	    }
+	    this.portalContainerNode = null;
+	  };
+	  /**
+	   * 手动渲染_overlayTarget
+	   */
+	
+	
+	  Portal.prototype.renderOverlay = function renderOverlay() {
+	
+	    var overlay = !this.props.children ? null : _react2["default"].Children.only(this.props.children);
+	
+	    // Save reference for future access.
+	    if (overlay !== null) {
+	      this.mountOverlayTarget();
+	      this.overlayInstance = _reactDom2["default"].unstable_renderSubtreeIntoContainer(this, overlay, this.overlayTarget);
+	    } else {
+	      // Unrender if the component is null for transitions to null
+	      this.unrenderOverlay();
+	      this.unmountOverlayTarget();
+	    }
+	  };
+	  /**
+	   * 销毁_overlayTarget组件。并把_overlayInstance置为null
+	   */
+	
+	
+	  Portal.prototype.unrenderOverlay = function unrenderOverlay() {
+	    if (this.overlayTarget) {
+	      !isReact16 && _reactDom2["default"].unmountComponentAtNode(this.overlayTarget);
+	      this.overlayInstance = null;
+	    }
+	  };
+	
+	  Portal.prototype.render = function render() {
+	    if (!isReact16) {
+	      return null;
+	    }
+	
+	    var overlay = !this.props.children ? null : _react2["default"].Children.only(this.props.children);
+	
+	    return _reactDom2["default"].createPortal(overlay, this.overlayTarget);
+	  };
+	
+	  return Portal;
+	}(_react.Component);
+	
+	;
+	
+	Portal.propTypes = propTypes;
+	Portal.defaultProps = defaultProps;
+	
+	exports["default"] = Portal;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports["default"] = function (componentOrElement) {
+	  return (0, _ownerDocument2["default"])(_reactDom2["default"].findDOMNode(componentOrElement));
+	};
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _ownerDocument = __webpack_require__(84);
+	
+	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = ownerDocument;
+	function ownerDocument(node) {
+	  return node && node.ownerDocument || document;
+	}
+	module.exports = exports["default"];
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports["default"] = getContainer;
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	/**
+	 * 获取容器组件
+	 * @param  {[type]} container        [description]
+	 * @param  {[type]} defaultContainer [description]
+	 * @return {[type]}                  [description]
+	 */
+	function getContainer(container, defaultContainer) {
+	  container = typeof container === 'function' ? container() : container;
+	  return _reactDom2["default"].findDOMNode(container) || defaultContainer;
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _BaseOverlay = __webpack_require__(87);
+	
+	var _BaseOverlay2 = _interopRequireDefault(_BaseOverlay);
+	
+	var _tinperBeeCore = __webpack_require__(26);
+	
+	var _Fade = __webpack_require__(99);
+	
+	var _Fade2 = _interopRequireDefault(_Fade);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var propTypes = _extends({}, _BaseOverlay2["default"].propTypes, {
+	
+	  /**
+	   * 是否显示
+	   */
+	  show: _propTypes2["default"].bool,
+	  /**
+	   * 是
+	   */
+	  rootClose: _propTypes2["default"].bool,
+	  /**
+	   * 当点击rootClose触发close时的回调函数
+	   */
+	  onHide: _propTypes2["default"].func,
+	
+	  /**
+	   * 使用动画
+	   */
+	  animation: _propTypes2["default"].oneOfType([_tinperBeeCore.elementType, _propTypes2["default"].func]),
+	
+	  /**
+	   * Callback fired before the Overlay transitions in
+	   */
+	  onEnter: _propTypes2["default"].func,
+	
+	  /**
+	   * Callback fired as the Overlay begins to transition in
+	   */
+	  onEntering: _propTypes2["default"].func,
+	
+	  /**
+	   * Callback fired after the Overlay finishes transitioning in
+	   */
+	  onEntered: _propTypes2["default"].func,
+	
+	  /**
+	   * Callback fired right before the Overlay transitions out
+	   */
+	  onExit: _propTypes2["default"].func,
+	
+	  /**
+	   * Callback fired as the Overlay begins to transition out
+	   */
+	  onExiting: _propTypes2["default"].func,
+	
+	  /**
+	   * Callback fired after the Overlay finishes transitioning out
+	   */
+	  onExited: _propTypes2["default"].func,
+	
+	  /**
+	   * Sets the direction of the Overlay.
+	   */
+	  placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left'])
+	});
+	
+	var defaultProps = {
+	  animation: _Fade2["default"],
+	  rootClose: false,
+	  show: false,
+	  placement: 'right'
+	};
+	
+	var Overlay = function (_Component) {
+	  _inherits(Overlay, _Component);
+	
+	  function Overlay() {
+	    _classCallCheck(this, Overlay);
+	
+	    return _possibleConstructorReturn(this, _Component.apply(this, arguments));
+	  }
+	
+	  Overlay.prototype.render = function render() {
+	    var _props = this.props,
+	        animation = _props.animation,
+	        children = _props.children,
+	        props = _objectWithoutProperties(_props, ['animation', 'children']);
+	
+	    var transition = animation === true ? _Fade2["default"] : animation || null;
+	
+	    var child = void 0;
+	
+	    if (!transition) {
+	      child = (0, _react.cloneElement)(children, {
+	        className: (0, _classnames2["default"])(children.props.className, 'in')
+	      });
+	    } else {
+	      child = children;
+	    }
+	
+	    return _react2["default"].createElement(
+	      _BaseOverlay2["default"],
+	      _extends({}, props, {
+	        transition: transition
+	      }),
+	      child
+	    );
+	  };
+	
+	  return Overlay;
+	}(_react.Component);
+	
+	Overlay.propTypes = propTypes;
+	Overlay.defaultProps = defaultProps;
+	
+	exports["default"] = Overlay;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _Portal = __webpack_require__(82);
+	
+	var _Portal2 = _interopRequireDefault(_Portal);
+	
+	var _Position = __webpack_require__(88);
+	
+	var _Position2 = _interopRequireDefault(_Position);
+	
+	var _RootCloseWrapper = __webpack_require__(96);
+	
+	var _RootCloseWrapper2 = _interopRequireDefault(_RootCloseWrapper);
+	
+	var _tinperBeeCore = __webpack_require__(26);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var isReact16 = _reactDom2["default"].createPortal !== undefined;
+	
+	var propTypes = _extends({}, _Position2["default"].propTypes, {
+	
+	  /**
+	   * 是否显示
+	   */
+	  show: _propTypes2["default"].bool,
+	
+	  /**
+	   * 点击其他地方，是否隐藏overlay
+	   */
+	  rootClose: _propTypes2["default"].bool,
+	
+	  /**
+	   * 当rootClose为true的时候，触发的隐藏方法
+	   * @type func
+	   */
+	  onHide: function onHide(props) {
+	    var propType = _propTypes2["default"].func;
+	    if (props.rootClose) {
+	      propType = propType.isRequired;
+	    }
+	
+	    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	      args[_key - 1] = arguments[_key];
+	    }
+	
+	    return propType.apply(undefined, [props].concat(args));
+	  },
+	
+	
+	  /**
+	   * 过渡动画组件
+	   */
+	  transition: _propTypes2["default"].oneOfType([_tinperBeeCore.elementType, _propTypes2["default"].func]),
+	
+	  /**
+	   * overlay添加动画前的钩子函数
+	   */
+	  onEnter: _propTypes2["default"].func,
+	
+	  /**
+	   * 开始动画的钩子函数
+	   */
+	  onEntering: _propTypes2["default"].func,
+	
+	  /**
+	   * 渲染之后的钩子函数
+	   */
+	  onEntered: _propTypes2["default"].func,
+	
+	  /**
+	   * 关闭开始时的钩子函数
+	   */
+	  onExit: _propTypes2["default"].func,
+	
+	  /**
+	   * 关闭时的钩子函数
+	   */
+	  onExiting: _propTypes2["default"].func,
+	
+	  /**
+	   * 关闭后的钩子函数
+	   */
+	  onExited: _propTypes2["default"].func
+	});
+	
+	function noop() {}
+	
+	var defaultProps = {
+	  show: false,
+	  rootClose: true
+	};
+	
+	/**
+	 * 悬浮组件
+	 */
+	
+	var BaseOverlay = function (_Component) {
+	  _inherits(BaseOverlay, _Component);
+	
+	  function BaseOverlay(props, context) {
+	    _classCallCheck(this, BaseOverlay);
+	
+	    var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
+	
+	    _this.state = { exited: !props.show };
+	    _this.onHiddenListener = _this.handleHidden.bind(_this);
+	    return _this;
+	  }
+	
+	  BaseOverlay.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+	    if (nextProps.show) {
+	      this.setState({ exited: false });
+	    } else if (!nextProps.transition) {
+	      // Otherwise let handleHidden take care of marking exited.
+	      this.setState({ exited: true });
+	    }
+	  };
+	
+	  BaseOverlay.prototype.handleHidden = function handleHidden() {
+	    this.setState({ exited: true });
+	
+	    if (this.props.onExited) {
+	      var _props;
+	
+	      (_props = this.props).onExited.apply(_props, arguments);
+	    }
+	  };
+	
+	  BaseOverlay.prototype.render = function render() {
+	    var _props2 = this.props,
+	        container = _props2.container,
+	        containerPadding = _props2.containerPadding,
+	        target = _props2.target,
+	        placement = _props2.placement,
+	        shouldUpdatePosition = _props2.shouldUpdatePosition,
+	        rootClose = _props2.rootClose,
+	        positionLeft = _props2.positionLeft,
+	        positionTop = _props2.positionTop,
+	        children = _props2.children,
+	        Transition = _props2.transition,
+	        props = _objectWithoutProperties(_props2, ['container', 'containerPadding', 'target', 'placement', 'shouldUpdatePosition', 'rootClose', 'positionLeft', 'positionTop', 'children', 'transition']);
+	
+	    // Don't un-render the overlay while it's transitioning out.
+	
+	
+	    var mountOverlay = props.show || Transition && !this.state.exited;
+	    if (!mountOverlay) {
+	      // Don't bother showing anything if we don't have to.
+	      return null;
+	    }
+	
+	    var child = children;
+	
+	    // Position is be inner-most because it adds inline styles into the child,
+	    // which the other wrappers don't forward correctly.
+	    child = _react2["default"].createElement(
+	      _Position2["default"],
+	      {
+	        container: container,
+	        containerPadding: containerPadding,
+	        target: target,
+	        positionLeft: positionLeft,
+	        positionTop: positionTop,
+	        placement: placement,
+	        shouldUpdatePosition: shouldUpdatePosition },
+	      child
+	    );
+	
+	    if (Transition) {
+	      var onExit = props.onExit,
+	          onExiting = props.onExiting,
+	          onEnter = props.onEnter,
+	          onEntering = props.onEntering,
+	          onEntered = props.onEntered;
+	
+	      // This animates the child node by injecting props, so it must precede
+	      // anything that adds a wrapping div.
+	
+	      child = _react2["default"].createElement(
+	        Transition,
+	        {
+	          'in': props.show,
+	          transitionAppear: true,
+	          onExit: onExit,
+	          onExiting: onExiting,
+	          onExited: this.onHiddenListener,
+	          onEnter: onEnter,
+	          onEntering: onEntering,
+	          onEntered: onEntered
+	        },
+	        child
+	      );
+	    }
+	
+	    // This goes after everything else because it adds a wrapping div.
+	    if (rootClose) {
+	      child = _react2["default"].createElement(
+	        _RootCloseWrapper2["default"],
+	        { onRootClose: props.onHide },
+	        child
+	      );
+	    }
+	
+	    if (isReact16) {
+	      return child;
+	    } else {
+	      return _react2["default"].createElement(
+	        _Portal2["default"],
+	        { container: container },
+	        child
+	      );
+	    }
+	  };
+	
+	  return BaseOverlay;
+	}(_react.Component);
+	
+	BaseOverlay.propTypes = propTypes;
+	BaseOverlay.defaultProps = defaultProps;
+	
+	exports["default"] = BaseOverlay;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _tinperBeeCore = __webpack_require__(26);
+	
+	var _calculatePosition = __webpack_require__(89);
+	
+	var _calculatePosition2 = _interopRequireDefault(_calculatePosition);
+	
+	var _getContainer = __webpack_require__(85);
+	
+	var _getContainer2 = _interopRequireDefault(_getContainer);
+	
+	var _ownerDocument = __webpack_require__(83);
+	
+	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var propTypes = {
+	    /**
+	     * 要设置定位的元素
+	     */
+	    target: _propTypes2["default"].oneOfType([_tinperBeeCore.componentOrElement, _propTypes2["default"].func]),
+	
+	    /**
+	     * 存放的容器元素
+	     */
+	    container: _propTypes2["default"].oneOfType([_tinperBeeCore.componentOrElement, _propTypes2["default"].func]),
+	    /**
+	     * 容器padding值
+	     */
+	    containerPadding: _propTypes2["default"].number,
+	    /**
+	     * 位置设置
+	     */
+	    placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
+	    /**
+	     * 是否需要更新位置
+	     */
+	    shouldUpdatePosition: _propTypes2["default"].bool
+	};
+	
+	var defaultProps = {
+	    containerPadding: 0,
+	    placement: 'right',
+	    shouldUpdatePosition: false
+	};
+	
+	/**
+	 * 计算子组件的位置的组件
+	 */
+	
+	var Position = function (_Component) {
+	    _inherits(Position, _Component);
+	
+	    function Position(props, context) {
+	        _classCallCheck(this, Position);
+	
+	        var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
+	
+	        _this.state = {
+	            positionLeft: 0,
+	            positionTop: 0,
+	            arrowOffsetLeft: null,
+	            arrowOffsetTop: null
+	        };
+	
+	        _this.needsFlush = false;
+	        _this.lastTarget = null;
+	
+	        _this.getTarget = _this.getTarget.bind(_this);
+	        _this.maybeUpdatePosition = _this.maybeUpdatePosition.bind(_this);
+	        _this.updatePosition = _this.updatePosition.bind(_this);
+	        return _this;
+	    }
+	
+	    Position.prototype.componentDidMount = function componentDidMount() {
+	        this.updatePosition(this.getTarget());
+	    };
+	
+	    Position.prototype.componentWillReceiveProps = function componentWillReceiveProps() {
+	        this.needsFlush = true;
+	    };
+	
+	    Position.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
+	        if (this.needsFlush) {
+	            this.needsFlush = false;
+	
+	            this.maybeUpdatePosition();
+	        }
+	    };
+	
+	    /**
+	     * 获取要设置位置的子元素
+	     */
+	
+	
+	    Position.prototype.getTarget = function getTarget() {
+	        var target = this.props.target;
+	
+	        var targetElement = typeof target === 'function' ? target() : target;
+	        return targetElement && _reactDom2["default"].findDOMNode(targetElement) || null;
+	    };
+	
+	    /**
+	     * 验证是否需要更新位置
+	     */
+	
+	
+	    Position.prototype.maybeUpdatePosition = function maybeUpdatePosition(placementChanged) {
+	        var target = this.getTarget();
+	        if (!this.props.shouldUpdatePosition && target === this.lastTarget && !placementChanged) {
+	            return;
+	        }
+	
+	        this.updatePosition(target);
+	    };
+	
+	    /**
+	     * 更新位置
+	     */
+	
+	    Position.prototype.updatePosition = function updatePosition(target) {
+	        this.lastTarget = target;
+	
+	        if (!target) {
+	            this.setState({
+	                positionLeft: 0,
+	                positionTop: 0,
+	                arrowOffsetLeft: null,
+	                arrowOffsetTop: null
+	            });
+	
+	            return;
+	        }
+	
+	        var overlay = _reactDom2["default"].findDOMNode(this);
+	        var container = (0, _getContainer2["default"])(this.props.container, (0, _ownerDocument2["default"])(this).body);
+	
+	        this.setState((0, _calculatePosition2["default"])(this.props.placement, overlay, target, container, this.props.containerPadding));
+	    };
+	
+	    Position.prototype.render = function render() {
+	        var _props = this.props,
+	            children = _props.children,
+	            className = _props.className,
+	            props = _objectWithoutProperties(_props, ['children', 'className']);
+	
+	        var _state = this.state,
+	            positionLeft = _state.positionLeft,
+	            positionTop = _state.positionTop,
+	            arrowPosition = _objectWithoutProperties(_state, ['positionLeft', 'positionTop']);
+	
+	        // These should not be forwarded to the child.
+	
+	
+	        delete props.target;
+	        delete props.container;
+	        delete props.containerPadding;
+	        delete props.shouldUpdatePosition;
+	
+	        var child = _react2["default"].Children.only(children);
+	        return (0, _react.cloneElement)(child, {
+	            className: (0, _classnames2["default"])(className, child.props.className),
+	            style: _extends({}, child.props.style, {
+	                left: positionLeft,
+	                top: positionTop
+	            })
+	        });
+	    };
+	
+	    return Position;
+	}(_react.Component);
+	
+	Position.propTypes = propTypes;
+	Position.defaultProps = defaultProps;
+	
+	exports["default"] = Position;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports["default"] = calculatePosition;
+	
+	var _offset = __webpack_require__(90);
+	
+	var _offset2 = _interopRequireDefault(_offset);
+	
+	var _position = __webpack_require__(92);
+	
+	var _position2 = _interopRequireDefault(_position);
+	
+	var _scrollTop = __webpack_require__(94);
+	
+	var _scrollTop2 = _interopRequireDefault(_scrollTop);
+	
+	var _ownerDocument = __webpack_require__(83);
+	
+	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function getContainerDimensions(containerNode) {
+	    var width = void 0,
+	        height = void 0,
+	        scroll = void 0;
+	
+	    if (containerNode.tagName === 'BODY') {
+	        width = window.innerWidth;
+	        height = window.innerHeight;
+	
+	        scroll = (0, _scrollTop2["default"])((0, _ownerDocument2["default"])(containerNode).documentElement) || (0, _scrollTop2["default"])(containerNode);
+	    } else {
+	        var _getOffset = (0, _offset2["default"])(containerNode);
+	
+	        width = _getOffset.width;
+	        height = _getOffset.height;
+	
+	        scroll = (0, _scrollTop2["default"])(containerNode);
+	    }
+	
+	    return { width: width, height: height, scroll: scroll };
+	}
+	
+	function getTopDelta(top, overlayHeight, container, padding) {
+	    var containerDimensions = getContainerDimensions(container);
+	    var containerScroll = containerDimensions.scroll;
+	    var containerHeight = containerDimensions.height;
+	
+	    var topEdgeOffset = top - padding - containerScroll;
+	    var bottomEdgeOffset = top + padding - containerScroll + overlayHeight;
+	
+	    if (topEdgeOffset < 0) {
+	        return -topEdgeOffset;
+	    } else if (bottomEdgeOffset > containerHeight) {
+	        return containerHeight - bottomEdgeOffset;
+	    } else {
+	        return 0;
+	    }
+	}
+	
+	function getLeftDelta(left, overlayWidth, container, padding) {
+	    var containerDimensions = getContainerDimensions(container);
+	    var containerWidth = containerDimensions.width;
+	
+	    var leftEdgeOffset = left - padding;
+	    var rightEdgeOffset = left + padding + overlayWidth;
+	
+	    if (leftEdgeOffset < 0) {
+	        return -leftEdgeOffset;
+	    } else if (rightEdgeOffset > containerWidth) {
+	        return containerWidth - rightEdgeOffset;
+	    }
+	
+	    return 0;
+	}
+	
+	function calculatePosition(placement, overlayNode, target, container, padding) {
+	    var childOffset = container.tagName === 'BODY' ? (0, _offset2["default"])(target) : (0, _position2["default"])(target, container);
+	
+	    var _getOffset2 = (0, _offset2["default"])(overlayNode),
+	        overlayHeight = _getOffset2.height,
+	        overlayWidth = _getOffset2.width;
+	
+	    var positionLeft = void 0,
+	        positionTop = void 0,
+	        arrowOffsetLeft = void 0,
+	        arrowOffsetTop = void 0;
+	
+	    if (/^left|^right/.test(placement)) {
+	        positionTop = childOffset.top + (childOffset.height - overlayHeight) / 2;
+	
+	        if (/left/.test(placement)) {
+	            positionLeft = childOffset.left - overlayWidth;
+	        } else {
+	            positionLeft = childOffset.left + childOffset.width;
+	        }
+	
+	        if (/Top/.test(placement)) {
+	            positionTop = childOffset.top;
+	        } else if (/Bottom/.test(placement)) {
+	            positionTop = childOffset.top + childOffset.height - overlayHeight;
+	        }
+	
+	        var topDelta = getTopDelta(positionTop, overlayHeight, container, padding);
+	
+	        positionTop += topDelta;
+	        arrowOffsetTop = 50 * (1 - 2 * topDelta / overlayHeight) + '%';
+	        arrowOffsetLeft = void 0;
+	    } else if (/^top|^bottom/.test(placement)) {
+	        positionLeft = childOffset.left + (childOffset.width - overlayWidth) / 2;
+	
+	        if (/top/.test(placement)) {
+	            positionTop = childOffset.top - overlayHeight;
+	        } else {
+	            positionTop = childOffset.top + childOffset.height;
+	        }
+	
+	        if (/Left/.test(placement)) {
+	            positionLeft = childOffset.left;
+	        } else if (/Right/.test(placement)) {
+	            positionLeft = childOffset.left + (childOffset.width - overlayWidth);
+	        }
+	
+	        var leftDelta = getLeftDelta(positionLeft, overlayWidth, container, padding);
+	
+	        positionLeft += leftDelta;
+	        arrowOffsetLeft = 50 * (1 - 2 * leftDelta / overlayWidth) + '%';
+	        arrowOffsetTop = void 0;
+	    } else {
+	        throw new Error('calcOverlayPosition(): No such placement of "' + placement + '" found.');
+	    }
+	
+	    return { positionLeft: positionLeft, positionTop: positionTop, arrowOffsetLeft: arrowOffsetLeft, arrowOffsetTop: arrowOffsetTop };
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = offset;
+	
+	var _contains = __webpack_require__(81);
+	
+	var _contains2 = _interopRequireDefault(_contains);
+	
+	var _isWindow = __webpack_require__(91);
+	
+	var _isWindow2 = _interopRequireDefault(_isWindow);
+	
+	var _ownerDocument = __webpack_require__(84);
+	
+	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function offset(node) {
+	  var doc = (0, _ownerDocument2.default)(node),
+	      win = (0, _isWindow2.default)(doc),
+	      docElem = doc && doc.documentElement,
+	      box = { top: 0, left: 0, height: 0, width: 0 };
+	
+	  if (!doc) return;
+	
+	  // Make sure it's not a disconnected DOM node
+	  if (!(0, _contains2.default)(docElem, node)) return box;
+	
+	  if (node.getBoundingClientRect !== undefined) box = node.getBoundingClientRect();
+	
+	  // IE8 getBoundingClientRect doesn't support width & height
+	  box = {
+	    top: box.top + (win.pageYOffset || docElem.scrollTop) - (docElem.clientTop || 0),
+	    left: box.left + (win.pageXOffset || docElem.scrollLeft) - (docElem.clientLeft || 0),
+	    width: (box.width == null ? node.offsetWidth : box.width) || 0,
+	    height: (box.height == null ? node.offsetHeight : box.height) || 0
+	  };
+	
+	  return box;
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = getWindow;
+	function getWindow(node) {
+	  return node === node.window ? node : node.nodeType === 9 ? node.defaultView || node.parentWindow : false;
+	}
+	module.exports = exports["default"];
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	exports.default = position;
+	
+	var _offset = __webpack_require__(90);
+	
+	var _offset2 = _interopRequireDefault(_offset);
+	
+	var _offsetParent = __webpack_require__(93);
+	
+	var _offsetParent2 = _interopRequireDefault(_offsetParent);
+	
+	var _scrollTop = __webpack_require__(94);
+	
+	var _scrollTop2 = _interopRequireDefault(_scrollTop);
+	
+	var _scrollLeft = __webpack_require__(95);
+	
+	var _scrollLeft2 = _interopRequireDefault(_scrollLeft);
+	
+	var _style = __webpack_require__(17);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function nodeName(node) {
+	  return node.nodeName && node.nodeName.toLowerCase();
+	}
+	
+	function position(node, offsetParent) {
+	  var parentOffset = { top: 0, left: 0 },
+	      offset;
+	
+	  // Fixed elements are offset from window (parentOffset = {top:0, left: 0},
+	  // because it is its only offset parent
+	  if ((0, _style2.default)(node, 'position') === 'fixed') {
+	    offset = node.getBoundingClientRect();
+	  } else {
+	    offsetParent = offsetParent || (0, _offsetParent2.default)(node);
+	    offset = (0, _offset2.default)(node);
+	
+	    if (nodeName(offsetParent) !== 'html') parentOffset = (0, _offset2.default)(offsetParent);
+	
+	    parentOffset.top += parseInt((0, _style2.default)(offsetParent, 'borderTopWidth'), 10) - (0, _scrollTop2.default)(offsetParent) || 0;
+	    parentOffset.left += parseInt((0, _style2.default)(offsetParent, 'borderLeftWidth'), 10) - (0, _scrollLeft2.default)(offsetParent) || 0;
+	  }
+	
+	  // Subtract parent offsets and node margins
+	  return _extends({}, offset, {
+	    top: offset.top - parentOffset.top - (parseInt((0, _style2.default)(node, 'marginTop'), 10) || 0),
+	    left: offset.left - parentOffset.left - (parseInt((0, _style2.default)(node, 'marginLeft'), 10) || 0)
+	  });
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = offsetParent;
+	
+	var _ownerDocument = __webpack_require__(84);
+	
+	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	var _style = __webpack_require__(17);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function nodeName(node) {
+	  return node.nodeName && node.nodeName.toLowerCase();
+	}
+	
+	function offsetParent(node) {
+	  var doc = (0, _ownerDocument2.default)(node),
+	      offsetParent = node && node.offsetParent;
+	
+	  while (offsetParent && nodeName(node) !== 'html' && (0, _style2.default)(offsetParent, 'position') === 'static') {
+	    offsetParent = offsetParent.offsetParent;
+	  }
+	
+	  return offsetParent || doc.documentElement;
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = scrollTop;
+	
+	var _isWindow = __webpack_require__(91);
+	
+	var _isWindow2 = _interopRequireDefault(_isWindow);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function scrollTop(node, val) {
+	  var win = (0, _isWindow2.default)(node);
+	
+	  if (val === undefined) return win ? 'pageYOffset' in win ? win.pageYOffset : win.document.documentElement.scrollTop : node.scrollTop;
+	
+	  if (win) win.scrollTo('pageXOffset' in win ? win.pageXOffset : win.document.documentElement.scrollLeft, val);else node.scrollTop = val;
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = scrollTop;
+	
+	var _isWindow = __webpack_require__(91);
+	
+	var _isWindow2 = _interopRequireDefault(_isWindow);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function scrollTop(node, val) {
+	  var win = (0, _isWindow2.default)(node);
+	
+	  if (val === undefined) return win ? 'pageXOffset' in win ? win.pageXOffset : win.document.documentElement.scrollLeft : node.scrollLeft;
+	
+	  if (win) win.scrollTo(val, 'pageYOffset' in win ? win.pageYOffset : win.document.documentElement.scrollTop);else node.scrollLeft = val;
+	}
+	module.exports = exports['default'];
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _contains = __webpack_require__(81);
+	
+	var _contains2 = _interopRequireDefault(_contains);
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _addEventListener = __webpack_require__(97);
+	
+	var _addEventListener2 = _interopRequireDefault(_addEventListener);
+	
+	var _ownerDocument = __webpack_require__(83);
+	
+	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var propTypes = {
+	  onRootClose: _propTypes2["default"].func,
+	  children: _propTypes2["default"].element,
+	  /**
+	   * 是否禁用
+	   */
+	  disabled: _propTypes2["default"].bool,
+	  /**
+	   * 触发事件选择
+	   */
+	  event: _propTypes2["default"].oneOf(['click', 'mousedown'])
+	};
+	
+	var defaultProps = {
+	  event: 'click'
+	};
+	
+	function isLeftClickEvent(event) {
+	  return event.button === 0;
+	}
+	
+	function isModifiedEvent(event) {
+	  return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+	}
+	
+	var RootCloseWrapper = function (_Component) {
+	  _inherits(RootCloseWrapper, _Component);
+	
+	  function RootCloseWrapper(props, context) {
+	    _classCallCheck(this, RootCloseWrapper);
+	
+	    var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
+	
+	    _this.handleMouseCapture = function (e) {
+	      _this.preventMouseRootClose = isModifiedEvent(e) || !isLeftClickEvent(e) || (0, _contains2["default"])(_reactDom2["default"].findDOMNode(_this), e.target);
+	    };
+	
+	    _this.handleMouse = function () {
+	      if (!_this.preventMouseRootClose && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
+	
+	    _this.handleKeyUp = function (e) {
+	      if (e.keyCode === 27 && _this.props.onRootClose) {
+	        _this.props.onRootClose();
+	      }
+	    };
+	
+	    _this.preventMouseRootClose = false;
+	
+	    _this.addEventListeners = _this.addEventListeners.bind(_this);
+	    _this.removeEventListeners = _this.removeEventListeners.bind(_this);
+	
+	    return _this;
+	  }
+	
+	  RootCloseWrapper.prototype.componentDidMount = function componentDidMount() {
+	    if (!this.props.disabled) {
+	      this.addEventListeners();
+	    }
+	  };
+	
+	  RootCloseWrapper.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
+	    if (!this.props.disabled && prevProps.disabled) {
+	      this.addEventListeners();
+	    } else if (this.props.disabled && !prevProps.disabled) {
+	      this.removeEventListeners();
+	    }
+	  };
+	
+	  RootCloseWrapper.prototype.componentWillUnmount = function componentWillUnmount() {
+	    if (!this.props.disabled) {
+	      this.removeEventListeners();
+	    }
+	  };
+	
+	  RootCloseWrapper.prototype.addEventListeners = function addEventListeners() {
+	    var event = this.props.event;
+	
+	    var doc = (0, _ownerDocument2["default"])(this);
+	
+	    // 避免react的监听事件触发引起判断的不准确
+	    this.documentMouseCaptureListener = (0, _addEventListener2["default"])(doc, event, this.handleMouseCapture, true);
+	
+	    this.documentMouseListener = (0, _addEventListener2["default"])(doc, event, this.handleMouse);
+	
+	    this.documentKeyupListener = (0, _addEventListener2["default"])(doc, 'keyup', this.handleKeyUp);
+	  };
+	
+	  RootCloseWrapper.prototype.removeEventListeners = function removeEventListeners() {
+	    if (this.documentMouseCaptureListener) {
+	      this.documentMouseCaptureListener.remove();
+	    }
+	
+	    if (this.documentMouseListener) {
+	      this.documentMouseListener.remove();
+	    }
+	
+	    if (this.documentKeyupListener) {
+	      this.documentKeyupListener.remove();
+	    }
+	  };
+	
+	  RootCloseWrapper.prototype.render = function render() {
+	    return this.props.children;
+	  };
+	
+	  return RootCloseWrapper;
+	}(_react.Component);
+	
+	RootCloseWrapper.propTypes = propTypes;
+	
+	RootCloseWrapper.defaultProps = defaultProps;
+	
+	exports["default"] = RootCloseWrapper;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports["default"] = function (node, event, handler, capture) {
+	  (0, _on2["default"])(node, event, handler, capture);
+	
+	  return {
+	    remove: function remove() {
+	      (0, _off2["default"])(node, event, handler, capture);
+	    }
+	  };
+	};
+	
+	var _on = __webpack_require__(15);
+	
+	var _on2 = _interopRequireDefault(_on);
+	
+	var _off = __webpack_require__(98);
+	
+	var _off2 = _interopRequireDefault(_off);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _inDOM = __webpack_require__(14);
+	
+	var _inDOM2 = _interopRequireDefault(_inDOM);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var off = function off() {};
+	if (_inDOM2.default) {
+	  off = function () {
+	    if (document.addEventListener) return function (node, eventName, handler, capture) {
+	      return node.removeEventListener(eventName, handler, capture || false);
+	    };else if (document.attachEvent) return function (node, eventName, handler) {
+	      return node.detachEvent('on' + eventName, handler);
+	    };
+	  }();
+	}
+	
+	exports.default = off;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Transition = __webpack_require__(100);
+	
+	var _Transition2 = _interopRequireDefault(_Transition);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var propTypes = {
+	  /**
+	   * Show the component; triggers the fade in or fade out animation
+	   */
+	  "in": _propTypes2["default"].bool,
+	
+	  /**
+	   * Unmount the component (remove it from the DOM) when it is faded out
+	   */
+	  unmountOnExit: _propTypes2["default"].bool,
+	
+	  /**
+	   * Run the fade in animation when the component mounts, if it is initially
+	   * shown
+	   */
+	  transitionAppear: _propTypes2["default"].bool,
+	
+	  /**
+	   * Duration of the fade animation in milliseconds, to ensure that finishing
+	   * callbacks are fired even if the original browser transition end events are
+	   * canceled
+	   */
+	  timeout: _propTypes2["default"].number,
+	
+	  /**
+	   * Callback fired before the component fades in
+	   */
+	  onEnter: _propTypes2["default"].func,
+	  /**
+	   * Callback fired after the component starts to fade in
+	   */
+	  onEntering: _propTypes2["default"].func,
+	  /**
+	   * Callback fired after the has component faded in
+	   */
+	  onEntered: _propTypes2["default"].func,
+	  /**
+	   * Callback fired before the component fades out
+	   */
+	  onExit: _propTypes2["default"].func,
+	  /**
+	   * Callback fired after the component starts to fade out
+	   */
+	  onExiting: _propTypes2["default"].func,
+	  /**
+	   * Callback fired after the component has faded out
+	   */
+	  onExited: _propTypes2["default"].func
+	};
+	
+	var defaultProps = {
+	  "in": false,
+	  timeout: 300,
+	  unmountOnExit: false,
+	  transitionAppear: false
+	};
+	
+	var Fade = function (_React$Component) {
+	  _inherits(Fade, _React$Component);
+	
+	  function Fade() {
+	    _classCallCheck(this, Fade);
+	
+	    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+	  }
+	
+	  Fade.prototype.render = function render() {
+	    return _react2["default"].createElement(_Transition2["default"], _extends({}, this.props, {
+	      className: (0, _classnames2["default"])(this.props.className, 'fade'),
+	      enteredClassName: 'in',
+	      enteringClassName: 'in'
+	    }));
+	  };
+	
+	  return Fade;
+	}(_react2["default"].Component);
+	
+	Fade.propTypes = propTypes;
+	Fade.defaultProps = defaultProps;
+	
+	exports["default"] = Fade;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.EXITING = exports.ENTERED = exports.ENTERING = exports.EXITED = exports.UNMOUNTED = undefined;
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(5);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _properties = __webpack_require__(13);
+	
+	var _properties2 = _interopRequireDefault(_properties);
+	
+	var _on = __webpack_require__(15);
+	
+	var _on2 = _interopRequireDefault(_on);
+	
+	var _classnames = __webpack_require__(3);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
+	
+	var transitionEndEvent = _properties2["default"].end;
+	
+	//设置状态码
+	var UNMOUNTED = exports.UNMOUNTED = 0;
+	var EXITED = exports.EXITED = 1;
+	var ENTERING = exports.ENTERING = 2;
+	var ENTERED = exports.ENTERED = 3;
+	var EXITING = exports.EXITING = 4;
+	
+	var propTypes = {
+	  /**
+	   * 是否触发动画
+	   */
+	  "in": _propTypes2["default"].bool,
+	
+	  /**
+	   * 不显示的时候是否移除组件
+	   */
+	  unmountOnExit: _propTypes2["default"].bool,
+	
+	  /**
+	   * 如果设置为默认显示，挂载时显示动画
+	   */
+	  transitionAppear: _propTypes2["default"].bool,
+	
+	  /**
+	   * 设置超时时间，防止出现问题，可设置为>=动画时间
+	   */
+	  timeout: _propTypes2["default"].number,
+	
+	  /**
+	   * 退出组件时添加的class
+	   */
+	  exitedClassName: _propTypes2["default"].string,
+	  /**
+	   * 退出组件中添加的class
+	   */
+	  exitingClassName: _propTypes2["default"].string,
+	  /**
+	   * 进入动画后添加的class
+	   */
+	  enteredClassName: _propTypes2["default"].string,
+	  /**
+	   * 进入动画时添加的class
+	   */
+	  enteringClassName: _propTypes2["default"].string,
+	
+	  /**
+	   * 进入动画开始时的钩子函数
+	   */
+	  onEnter: _propTypes2["default"].func,
+	  /**
+	   * 进入动画中的钩子函数
+	   */
+	  onEntering: _propTypes2["default"].func,
+	  /**
+	   * 进入动画后的钩子函数
+	   */
+	  onEntered: _propTypes2["default"].func,
+	  /**
+	   * 退出动画开始时的钩子函数
+	   */
+	  onExit: _propTypes2["default"].func,
+	  /**
+	   * 退出动画中的钩子函数
+	   */
+	  onExiting: _propTypes2["default"].func,
+	  /**
+	   * 退出动画后的钩子函数
+	   */
+	  onExited: _propTypes2["default"].func
+	};
+	
+	function noop() {}
+	
+	var defaultProps = {
+	  "in": false,
+	  unmountOnExit: false,
+	  transitionAppear: false,
+	  timeout: 5000,
+	  onEnter: noop,
+	  onEntering: noop,
+	  onEntered: noop,
+	  onExit: noop,
+	  onExiting: noop,
+	  onExited: noop
+	};
+	
+	/**
+	 * 动画组件
+	 */
+	
+	var Transition = function (_Component) {
+	  _inherits(Transition, _Component);
+	
+	  function Transition(props, context) {
+	    _classCallCheck(this, Transition);
+	
+	    var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
+	
+	    var initialStatus = void 0;
+	    if (props["in"]) {
+	      // 在componentdidmount时开始执行动画
+	      initialStatus = props.transitionAppear ? EXITED : ENTERED;
+	    } else {
+	      initialStatus = props.unmountOnExit ? UNMOUNTED : EXITED;
+	    }
+	    _this.state = { status: initialStatus };
+	
+	    _this.nextCallback = null;
+	
+	    _this.performEnter = _this.performEnter.bind(_this);
+	    _this.performExit = _this.performExit.bind(_this);
+	    _this.cancelNextCallback = _this.cancelNextCallback.bind(_this);
+	    _this.onTransitionEnd = _this.onTransitionEnd.bind(_this);
+	    _this.safeSetState = _this.safeSetState.bind(_this);
+	    _this.setNextCallback = _this.setNextCallback.bind(_this);
+	
+	    return _this;
+	  }
+	
+	  Transition.prototype.componentDidMount = function componentDidMount() {
+	    if (this.props.transitionAppear && this.props["in"]) {
+	      this.performEnter(this.props);
+	    }
+	  };
+	
+	  Transition.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+	    if (nextProps["in"] && this.props.unmountOnExit) {
+	      if (this.state.status === UNMOUNTED) {
+	        // 在componentDidUpdate执行动画.
+	        this.setState({ status: EXITED });
+	      }
+	    } else {
+	      this._needsUpdate = true;
+	    }
+	  };
+	
+	  Transition.prototype.componentDidUpdate = function componentDidUpdate() {
+	    var status = this.state.status;
+	
+	    if (this.props.unmountOnExit && status === EXITED) {
+	      // 当使用unmountOnExit时，exited为exiting和unmont的过渡状态
+	      if (this.props["in"]) {
+	        this.performEnter(this.props);
+	      } else {
+	        this.setState({ status: UNMOUNTED });
+	      }
+	
+	      return;
+	    }
+	
+	    // 确保只响应prop变化
+	    if (this._needsUpdate) {
+	      this._needsUpdate = false;
+	
+	      if (this.props["in"]) {
+	        if (status === EXITING) {
+	          this.performEnter(this.props);
+	        } else if (status === EXITED) {
+	          this.performEnter(this.props);
+	        }
+	        // 其他，当我们已经输入或输出
+	      } else {
+	        if (status === ENTERING || status === ENTERED) {
+	          this.performExit(this.props);
+	        }
+	        // 我们已经输入或输出完成
+	      }
+	    }
+	  };
+	
+	  Transition.prototype.componentWillUnmount = function componentWillUnmount() {
+	    this.cancelNextCallback();
+	  };
+	
+	  Transition.prototype.performEnter = function performEnter(props) {
+	    var _this2 = this;
+	
+	    this.cancelNextCallback();
+	    var node = _reactDom2["default"].findDOMNode(this);
+	
+	    // 这里接收新props
+	    props.onEnter(node);
+	
+	    this.safeSetState({ status: ENTERING }, function () {
+	      _this2.props.onEntering(node);
+	
+	      _this2.onTransitionEnd(node, function () {
+	        _this2.safeSetState({ status: ENTERED }, function () {
+	          _this2.props.onEntered(node);
+	        });
+	      });
+	    });
+	  };
+	
+	  Transition.prototype.performExit = function performExit(props) {
+	    var _this3 = this;
+	
+	    this.cancelNextCallback();
+	    var node = _reactDom2["default"].findDOMNode(this);
+	
+	    props.onExit(node);
+	
+	    this.safeSetState({ status: EXITING }, function () {
+	      _this3.props.onExiting(node);
+	
+	      _this3.onTransitionEnd(node, function () {
+	        _this3.safeSetState({ status: EXITED }, function () {
+	          _this3.props.onExited(node);
+	        });
+	      });
+	    });
+	  };
+	
+	  Transition.prototype.cancelNextCallback = function cancelNextCallback() {
+	    if (this.nextCallback !== null) {
+	      this.nextCallback.cancel();
+	      this.nextCallback = null;
+	    }
+	  };
+	
+	  Transition.prototype.safeSetState = function safeSetState(nextState, callback) {
+	    // 确保在组件销毁后挂起的setState被消除
+	    this.setState(nextState, this.setNextCallback(callback));
+	  };
+	
+	  Transition.prototype.setNextCallback = function setNextCallback(callback) {
+	    var _this4 = this;
+	
+	    var active = true;
+	
+	    this.nextCallback = function (event) {
+	      if (active) {
+	        active = false;
+	        _this4.nextCallback = null;
+	
+	        callback(event);
+	      }
+	    };
+	
+	    this.nextCallback.cancel = function () {
+	      active = false;
+	    };
+	
+	    return this.nextCallback;
+	  };
+	
+	  Transition.prototype.onTransitionEnd = function onTransitionEnd(node, handler) {
+	    this.setNextCallback(handler);
+	
+	    if (node) {
+	      (0, _on2["default"])(node, transitionEndEvent, this.nextCallback);
+	      setTimeout(this.nextCallback, this.props.timeout);
+	    } else {
+	      setTimeout(this.nextCallback, 0);
+	    }
+	  };
+	
+	  Transition.prototype.render = function render() {
+	    var status = this.state.status;
+	    if (status === UNMOUNTED) {
+	      return null;
+	    }
+	
+	    var _props = this.props,
+	        children = _props.children,
+	        className = _props.className,
+	        childProps = _objectWithoutProperties(_props, ['children', 'className']);
+	
+	    Object.keys(Transition.propTypes).forEach(function (key) {
+	      return delete childProps[key];
+	    });
+	
+	    var transitionClassName = void 0;
+	    if (status === EXITED) {
+	      transitionClassName = this.props.exitedClassName;
+	    } else if (status === ENTERING) {
+	      transitionClassName = this.props.enteringClassName;
+	    } else if (status === ENTERED) {
+	      transitionClassName = this.props.enteredClassName;
+	    } else if (status === EXITING) {
+	      transitionClassName = this.props.exitingClassName;
+	    }
+	
+	    var child = _react2["default"].Children.only(children);
+	    return _react2["default"].cloneElement(child, _extends({}, childProps, {
+	      className: (0, _classnames2["default"])(child.props.className, className, transitionClassName)
+	    }));
+	  };
+	
+	  return Transition;
+	}(_react.Component);
+	
+	Transition.propTypes = propTypes;
+	
+	Transition.defaultProps = defaultProps;
+	
+	exports["default"] = Transition;
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * Safe chained function
+	 *
+	 * Will only create a new function if needed,
+	 * otherwise will pass back existing functions or null.
+	 *
+	 * @param {function} functions to chain
+	 * @returns {function|null}
+	 */
+	function createChainedFunction() {
+	  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+	    funcs[_key] = arguments[_key];
+	  }
+	
+	  return funcs.filter(function (f) {
+	    return f != null;
+	  }).reduce(function (acc, f) {
+	    if (typeof f !== 'function') {
+	      throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+	    }
+	
+	    if (acc === null) {
+	      return f;
+	    }
+	
+	    return function chainedFunction() {
+	      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+	        args[_key2] = arguments[_key2];
+	      }
+	
+	      acc.apply(this, args);
+	      f.apply(this, args);
+	    };
+	  }, null);
+	}
+	
+	exports["default"] = createChainedFunction;
 	module.exports = exports['default'];
 
 /***/ })

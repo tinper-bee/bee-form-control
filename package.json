@@ -1,6 +1,6 @@
 {
  "name": "bee-form-control",
- "version": "1.1.0",
+ "version": "1.1.1",
  "description": "form-control ui component for react",
  "keywords": [
   "react",
@@ -38,6 +38,7 @@
  "dependencies": {
   "bee-icon": "^1.0.3",
   "classnames": "^2.2.5",
+  "express": "^4.16.3",
   "tinper-bee-core": "^0.4.1",
   "warning": "^3.0.0"
  },
@@ -50,6 +51,7 @@
   "bee-button": "latest",
   "bee-layout": "latest",
   "bee-panel": "latest",
+  "bee-tooltip": "^1.0.2",
   "chai": "^3.5.0",
   "console-polyfill": "^0.2.3",
   "cz-conventional-changelog": "^2.1.0",

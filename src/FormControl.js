@@ -13,13 +13,17 @@ const propTypes = {
     onSearch: PropTypes.func,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
+    showClose:PropTypes.bool,
+    showPop:PropTypes.bool,
 };
 
 const defaultProps = {
     componentClass: 'input',
     clsPrefix: 'u-form-control',
     type: 'text',
-    size: 'md'
+    size: 'md',
+    showClose:false,
+    showPop:false
 };
 
 
@@ -29,7 +33,8 @@ class FormControl extends React.Component {
         super(props);
         this.state = {
             showSearch: !props.value,
-            value: props.value == null ? "" : props.value
+            value: props.value == null ? "" : props.value,
+            showClose:false
         }
         this.input = {};
     }
@@ -55,7 +60,9 @@ class FormControl extends React.Component {
     handleChange = (e) => {
         const {onChange} = this.props;
         let value = this.input.value;
-
+        this.setState({
+            showClose:true
+        })
         if (onChange) {
             onChange(value,e);
         }
@@ -63,12 +70,15 @@ class FormControl extends React.Component {
 
     clearValue = () => {
         const {onChange} = this.props;
-        this.setState({showSearch: true, value: ""});
+        this.setState({
+            showSearch: true, 
+            value: "",
+            showClose:false
+        });
         if (onChange) {
             onChange("");
         }
         this.input.focus();
-
     }
 
     handleKeyDown = (e) => {
@@ -89,6 +99,17 @@ class FormControl extends React.Component {
         }
     }
 
+    handleFocus = (e) => {
+        const { value } = this.state;
+        const { onFocus } = this.props;
+        if(onFocus){
+            onFocus(value, e);
+        }
+    }
+
+    handleClick=(e)=>{
+        alert()
+    }
     renderInput = () => {
         const {
             componentClass: Component,
@@ -114,15 +135,36 @@ class FormControl extends React.Component {
         }
 
         return (
-            <Component
-                {...others}
-                type={type}
-                ref={(el) => this.input = el }
-                value={value}
-                onChange={this.handleChange}
-                onBlur={this.handleBlur}
-                className={classnames(className, classNames)}
-            />
+            this.props.showClose?(
+                <div className={classnames(`${clsPrefix}-close`,`${clsPrefix}-affix-wrapper`, className)}>
+                    <Component
+                        {...others}
+                        type={type}
+                        ref={(el) => this.input = el }
+                        value={value}
+                        onChange={this.handleChange}
+                        onBlur={this.handleBlur}
+                        onFocus={this.handleFocus}
+                        className={classnames(className, classNames)}
+                    />
+                    <div className={`${clsPrefix}-suffix`}>
+                        {
+                            this.state.showClose? <Icon onClick={this.clearValue} type="uf-close-c"/>:''
+                        }
+                    </div>
+                </div>
+            ):(
+                <Component
+                    {...others}
+                    type={type}
+                    ref={(el) => this.input = el }
+                    value={value}
+                    onChange={this.handleChange}
+                    onBlur={this.handleBlur}
+                    className={classnames(className, classNames)}
+                />
+            )
+           
         );
     }
 

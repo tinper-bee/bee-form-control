@@ -40,14 +40,18 @@ var propTypes = {
     size: _propTypes2["default"].oneOf(['sm', 'md', 'lg']),
     onSearch: _propTypes2["default"].func,
     onChange: _propTypes2["default"].func,
-    onBlur: _propTypes2["default"].func
+    onBlur: _propTypes2["default"].func,
+    showClose: _propTypes2["default"].bool,
+    showPop: _propTypes2["default"].bool
 };
 
 var defaultProps = {
     componentClass: 'input',
     clsPrefix: 'u-form-control',
     type: 'text',
-    size: 'md'
+    size: 'md',
+    showClose: false,
+    showPop: false
 };
 
 var FormControl = function (_React$Component) {
@@ -75,7 +79,9 @@ var FormControl = function (_React$Component) {
             var onChange = _this.props.onChange;
 
             var value = _this.input.value;
-
+            _this.setState({
+                showClose: true
+            });
             if (onChange) {
                 onChange(value, e);
             }
@@ -84,7 +90,11 @@ var FormControl = function (_React$Component) {
         _this.clearValue = function () {
             var onChange = _this.props.onChange;
 
-            _this.setState({ showSearch: true, value: "" });
+            _this.setState({
+                showSearch: true,
+                value: "",
+                showClose: false
+            });
             if (onChange) {
                 onChange("");
             }
@@ -114,6 +124,19 @@ var FormControl = function (_React$Component) {
             }
         };
 
+        _this.handleFocus = function (e) {
+            var value = _this.state.value;
+            var onFocus = _this.props.onFocus;
+
+            if (onFocus) {
+                onFocus(value, e);
+            }
+        };
+
+        _this.handleClick = function (e) {
+            alert();
+        };
+
         _this.renderInput = function () {
             var _this$props2 = _this.props,
                 Component = _this$props2.componentClass,
@@ -139,7 +162,26 @@ var FormControl = function (_React$Component) {
                 classNames = (0, _classnames2["default"])(clsPrefix, classes);
             }
 
-            return _react2["default"].createElement(Component, _extends({}, others, {
+            return _this.props.showClose ? _react2["default"].createElement(
+                'div',
+                { className: (0, _classnames2["default"])(clsPrefix + '-close', clsPrefix + '-affix-wrapper', className) },
+                _react2["default"].createElement(Component, _extends({}, others, {
+                    type: type,
+                    ref: function ref(el) {
+                        return _this.input = el;
+                    },
+                    value: value,
+                    onChange: _this.handleChange,
+                    onBlur: _this.handleBlur,
+                    onFocus: _this.handleFocus,
+                    className: (0, _classnames2["default"])(className, classNames)
+                })),
+                _react2["default"].createElement(
+                    'div',
+                    { className: clsPrefix + '-suffix' },
+                    _this.state.showClose ? _react2["default"].createElement(_beeIcon2["default"], { onClick: _this.clearValue, type: 'uf-close-c' }) : ''
+                )
+            ) : _react2["default"].createElement(Component, _extends({}, others, {
                 type: type,
                 ref: function ref(el) {
                     return _this.input = el;
@@ -198,7 +240,8 @@ var FormControl = function (_React$Component) {
 
         _this.state = {
             showSearch: !props.value,
-            value: props.value == null ? "" : props.value
+            value: props.value == null ? "" : props.value,
+            showClose: false
         };
         _this.input = {};
         return _this;
