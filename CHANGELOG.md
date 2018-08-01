@@ -1,3 +1,13 @@
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/tinper-bee/form-control/compare/v1.1.1...v1.1.2) (2018-08-01)
+
+
+### Features
+
+* 新增清空功能 ([0603822](https://github.com/tinper-bee/form-control/commit/0603822))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/tinper-bee/form-control/compare/v1.1.0...v1.1.1) (2018-08-01)
 
