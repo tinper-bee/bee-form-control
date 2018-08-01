@@ -1,6 +1,6 @@
 /**
- * @title 清空按钮
- * @description 通过设置showClose={true}属性，让FormControl组件有清空功能
+ * @title 配合toolTip使用
+ * @description 
  */
 
 import React, {Component} from 'react';
@@ -28,12 +28,11 @@ export default class Demo6 extends Component {
         return (
             <div className="demo7">
                 <Tooltip trigger="click" 
-                inverse rootClose placement="bottom" 
+                inverse rootClose placement="right" 
                 overlay={this.state.value}>
                     <FormControl
                         className="demo7-input"
                         value={this.state.value}
-                        onSearch={this.onSearch}
                         onChange={this.onChange}
                     />
 				</Tooltip>

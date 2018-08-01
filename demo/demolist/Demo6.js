@@ -29,7 +29,6 @@ export default class Demo6 extends Component {
                 <FormControl
                     className="demo6-input"
                     value={this.state.value}
-                    onSearch={this.onSearch}
                     onChange={this.onChange}
                     showClose={true}
                 />

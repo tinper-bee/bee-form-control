@@ -56,3 +56,4 @@ import "./node_modules/build/bee-form-control.css"
 |componentClass|默认定义的元素类型|string|'input'|
 |onChange|input值发生改变触发的回调|func|-|
 |onSearch|input type="search"前提下回车触发的回调 多用于搜索|func|-|
+|showClose|是否显示情况按钮|bool|false|

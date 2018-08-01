@@ -6395,4 +6395,7 @@ input.u-button[type="submit"] {
     width: 200px;
     display: block; }
 
+.u-tooltip .tooltip-inner {
+  max-width: unset; }
+
 /*# sourceMappingURL=demo.css.map */
