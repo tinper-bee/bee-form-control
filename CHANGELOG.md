@@ -1,3 +1,13 @@
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/tinper-bee/form-control/compare/v1.1.2...v1.1.3) (2018-08-28)
+
+
+### Bug Fixes
+
+* **bee-form-control:** 去掉showClose和showPop警告 ([2d80d59](https://github.com/tinper-bee/form-control/commit/2d80d59))
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/tinper-bee/form-control/compare/v1.1.1...v1.1.2) (2018-08-01)
 
