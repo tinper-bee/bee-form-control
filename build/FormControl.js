@@ -41,17 +41,14 @@ var propTypes = {
     onSearch: _propTypes2["default"].func,
     onChange: _propTypes2["default"].func,
     onBlur: _propTypes2["default"].func,
-    showClose: _propTypes2["default"].bool,
-    showPop: _propTypes2["default"].bool
+    showClose: _propTypes2["default"].bool
 };
 
 var defaultProps = {
     componentClass: 'input',
     clsPrefix: 'u-form-control',
     type: 'text',
-    size: 'md',
-    showClose: false,
-    showPop: false
+    size: 'md'
 };
 
 var FormControl = function (_React$Component) {
@@ -148,7 +145,8 @@ var FormControl = function (_React$Component) {
                 onChange = _this$props2.onChange,
                 onSearch = _this$props2.onSearch,
                 onBlur = _this$props2.onBlur,
-                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur']);
+                showClose = _this$props2.showClose,
+                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur', 'showClose']);
             // input[type="file"] 不应该有类名 .form-control.
 
 
@@ -162,7 +160,7 @@ var FormControl = function (_React$Component) {
                 classNames = (0, _classnames2["default"])(clsPrefix, classes);
             }
 
-            return _this.props.showClose ? _react2["default"].createElement(
+            return showClose ? _react2["default"].createElement(
                 'div',
                 { className: (0, _classnames2["default"])(clsPrefix + '-close', clsPrefix + '-affix-wrapper', className) },
                 _react2["default"].createElement(Component, _extends({}, others, {

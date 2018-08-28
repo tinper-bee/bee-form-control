@@ -13,17 +13,14 @@ const propTypes = {
     onSearch: PropTypes.func,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
-    showClose:PropTypes.bool,
-    showPop:PropTypes.bool,
+    showClose: PropTypes.bool
 };
 
 const defaultProps = {
     componentClass: 'input',
     clsPrefix: 'u-form-control',
     type: 'text',
-    size: 'md',
-    showClose:false,
-    showPop:false
+    size: 'md'
 };
 
 
@@ -121,6 +118,7 @@ class FormControl extends React.Component {
             onChange,
             onSearch,
             onBlur,
+            showClose,
             ...others
         } = this.props;
         // input[type="file"] 不应该有类名 .form-control.
@@ -135,7 +133,7 @@ class FormControl extends React.Component {
         }
 
         return (
-            this.props.showClose?(
+            showClose?(
                 <div className={classnames(`${clsPrefix}-close`,`${clsPrefix}-affix-wrapper`, className)}>
                     <Component
                         {...others}

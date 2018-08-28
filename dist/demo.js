@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(67);var Demo2 = __webpack_require__(72);var Demo3 = __webpack_require__(73);var Demo4 = __webpack_require__(74);var Demo5 = __webpack_require__(75);var Demo6 = __webpack_require__(76);var Demo7 = __webpack_require__(77);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (v) => {\n        this.setState({value: v});\n    }\n    onBlur = (v) => {\n        console.log(v);\n    }\n\n    render() {\n        return (\n            <div className=\"demo1\">\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    onBlur={this.onBlur}\n                    size=\"sm\"\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"lg\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo1 {\n    padding-bottom: 20px;\n    display: block;\n    .demo1-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"我是这样\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onHander = () => {\n        this.setState({value: \"我改变了\"})\n    }\n\n    render() {\n        return (\n            <div className=\"demo2\">\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\n                <FormControl className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo2 {\n    padding-bottom: 20px;\n    display: block;\n    .demo2-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\n * @title 获取Input对象句柄\n * @description 获取对象句柄，两种方式。\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo3 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onHander = () => {\n        this.textInput.input.focus();\n    }\n\n    render() {\n        return (\n            <div className=\"demo3\">\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\n\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref={(input) => {this.textInput = input}}\n                />\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref=\"test\"\n                />\n            </div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\n    padding-bottom: 20px;\n    display: block;\n    .demo3-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    render() {\n        return (\n            <div className=\"demo4\">\n                <FormControl\n                    className=\"demo4-input\"\n                    autoFocus\n                    value={this.state.value}\n                />\n            </div>\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\n    padding-bottom: 20px;\n    display: block;\n    .demo4-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\n * @title 搜索框\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(\"搜索\" + value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo5\">\n                <FormControl\n                    className=\"demo5-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    type=\"search\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能", "scss_code": ".demo5 {\n    padding-bottom: 20px;\n    display: block;\n    .demo5-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo6, null), "title": " 清空按钮", "code": "/**\n * @title 清空按钮\n * @description 通过设置showClose={true}属性，让FormControl组件有清空功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo6\">\n                <FormControl\n                    className=\"demo6-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    showClose={true}\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置showClose={true}属性，让FormControl组件有清空功能", "scss_code": ".demo6 {\n    padding-bottom: 20px;\n    display: block;\n    .demo6-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo7, null), "title": " 配合toolTip使用", "code": "/**\n * @title 配合toolTip使用\n * @description \n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Tooltip, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo7\">\n                <Tooltip trigger=\"click\" \n                inverse rootClose placement=\"right\" \n                overlay={this.state.value}>\n                    <FormControl\n                        className=\"demo7-input\"\n                        value={this.state.value}\n                        onChange={this.onChange}\n                    />\n\t\t\t\t</Tooltip>\n               \n            </div>\n\n        )\n    }\n}", "desc": " ", "scss_code": "@import '../../node_modules/bee-tooltip/src/Tooltip.scss';\n.demo7 {\n    padding-bottom: 20px;\n    display: block;\n    .demo7-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }];
+	var Demo1 = __webpack_require__(67);var Demo2 = __webpack_require__(72);var Demo3 = __webpack_require__(73);var Demo4 = __webpack_require__(74);var Demo5 = __webpack_require__(75);var Demo6 = __webpack_require__(76);var Demo7 = __webpack_require__(77);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (v) => {\n        this.setState({value: v});\n    }\n    onBlur = (v) => {\n        console.log(v);\n    }\n\n    render() {\n        return (\n            <div className=\"demo1\">\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    onBlur={this.onBlur}\n                    size=\"sm\"\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"lg\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo1 {\n    padding-bottom: 20px;\n    display: block;\n    .demo1-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"我是这样\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onHander = () => {\n        this.setState({value: \"我改变了\"})\n    }\n\n    render() {\n        return (\n            <div className=\"demo2\">\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\n                <FormControl className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo2 {\n    padding-bottom: 20px;\n    display: block;\n    .demo2-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\n * @title 获取Input对象句柄\n * @description 获取对象句柄，两种方式。\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo3 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onHander = () => {\n        this.textInput.input.focus();\n    }\n\n    render() {\n        return (\n            <div className=\"demo3\">\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\n\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref={(input) => {this.textInput = input}}\n                />\n                <FormControl\n                    className=\"demo3-input\"\n                    value={this.state.value}\n                    ref=\"test\"\n                />\n            </div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\n    padding-bottom: 20px;\n    display: block;\n    .demo3-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    render() {\n        return (\n            <div className=\"demo4\">\n                <FormControl\n                    className=\"demo4-input\"\n                    autoFocus\n                    value={this.state.value}\n                />\n            </div>\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\n    padding-bottom: 20px;\n    display: block;\n    .demo4-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\n * @title 搜索框\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(\"搜索\" + value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo5\">\n                <FormControl\n                    className=\"demo5-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    type=\"search\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能", "scss_code": ".demo5 {\n    padding-bottom: 20px;\n    display: block;\n    .demo5-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo6, null), "title": " 清空按钮", "code": "/**\n * @title 清空按钮\n * @description 通过设置 showClose 属性，让FormControl组件有清空功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo6\">\n                <FormControl\n                    className=\"demo6-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    showClose\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置 showClose 属性，让FormControl组件有清空功能", "scss_code": ".demo6 {\n    padding-bottom: 20px;\n    display: block;\n    .demo6-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo7, null), "title": " 配合toolTip使用", "code": "/**\n * @title 配合toolTip使用\n * @description \n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Tooltip, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo7\">\n                <Tooltip trigger=\"click\" \n                inverse rootClose placement=\"right\" \n                overlay={this.state.value}>\n                    <FormControl\n                        className=\"demo7-input\"\n                        value={this.state.value}\n                        onChange={this.onChange}\n                    />\n\t\t\t\t</Tooltip>\n               \n            </div>\n\n        )\n    }\n}", "desc": " ", "scss_code": "@import '../../node_modules/bee-tooltip/src/Tooltip.scss';\n.demo7 {\n    padding-bottom: 20px;\n    display: block;\n    .demo7-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}\n.u-tooltip .tooltip-inner{\n    max-width:unset;\n}" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -6494,17 +6494,14 @@
 	    onSearch: _propTypes2['default'].func,
 	    onChange: _propTypes2['default'].func,
 	    onBlur: _propTypes2['default'].func,
-	    showClose: _propTypes2['default'].bool,
-	    showPop: _propTypes2['default'].bool
+	    showClose: _propTypes2['default'].bool
 	};
 	
 	var defaultProps = {
 	    componentClass: 'input',
 	    clsPrefix: 'u-form-control',
 	    type: 'text',
-	    size: 'md',
-	    showClose: false,
-	    showPop: false
+	    size: 'md'
 	};
 	
 	var FormControl = function (_React$Component) {
@@ -6601,7 +6598,8 @@
 	                onChange = _this$props2.onChange,
 	                onSearch = _this$props2.onSearch,
 	                onBlur = _this$props2.onBlur,
-	                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur']);
+	                showClose = _this$props2.showClose,
+	                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur', 'showClose']);
 	            // input[type="file"] 不应该有类名 .form-control.
 	
 	
@@ -6615,7 +6613,7 @@
 	                classNames = (0, _classnames2['default'])(clsPrefix, classes);
 	            }
 	
-	            return _this.props.showClose ? _react2['default'].createElement(
+	            return showClose ? _react2['default'].createElement(
 	                'div',
 	                { className: (0, _classnames2['default'])(clsPrefix + '-close', clsPrefix + '-affix-wrapper', className) },
 	                _react2['default'].createElement(Component, _extends({}, others, {
@@ -7159,7 +7157,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 清空按钮
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 通过设置showClose={true}属性，让FormControl组件有清空功能
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 通过设置 showClose 属性，让FormControl组件有清空功能
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 	
 	var Demo6 = function (_Component) {
@@ -7440,7 +7438,7 @@
 	
 	        return _react2["default"].createElement(
 	            _OverlayTrigger2["default"],
-	            _extends({ placement: placement }, others, { overlay: overlayNode }),
+	            _extends({ shouldUpdatePosition: true, placement: placement }, others, { overlay: overlayNode }),
 	            children
 	        );
 	    };
@@ -8735,7 +8733,8 @@
 	        var _state = this.state,
 	            positionLeft = _state.positionLeft,
 	            positionTop = _state.positionTop,
-	            arrowPosition = _objectWithoutProperties(_state, ['positionLeft', 'positionTop']);
+	            inverseArrow = _state.inverseArrow,
+	            arrowPosition = _objectWithoutProperties(_state, ['positionLeft', 'positionTop', 'inverseArrow']);
 	
 	        // These should not be forwarded to the child.
 	
@@ -8747,7 +8746,7 @@
 	
 	        var child = _react2["default"].Children.only(children);
 	        return (0, _react.cloneElement)(child, {
-	            className: (0, _classnames2["default"])(className, child.props.className),
+	            className: (0, _classnames2["default"])(className, child.props.className, { 'inverse-arrow': inverseArrow }),
 	            style: _extends({}, child.props.style, {
 	                left: positionLeft,
 	                top: positionTop
@@ -8858,7 +8857,8 @@
 	    var positionLeft = void 0,
 	        positionTop = void 0,
 	        arrowOffsetLeft = void 0,
-	        arrowOffsetTop = void 0;
+	        arrowOffsetTop = void 0,
+	        inverseArrow = void 0;
 	
 	    if (/^left|^right/.test(placement)) {
 	        positionTop = childOffset.top + (childOffset.height - overlayHeight) / 2;
@@ -8876,7 +8876,17 @@
 	        }
 	
 	        var topDelta = getTopDelta(positionTop, overlayHeight, container, padding);
-	
+	        var leftDelta = getLeftDelta(positionLeft, overlayWidth, container, padding);
+	        //内容超出
+	        if (leftDelta > 0) {
+	            inverseArrow = true;
+	            positionLeft = childOffset.left + childOffset.width + 6;
+	        } else if (leftDelta < 0) {
+	            inverseArrow = true;
+	            positionLeft = childOffset.left - overlayWidth - 6;
+	        } else {
+	            positionLeft += leftDelta;
+	        }
 	        positionTop += topDelta;
 	        arrowOffsetTop = 50 * (1 - 2 * topDelta / overlayHeight) + '%';
 	        arrowOffsetLeft = void 0;
@@ -8895,16 +8905,37 @@
 	            positionLeft = childOffset.left + (childOffset.width - overlayWidth);
 	        }
 	
-	        var leftDelta = getLeftDelta(positionLeft, overlayWidth, container, padding);
-	
-	        positionLeft += leftDelta;
-	        arrowOffsetLeft = 50 * (1 - 2 * leftDelta / overlayWidth) + '%';
+	        var _leftDelta = getLeftDelta(positionLeft, overlayWidth, container, padding);
+	        var _topDelta = getTopDelta(positionTop, overlayHeight, container, padding);
+	        positionLeft += _leftDelta;
+	        arrowOffsetLeft = 50 * (1 - 2 * _leftDelta / overlayWidth) + '%';
 	        arrowOffsetTop = void 0;
+	        if (_topDelta > 0) {
+	            inverseArrow = true;
+	            positionTop = childOffset.top + childOffset.height + 6;
+	        } else if (_topDelta < 0) {
+	            inverseArrow = true;
+	            positionTop = childOffset.top - overlayHeight - 6;
+	        } else {
+	            positionTop += _topDelta;
+	        }
+	
+	        // if((positionLeft + panelWidth) > docWidth)
+	        //         left = docWidth - panelWidth - 10;
+	        //     if(left < 0)
+	        //         left = 0;
+	
+	        //      if((top + panelHeight) > docHeight) {
+	        //  top = docHeight - panelHeight - 10;
+	        //  }
+	
+	        //      if(top < 0)
+	        //          top = 0;
 	    } else {
 	        throw new Error('calcOverlayPosition(): No such placement of "' + placement + '" found.');
 	    }
 	
-	    return { positionLeft: positionLeft, positionTop: positionTop, arrowOffsetLeft: arrowOffsetLeft, arrowOffsetTop: arrowOffsetTop };
+	    return { positionLeft: positionLeft, positionTop: positionTop, arrowOffsetLeft: arrowOffsetLeft, arrowOffsetTop: arrowOffsetTop, inverseArrow: inverseArrow };
 	}
 	module.exports = exports['default'];
 

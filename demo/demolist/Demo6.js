@@ -1,6 +1,6 @@
 /**
  * @title 清空按钮
- * @description 通过设置showClose={true}属性，让FormControl组件有清空功能
+ * @description 通过设置 showClose 属性，让FormControl组件有清空功能
  */
 
 import React, {Component} from 'react';
@@ -30,7 +30,7 @@ export default class Demo6 extends Component {
                     className="demo6-input"
                     value={this.state.value}
                     onChange={this.onChange}
-                    showClose={true}
+                    showClose
                 />
             </div>
 
