@@ -51,6 +51,7 @@ import "./node_modules/build/bee-form-control.css"
 |参数|说明|类型|默认值|
 |---|----|---|------|
 |className|类名|string|-|
+|componentClass|说明表单类型(`input`,`textarea`)|string|'input'|
 |type|类型(`text`,`search`, `submit`,'checkbox',...详情http://www.w3school.com.cn/html5/att_input_type.asp)|string|'input'|
 |value|默认定义的input值|any|-|
 |componentClass|默认定义的元素类型|string|'input'|
