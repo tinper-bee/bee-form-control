@@ -66,7 +66,7 @@ var FormControl = function (_React$Component) {
             _this.setState({
                 value: value,
                 showSearch: value == null || value === "",
-                defultSelect: false
+                defaultSelect: false
             });
             if (onChange) {
                 onChange(value, e);
@@ -80,7 +80,7 @@ var FormControl = function (_React$Component) {
             _this.setState({
                 value: value,
                 showClose: true,
-                defultSelect: false
+                defaultSelect: false
             });
             if (onChange) {
                 onChange(value, e);
@@ -94,7 +94,7 @@ var FormControl = function (_React$Component) {
                 showSearch: true,
                 value: "",
                 showClose: false,
-                defultSelect: false
+                defaultSelect: false
             });
             if (onChange) {
                 onChange("");
@@ -145,8 +145,8 @@ var FormControl = function (_React$Component) {
                 onSearch = _this$props2.onSearch,
                 onBlur = _this$props2.onBlur,
                 showClose = _this$props2.showClose,
-                defultSelect = _this$props2.defultSelect,
-                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange', 'onSearch', 'onBlur', 'showClose', 'defultSelect']);
+                defaultSelect = _this$props2.defaultSelect,
+                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange', 'onSearch', 'onBlur', 'showClose', 'defaultSelect']);
 
             var value = _this.state.value;
             // input[type="file"] 不应该有类名 .form-control.
@@ -241,14 +241,14 @@ var FormControl = function (_React$Component) {
             showSearch: !props.value,
             value: props.value == null ? "" : props.value,
             showClose: false,
-            defultSelect: props.defultSelect
+            defaultSelect: props.defaultSelect
         };
         _this.input = {};
         return _this;
     }
 
     FormControl.prototype.componentDidMount = function componentDidMount() {
-        if (this.state.defultSelect) {
+        if (this.state.defaultSelect) {
             this.input.select();
         }
     };

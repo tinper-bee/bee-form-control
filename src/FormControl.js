@@ -32,13 +32,13 @@ class FormControl extends React.Component {
             showSearch: !props.value,
             value: props.value == null ? "" : props.value,
             showClose:false,
-            defultSelect:props.defultSelect
+            defaultSelect:props.defaultSelect
         }
         this.input = {};
     }
 
     componentDidMount(){
-        if(this.state.defultSelect){
+        if(this.state.defaultSelect){
             this.input.select();
         }
     }
@@ -56,7 +56,7 @@ class FormControl extends React.Component {
         this.setState({
             value: value,
             showSearch: value == null || value === "",
-            defultSelect:false
+            defaultSelect:false
         });
         if (onChange) {
             onChange(value,e);
@@ -69,7 +69,7 @@ class FormControl extends React.Component {
         this.setState({
             value,
             showClose:true,
-            defultSelect:false
+            defaultSelect:false
         })
         if (onChange) {
             onChange(value,e);
@@ -82,7 +82,7 @@ class FormControl extends React.Component {
             showSearch: true, 
             value: "",
             showClose:false,
-            defultSelect:false
+            defaultSelect:false
         });
         if (onChange) {
             onChange("");
@@ -126,7 +126,7 @@ class FormControl extends React.Component {
             onSearch,
             onBlur,
             showClose,
-            defultSelect,
+            defaultSelect,
             ...others
         } = this.props;
         let { value } = this.state;
