@@ -1,3 +1,13 @@
+<a name="1.1.5"></a>
+## [1.1.5](https://github.com/tinper-bee/form-control/compare/v1.1.4...v1.1.5) (2018-11-13)
+
+
+### Features
+
+* **bee-form-control:** 新增onChange，defaultSelect ([b2c5b53](https://github.com/tinper-bee/form-control/commit/b2c5b53))
+
+
+
 <a name="1.1.4"></a>
 ## [1.1.4](https://github.com/tinper-bee/form-control/compare/v1.1.3...v1.1.4) (2018-11-13)
 
