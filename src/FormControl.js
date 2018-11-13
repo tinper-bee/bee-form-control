@@ -13,7 +13,7 @@ const propTypes = {
     onSearch: PropTypes.func,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
-    showClose: PropTypes.bool
+    showClose: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -31,23 +31,32 @@ class FormControl extends React.Component {
         this.state = {
             showSearch: !props.value,
             value: props.value == null ? "" : props.value,
-            showClose:false
+            showClose:false,
+            defultSelect:props.defultSelect
         }
         this.input = {};
     }
 
-    componentWillReceiveProps(nextProp) {
-        if (nextProp.value !== this.state.value) {
-            this.setState({value: nextProp.value});
+    componentDidMount(){
+        if(this.state.defultSelect){
+            this.input.select();
         }
     }
-
+    componentWillReceiveProps(nextProp) {
+        if (nextProp.value !== this.input.value) {
+            this.setState({value: nextProp.value});
+            if (this.props.onChange) {
+                this.props.onChange(nextProp.value);
+            }
+        }
+    }
     handleSearchChange = (e) => {
         const {onChange} = this.props;
         const value = this.input.value;
         this.setState({
             value: value,
-            showSearch: value == null || value === ""
+            showSearch: value == null || value === "",
+            defultSelect:false
         });
         if (onChange) {
             onChange(value,e);
@@ -58,7 +67,9 @@ class FormControl extends React.Component {
         const {onChange} = this.props;
         let value = this.input.value;
         this.setState({
-            showClose:true
+            value,
+            showClose:true,
+            defultSelect:false
         })
         if (onChange) {
             onChange(value,e);
@@ -70,7 +81,8 @@ class FormControl extends React.Component {
         this.setState({
             showSearch: true, 
             value: "",
-            showClose:false
+            showClose:false,
+            defultSelect:false
         });
         if (onChange) {
             onChange("");
@@ -103,10 +115,6 @@ class FormControl extends React.Component {
             onFocus(value, e);
         }
     }
-
-    handleClick=(e)=>{
-        alert()
-    }
     renderInput = () => {
         const {
             componentClass: Component,
@@ -114,13 +122,14 @@ class FormControl extends React.Component {
             className,
             size,
             clsPrefix,
-            value,
             onChange,
             onSearch,
             onBlur,
             showClose,
+            defultSelect,
             ...others
         } = this.props;
+        let { value } = this.state;
         // input[type="file"] 不应该有类名 .form-control.
         let classes = {};
         if (size) {

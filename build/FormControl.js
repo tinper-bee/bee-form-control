@@ -65,7 +65,8 @@ var FormControl = function (_React$Component) {
             var value = _this.input.value;
             _this.setState({
                 value: value,
-                showSearch: value == null || value === ""
+                showSearch: value == null || value === "",
+                defultSelect: false
             });
             if (onChange) {
                 onChange(value, e);
@@ -77,7 +78,9 @@ var FormControl = function (_React$Component) {
 
             var value = _this.input.value;
             _this.setState({
-                showClose: true
+                value: value,
+                showClose: true,
+                defultSelect: false
             });
             if (onChange) {
                 onChange(value, e);
@@ -90,7 +93,8 @@ var FormControl = function (_React$Component) {
             _this.setState({
                 showSearch: true,
                 value: "",
-                showClose: false
+                showClose: false,
+                defultSelect: false
             });
             if (onChange) {
                 onChange("");
@@ -130,10 +134,6 @@ var FormControl = function (_React$Component) {
             }
         };
 
-        _this.handleClick = function (e) {
-            alert();
-        };
-
         _this.renderInput = function () {
             var _this$props2 = _this.props,
                 Component = _this$props2.componentClass,
@@ -141,14 +141,15 @@ var FormControl = function (_React$Component) {
                 className = _this$props2.className,
                 size = _this$props2.size,
                 clsPrefix = _this$props2.clsPrefix,
-                value = _this$props2.value,
                 onChange = _this$props2.onChange,
                 onSearch = _this$props2.onSearch,
                 onBlur = _this$props2.onBlur,
                 showClose = _this$props2.showClose,
-                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur', 'showClose']);
-            // input[type="file"] 不应该有类名 .form-control.
+                defultSelect = _this$props2.defultSelect,
+                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'onChange', 'onSearch', 'onBlur', 'showClose', 'defultSelect']);
 
+            var value = _this.state.value;
+            // input[type="file"] 不应该有类名 .form-control.
 
             var classes = {};
             if (size) {
@@ -239,15 +240,25 @@ var FormControl = function (_React$Component) {
         _this.state = {
             showSearch: !props.value,
             value: props.value == null ? "" : props.value,
-            showClose: false
+            showClose: false,
+            defultSelect: props.defultSelect
         };
         _this.input = {};
         return _this;
     }
 
+    FormControl.prototype.componentDidMount = function componentDidMount() {
+        if (this.state.defultSelect) {
+            this.input.select();
+        }
+    };
+
     FormControl.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProp) {
-        if (nextProp.value !== this.state.value) {
+        if (nextProp.value !== this.input.value) {
             this.setState({ value: nextProp.value });
+            if (this.props.onChange) {
+                this.props.onChange(nextProp.value);
+            }
         }
     };
 
