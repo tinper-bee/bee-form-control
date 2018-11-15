@@ -27,12 +27,12 @@ class Demo3 extends Component {
 
                 <FormControl
                     className="demo3-input"
-                    value={this.state.value}
+                    defaultValue={this.state.value}
                     ref={(input) => {this.textInput = input}}
                 />
                 <FormControl
                     className="demo3-input"
-                    value={this.state.value}
+                    defaultValue={this.state.value}
                     ref="test"
                 />
             </div>

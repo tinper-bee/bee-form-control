@@ -13,7 +13,7 @@ const propTypes = {
     onSearch: PropTypes.func,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
-    showClose: PropTypes.bool,
+    showClose: PropTypes.bool
 };
 
 const defaultProps = {
@@ -31,32 +31,23 @@ class FormControl extends React.Component {
         this.state = {
             showSearch: !props.value,
             value: props.value == null ? "" : props.value,
-            showClose:false,
-            defaultSelect:props.defaultSelect
+            showClose:false
         }
         this.input = {};
     }
 
-    componentDidMount(){
-        if(this.state.defaultSelect){
-            this.input.select();
-        }
-    }
     componentWillReceiveProps(nextProp) {
-        if (nextProp.value !== this.input.value) {
+        if (nextProp.value !== this.state.value) {
             this.setState({value: nextProp.value});
-            if (this.props.onChange) {
-                this.props.onChange(nextProp.value);
-            }
         }
     }
+
     handleSearchChange = (e) => {
         const {onChange} = this.props;
         const value = this.input.value;
         this.setState({
             value: value,
-            showSearch: value == null || value === "",
-            defaultSelect:false
+            showSearch: value == null || value === ""
         });
         if (onChange) {
             onChange(value,e);
@@ -67,9 +58,7 @@ class FormControl extends React.Component {
         const {onChange} = this.props;
         let value = this.input.value;
         this.setState({
-            value,
-            showClose:true,
-            defaultSelect:false
+            showClose:true
         })
         if (onChange) {
             onChange(value,e);
@@ -81,8 +70,7 @@ class FormControl extends React.Component {
         this.setState({
             showSearch: true, 
             value: "",
-            showClose:false,
-            defaultSelect:false
+            showClose:false
         });
         if (onChange) {
             onChange("");
@@ -115,6 +103,7 @@ class FormControl extends React.Component {
             onFocus(value, e);
         }
     }
+
     renderInput = () => {
         const {
             componentClass: Component,
@@ -122,14 +111,13 @@ class FormControl extends React.Component {
             className,
             size,
             clsPrefix,
+            value,
             onChange,
             onSearch,
             onBlur,
             showClose,
-            defaultSelect,
             ...others
         } = this.props;
-        let { value } = this.state;
         // input[type="file"] 不应该有类名 .form-control.
         let classes = {};
         if (size) {
