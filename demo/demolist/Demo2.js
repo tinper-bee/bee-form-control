@@ -11,7 +11,8 @@ export default class Demo2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: "我是这样"
+            value: "我是这样",
+            select:false
         }
     }
 
@@ -20,14 +21,17 @@ export default class Demo2 extends Component {
     }
 
     onHander = () => {
-        this.setState({value: "我改变了"})
+        this.setState({
+            value: "我改变了",
+            select:true
+        })
     }
 
     render() {
         return (
             <div className="demo2">
                 <Button colors="primary" onClick={this.onHander}>修改输入框值</Button>
-                <FormControl className="demo2-input" value={this.state.value} onChange={this.onChange}/>
+                <FormControl focusSelect={this.state.select} className="demo2-input" value={this.state.value} onChange={this.onChange}/>
             </div>
 
         )

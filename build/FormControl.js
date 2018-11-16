@@ -41,7 +41,8 @@ var propTypes = {
     onSearch: _propTypes2["default"].func,
     onChange: _propTypes2["default"].func,
     onBlur: _propTypes2["default"].func,
-    showClose: _propTypes2["default"].bool
+    showClose: _propTypes2["default"].bool,
+    focusSelect: _propTypes2["default"].bool
 };
 
 var defaultProps = {
@@ -125,6 +126,9 @@ var FormControl = function (_React$Component) {
             var value = _this.state.value;
             var onFocus = _this.props.onFocus;
 
+            if (_this.props.focusSelect) {
+                _this.input.select();
+            }
             if (onFocus) {
                 onFocus(value, e);
             }
@@ -142,7 +146,8 @@ var FormControl = function (_React$Component) {
                 onSearch = _this$props2.onSearch,
                 onBlur = _this$props2.onBlur,
                 showClose = _this$props2.showClose,
-                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur', 'showClose']);
+                focusSelect = _this$props2.focusSelect,
+                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur', 'showClose', 'focusSelect']);
             // input[type="file"] 不应该有类名 .form-control.
 
 
@@ -183,6 +188,7 @@ var FormControl = function (_React$Component) {
                 value: value,
                 onChange: _this.handleChange,
                 onBlur: _this.handleBlur,
+                onFocus: _this.handleFocus,
                 className: (0, _classnames2["default"])(className, classNames)
             }));
         };
@@ -221,6 +227,7 @@ var FormControl = function (_React$Component) {
                         value: value,
                         onKeyDown: _this.handleKeyDown,
                         onBlur: _this.handleBlur,
+                        onFocus: _this.handleFocus,
                         className: (0, _classnames2["default"])(className, clsPrefix, classes)
                     })),
                     _react2["default"].createElement(

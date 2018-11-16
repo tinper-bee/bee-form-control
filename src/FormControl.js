@@ -13,7 +13,8 @@ const propTypes = {
     onSearch: PropTypes.func,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
-    showClose: PropTypes.bool
+    showClose: PropTypes.bool,
+    focusSelect:PropTypes.bool
 };
 
 const defaultProps = {
@@ -99,6 +100,9 @@ class FormControl extends React.Component {
     handleFocus = (e) => {
         const { value } = this.state;
         const { onFocus } = this.props;
+        if(this.props.focusSelect){
+            this.input.select()
+        }
         if(onFocus){
             onFocus(value, e);
         }
@@ -116,6 +120,7 @@ class FormControl extends React.Component {
             onSearch,
             onBlur,
             showClose,
+            focusSelect,
             ...others
         } = this.props;
         // input[type="file"] 不应该有类名 .form-control.
@@ -156,6 +161,7 @@ class FormControl extends React.Component {
                     value={value}
                     onChange={this.handleChange}
                     onBlur={this.handleBlur}
+                    onFocus={this.handleFocus}
                     className={classnames(className, classNames)}
                 />
             )
@@ -194,6 +200,7 @@ class FormControl extends React.Component {
                         value={value}
                         onKeyDown={this.handleKeyDown}
                         onBlur={this.handleBlur}
+                        onFocus={this.handleFocus}
                         className={classnames(className, clsPrefix, classes)}
                     />
                     <div className={`${clsPrefix}-suffix`}>

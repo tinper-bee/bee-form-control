@@ -21,7 +21,7 @@ class Demo4 extends Component {
             <div className="demo4">
                 <FormControl
                     className="demo4-input"
-                    autoFocus
+                    //autoFocus
                     defaultValue={this.state.value}
                 />
             </div>

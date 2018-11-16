@@ -58,4 +58,4 @@ import "./node_modules/build/bee-form-control.css"
 |defaultValue|input默认值|string|-|
 |onSearch|input type="search"前提下回车触发的回调 多用于搜索|func|-|
 |showClose|是否显示清空按钮|bool|-|
-|defaultSelect|设置是否默认选中内容,注意：设置为true后FormControl获得焦点|bool|false|
+|focusSelect|设置当focus的时候是否选择内容|bool|false|
