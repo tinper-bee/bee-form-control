@@ -1,3 +1,13 @@
+<a name="1.1.7"></a>
+## [1.1.7](https://github.com/tinper-bee/form-control/compare/v1.1.6...v1.1.7) (2018-11-16)
+
+
+### Features
+
+* **bee-form-control:** 新增focusSelect 获得焦点后全选内容功能 ([4a80544](https://github.com/tinper-bee/form-control/commit/4a80544))
+
+
+
 <a name="1.1.6"></a>
 ## [1.1.6](https://github.com/tinper-bee/form-control/compare/v1.1.5...v1.1.6) (2018-11-15)
 
