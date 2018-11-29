@@ -1,3 +1,13 @@
+<a name="1.1.8"></a>
+## [1.1.8](https://github.com/tinper-bee/form-control/compare/v1.1.7...v1.1.8) (2018-11-29)
+
+
+### Bug Fixes
+
+* **bee-form-control:** type=search改造 ([42a5cbc](https://github.com/tinper-bee/form-control/commit/42a5cbc))
+
+
+
 <a name="1.1.7"></a>
 ## [1.1.7](https://github.com/tinper-bee/form-control/compare/v1.1.6...v1.1.7) (2018-11-16)
 
