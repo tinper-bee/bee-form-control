@@ -87,7 +87,10 @@ class FormControl extends React.Component {
             }
         }
     }
-
+    handleSearch =(e)=>{
+        const {onSearch, value} = this.props;
+        if(onSearch)onSearch(value);
+    }
     handleBlur = (e) => {
         const { value } = this.state;
         const { onBlur } = this.props;
@@ -204,11 +207,12 @@ class FormControl extends React.Component {
                         className={classnames(className, clsPrefix, classes)}
                     />
                     <div className={`${clsPrefix}-suffix`}>
-                        {
+                        <Icon type="uf-search" onClick={this.handleSearch}/>
+                        {/* {
                             this.state.showSearch || others.disabled
-                            ? <Icon type="uf-search"/>
+                            ? <Icon type="uf-search" onClick={this.handleSearch}/>
                             : <Icon onClick={this.clearValue} type="uf-close-c"/>
-                        }
+                        } */}
                     </div>
                 </div>
             );

@@ -1,6 +1,6 @@
 /**
  * @title 搜索框
- * @description 通过设置type="search"属性，让FormControl组件有搜索功能
+ * @description 通过设置type="search"属性，让FormControl组件有搜索功能。type="search"下showClose不可用
  */
 
 import React, {Component} from 'react';

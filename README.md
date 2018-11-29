@@ -56,6 +56,6 @@ import "./node_modules/build/bee-form-control.css"
 |onChange|input值发生改变触发的回调|func|-|
 |value|input当前值|string|-|
 |defaultValue|input默认值|string|-|
-|onSearch|input type="search"前提下回车触发的回调 多用于搜索|func|-|
+|onSearch|input type="search" 回车和点击搜索按钮的回调|func|-|
 |showClose|是否显示清空按钮|bool|-|
 |focusSelect|设置当focus的时候是否选择内容|bool|false|
