@@ -80,16 +80,16 @@ class FormControl extends React.Component {
     }
 
     handleKeyDown = (e) => {
-        const {onSearch, value, type} = this.props;
+        const {onSearch, type} = this.props;
         if (e.keyCode === 13 && type === "search") {
             if (onSearch) {
-                onSearch(value);
+                onSearch(this.input.value);
             }
         }
     }
     handleSearch =(e)=>{
-        const {onSearch, value} = this.props;
-        if(onSearch)onSearch(value);
+        const { onSearch } = this.props;
+        if(onSearch)onSearch(this.input.value);
     }
     handleBlur = (e) => {
         const { value } = this.state;

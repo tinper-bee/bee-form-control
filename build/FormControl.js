@@ -102,22 +102,19 @@ var FormControl = function (_React$Component) {
         _this.handleKeyDown = function (e) {
             var _this$props = _this.props,
                 onSearch = _this$props.onSearch,
-                value = _this$props.value,
                 type = _this$props.type;
 
             if (e.keyCode === 13 && type === "search") {
                 if (onSearch) {
-                    onSearch(value);
+                    onSearch(_this.input.value);
                 }
             }
         };
 
         _this.handleSearch = function (e) {
-            var _this$props2 = _this.props,
-                onSearch = _this$props2.onSearch,
-                value = _this$props2.value;
+            var onSearch = _this.props.onSearch;
 
-            if (onSearch) onSearch(value);
+            if (onSearch) onSearch(_this.input.value);
         };
 
         _this.handleBlur = function (e) {
@@ -143,19 +140,19 @@ var FormControl = function (_React$Component) {
         };
 
         _this.renderInput = function () {
-            var _this$props3 = _this.props,
-                Component = _this$props3.componentClass,
-                type = _this$props3.type,
-                className = _this$props3.className,
-                size = _this$props3.size,
-                clsPrefix = _this$props3.clsPrefix,
-                value = _this$props3.value,
-                onChange = _this$props3.onChange,
-                onSearch = _this$props3.onSearch,
-                onBlur = _this$props3.onBlur,
-                showClose = _this$props3.showClose,
-                focusSelect = _this$props3.focusSelect,
-                others = _objectWithoutProperties(_this$props3, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur', 'showClose', 'focusSelect']);
+            var _this$props2 = _this.props,
+                Component = _this$props2.componentClass,
+                type = _this$props2.type,
+                className = _this$props2.className,
+                size = _this$props2.size,
+                clsPrefix = _this$props2.clsPrefix,
+                value = _this$props2.value,
+                onChange = _this$props2.onChange,
+                onSearch = _this$props2.onSearch,
+                onBlur = _this$props2.onBlur,
+                showClose = _this$props2.showClose,
+                focusSelect = _this$props2.focusSelect,
+                others = _objectWithoutProperties(_this$props2, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur', 'showClose', 'focusSelect']);
             // input[type="file"] 不应该有类名 .form-control.
 
 
@@ -202,17 +199,17 @@ var FormControl = function (_React$Component) {
         };
 
         _this.renderSearch = function () {
-            var _this$props4 = _this.props,
-                Component = _this$props4.componentClass,
-                type = _this$props4.type,
-                className = _this$props4.className,
-                size = _this$props4.size,
-                clsPrefix = _this$props4.clsPrefix,
-                value = _this$props4.value,
-                onChange = _this$props4.onChange,
-                onSearch = _this$props4.onSearch,
-                onBlur = _this$props4.onBlur,
-                others = _objectWithoutProperties(_this$props4, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur']);
+            var _this$props3 = _this.props,
+                Component = _this$props3.componentClass,
+                type = _this$props3.type,
+                className = _this$props3.className,
+                size = _this$props3.size,
+                clsPrefix = _this$props3.clsPrefix,
+                value = _this$props3.value,
+                onChange = _this$props3.onChange,
+                onSearch = _this$props3.onSearch,
+                onBlur = _this$props3.onBlur,
+                others = _objectWithoutProperties(_this$props3, ['componentClass', 'type', 'className', 'size', 'clsPrefix', 'value', 'onChange', 'onSearch', 'onBlur']);
             // input[type="file"] 不应该有类名 .form-control.
 
 
