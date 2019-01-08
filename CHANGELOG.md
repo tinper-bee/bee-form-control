@@ -1,3 +1,13 @@
+<a name="1.1.9"></a>
+## [1.1.9](https://github.com/tinper-bee/form-control/compare/v1.1.8...v1.1.9) (2019-01-08)
+
+
+### Bug Fixes
+
+* **bee-form-control:** type=search 无法获得值 ([c21b9af](https://github.com/tinper-bee/form-control/commit/c21b9af))
+
+
+
 <a name="1.1.8"></a>
 ## [1.1.8](https://github.com/tinper-bee/form-control/compare/v1.1.7...v1.1.8) (2018-11-29)
 
