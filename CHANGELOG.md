@@ -1,50 +1,17 @@
-<a name="1.1.9"></a>
-## [1.1.9](https://github.com/tinper-bee/form-control/compare/v1.1.8...v1.1.9) (2019-01-08)
+<a name="1.1.10"></a>
+## [1.1.10](https://github.com/tinper-bee/form-control/compare/v1.1.3...v1.1.10) (2019-02-25)
 
 
 ### Bug Fixes
 
 * **bee-form-control:** type=search 无法获得值 ([c21b9af](https://github.com/tinper-bee/form-control/commit/c21b9af))
-
-
-
-<a name="1.1.8"></a>
-## [1.1.8](https://github.com/tinper-bee/form-control/compare/v1.1.7...v1.1.8) (2018-11-29)
-
-
-### Bug Fixes
-
 * **bee-form-control:** type=search改造 ([42a5cbc](https://github.com/tinper-bee/form-control/commit/42a5cbc))
-
-
-
-<a name="1.1.7"></a>
-## [1.1.7](https://github.com/tinper-bee/form-control/compare/v1.1.6...v1.1.7) (2018-11-16)
 
 
 ### Features
 
 * **bee-form-control:** 新增focusSelect 获得焦点后全选内容功能 ([4a80544](https://github.com/tinper-bee/form-control/commit/4a80544))
-
-
-
-<a name="1.1.6"></a>
-## [1.1.6](https://github.com/tinper-bee/form-control/compare/v1.1.5...v1.1.6) (2018-11-15)
-
-
-
-<a name="1.1.5"></a>
-## [1.1.5](https://github.com/tinper-bee/form-control/compare/v1.1.4...v1.1.5) (2018-11-13)
-
-
-### Features
-
 * **bee-form-control:** 新增onChange，defaultSelect ([b2c5b53](https://github.com/tinper-bee/form-control/commit/b2c5b53))
-
-
-
-<a name="1.1.4"></a>
-## [1.1.4](https://github.com/tinper-bee/form-control/compare/v1.1.3...v1.1.4) (2018-11-13)
 
 
 
