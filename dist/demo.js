@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(89);var Demo3 = __webpack_require__(90);var Demo4 = __webpack_require__(91);var Demo5 = __webpack_require__(92);var Demo6 = __webpack_require__(93);var Demo7 = __webpack_require__(94);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\n * @title 不同size Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport ReactDOM from 'react-dom'\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (v) => {\n        this.setState({value: v});\n    }\n    onBlur = (v) => {\n        console.log(v);\n    }\n    click = ()=>{\n        console.log('-----')\n        console.log(ReactDOM.findDOMNode(this.refs.input).value)\n    }\n\n    render() {\n        return (\n            <div className=\"demo1\">\n            <button onClick={this.click}>click</button>\n                <FormControl\n                    className=\"demo1-input\"\n                    size=\"sm\"\n                    data-a='2'\n                    ref='input'\n                    type='search'\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    focusSelect={true}\n                    onSearch={this.onBlur}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                />\n                <FormControl\n                    className=\"demo1-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    size=\"lg\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo1 {\n    padding-bottom: 20px;\n    display: block;\n    .demo1-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\n * @title 可控 Input\n * @description\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"我是这样\",\n            select:false\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onHander = () => {\n        this.setState({\n            value: \"我改变了\",\n            select:true\n        })\n    }\n\n    render() {\n        return (\n            <div className=\"demo2\">\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\n                <FormControl focusSelect={this.state.select} className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\n            </div>\n\n        )\n    }\n}", "desc": "", "scss_code": ".demo2 {\n    padding-bottom: 20px;\n    display: block;\n    .demo2-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\n * @title 获取Input对象句柄\n * @description 获取对象句柄，两种方式。\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo3 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onHander = () => {\n        this.textInput.input.focus();\n    }\n\n    render() {\n        return (\n            <div className=\"demo3\">\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\n\n                <FormControl\n                    className=\"demo3-input\"\n                    defaultValue={this.state.value}\n                    ref={(input) => {this.textInput = input}}\n                />\n                <FormControl\n                    className=\"demo3-input\"\n                    defaultValue={this.state.value}\n                    ref=\"test\"\n                />\n            </div>\n\n        )\n    }\n}\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\n    padding-bottom: 20px;\n    display: block;\n    .demo3-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\n * @title 设置文本框焦点事件 autoFocus 属性\n * @description 设置文本框焦点事件 autoFocus 属性\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\nclass Demo4 extends Component {\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    render() {\n        return (\n            <div className=\"demo4\">\n                <FormControl\n                    className=\"demo4-input\"\n                    //autoFocus\n                    defaultValue={this.state.value}\n                />\n            </div>\n        )\n    }\n}\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\n    padding-bottom: 20px;\n    display: block;\n    .demo4-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\n * @title 搜索框\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(\"搜索\" + value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo5\">\n                <FormControl\n                    className=\"demo5-input\"\n                    value={this.state.value}\n                    onSearch={this.onSearch}\n                    onChange={this.onChange}\n                    type=\"search\"\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用", "scss_code": ".demo5 {\n    padding-bottom: 20px;\n    display: block;\n    .demo5-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo6, null), "title": " 清空按钮", "code": "/**\n * @title 清空按钮\n * @description 通过设置 showClose 属性，让FormControl组件有清空功能\n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo6\">\n                <FormControl\n                    className=\"demo6-input\"\n                    value={this.state.value}\n                    onChange={this.onChange}\n                    showClose\n                />\n            </div>\n\n        )\n    }\n}", "desc": " 通过设置 showClose 属性，让FormControl组件有清空功能", "scss_code": ".demo6 {\n    padding-bottom: 20px;\n    display: block;\n    .demo6-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}" }, { "example": _react2['default'].createElement(Demo7, null), "title": " 配合toolTip使用", "code": "/**\n * @title 配合toolTip使用\n * @description \n */\n\nimport React, {Component} from 'react';\nimport { FormControl, Tooltip, Button } from 'tinper-bee';\n\n\n    constructor(props) {\n        super(props);\n        this.state = {\n            value: \"test\"\n        }\n    }\n\n    onChange = (value) => {\n        this.setState({value: value});\n    }\n\n    onSearch = (value) => {\n        console.log(value);\n    }\n\n    render() {\n        return (\n            <div className=\"demo7\">\n                <Tooltip trigger=\"click\" \n                inverse rootClose placement=\"right\" \n                overlay={this.state.value}>\n                    <FormControl\n                        className=\"demo7-input\"\n                        value={this.state.value}\n                        onChange={this.onChange}\n                    />\n\t\t\t\t</Tooltip>\n               \n            </div>\n\n        )\n    }\n}", "desc": " ", "scss_code": "@import '../../node_modules/bee-tooltip/src/Tooltip.scss';\n.demo7 {\n    padding-bottom: 20px;\n    display: block;\n    .demo7-input{\n        margin-top: 10px;\n        width: 200px;\n        display: block;\n    }\n}\n.u-tooltip .tooltip-inner{\n    max-width:unset;\n}" }];
+	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(89);var Demo3 = __webpack_require__(90);var Demo4 = __webpack_require__(91);var Demo5 = __webpack_require__(92);var Demo6 = __webpack_require__(93);var Demo7 = __webpack_require__(94);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\r\n * @title 不同size Input\r\n * @description\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (v) => {\r\n        this.setState({value: v});\r\n    }\r\n    onBlur = (v) => {\r\n        console.log(v);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo1\">\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    onBlur={this.onBlur}\r\n                    size=\"sm\"\r\n                    focusSelect={true}\r\n                />\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                />\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    size=\"lg\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": "", "scss_code": ".demo1 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo1-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\r\n * @title 可控 Input\r\n * @description\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"我是这样\",\r\n            select:false\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onHander = () => {\r\n        this.setState({\r\n            value: \"我改变了\",\r\n            select:true\r\n        })\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo2\">\r\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\r\n                <FormControl focusSelect={this.state.select} className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": "", "scss_code": ".demo2 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo2-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\r\n * @title 获取Input对象句柄\r\n * @description 获取对象句柄，两种方式。\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\nclass Demo3 extends Component {\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onHander = () => {\r\n        this.textInput.input.focus();\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo3\">\r\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\r\n\r\n                <FormControl\r\n                    className=\"demo3-input\"\r\n                    defaultValue={this.state.value}\r\n                    ref={(input) => {this.textInput = input}}\r\n                />\r\n                <FormControl\r\n                    className=\"demo3-input\"\r\n                    defaultValue={this.state.value}\r\n                    ref=\"test\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}\r\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo3-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\r\n * @title 设置文本框焦点事件 autoFocus 属性\r\n * @description 设置文本框焦点事件 autoFocus 属性\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\nclass Demo4 extends Component {\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo4\">\r\n                <FormControl\r\n                    className=\"demo4-input\"\r\n                    //autoFocus\r\n                    defaultValue={this.state.value}\r\n                />\r\n            </div>\r\n        )\r\n    }\r\n}\r\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo4-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\r\n * @title 搜索框\r\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(\"搜索\" + value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo5\">\r\n                <FormControl\r\n                    className=\"demo5-input\"\r\n                    value={this.state.value}\r\n                    onSearch={this.onSearch}\r\n                    onChange={this.onChange}\r\n                    type=\"search\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用", "scss_code": ".demo5 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo5-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo6, null), "title": " 清空按钮", "code": "/**\r\n * @title 清空按钮\r\n * @description 通过设置 showClose 属性，让FormControl组件有清空功能\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo6\">\r\n                <FormControl\r\n                    className=\"demo6-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    showClose\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " 通过设置 showClose 属性，让FormControl组件有清空功能", "scss_code": ".demo6 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo6-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo7, null), "title": " 配合toolTip使用", "code": "/**\r\n * @title 配合toolTip使用\r\n * @description \r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Tooltip, Button } from 'tinper-bee';\r\n\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo7\">\r\n                <Tooltip trigger=\"click\" \r\n                inverse rootClose placement=\"right\" \r\n                overlay={this.state.value}>\r\n                    <FormControl\r\n                        className=\"demo7-input\"\r\n                        value={this.state.value}\r\n                        onChange={this.onChange}\r\n                    />\r\n\t\t\t\t</Tooltip>\r\n               \r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " ", "scss_code": "@import '../../node_modules/bee-tooltip/src/Tooltip.scss';\r\n.demo7 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo7-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}\r\n.u-tooltip .tooltip-inner{\r\n    max-width:unset;\r\n}" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -6164,7 +6164,7 @@
 	    });
 	}
 	
-	function notice(content, duration, type, onClose, position, style, keyboard, onEscapeKeyUp) {
+	function notice(content, duration, type, onClose, position, style, keyboard, onEscapeKeyUp, showIcon) {
 	    var iconType = {
 	        info: 'uf uf-i-c-2',
 	        success: 'uf uf-correct',
@@ -6190,11 +6190,11 @@
 	            content: _react2["default"].createElement(
 	                'div',
 	                null,
-	                _react2["default"].createElement(
+	                showIcon ? _react2["default"].createElement(
 	                    'div',
 	                    { className: clsPrefix + '-notice-description-icon' },
 	                    _react2["default"].createElement('i', { className: (0, _classnames2["default"])(iconType) })
-	                ),
+	                ) : null,
 	                _react2["default"].createElement(
 	                    'div',
 	                    { className: clsPrefix + '-notice-description-content' },
@@ -6222,7 +6222,8 @@
 	        var onClose = obj.onClose || noop;
 	        var position = obj.position || "top";
 	        var style = obj.style || {};
-	        return notice(content, duration, color, onClose, position, style, obj.keyboard, obj.onEscapeKeyUp);
+	        var showIcon = obj.showIcon || false;
+	        return notice(content, duration, color, onClose, position, style, obj.keyboard, obj.onEscapeKeyUp, showIcon);
 	    },
 	    config: function config(options) {
 	        if (options.top !== undefined) {
@@ -7798,7 +7799,7 @@
 	    /**
 	     * @title 尺寸
 	     */
-	    size: _propTypes2["default"].oneOf(['sm', 'xg', 'lg']),
+	    size: _propTypes2["default"].oneOf(['sm', 'md', 'xg', 'lg']),
 	    /**
 	     * @title 样式
 	     */
@@ -7812,7 +7813,7 @@
 	    /**
 	    * @title 类型
 	    */
-	    colors: _propTypes2["default"].oneOf(['primary', 'accent', 'success', 'info', 'warning', 'danger', 'default']),
+	    colors: _propTypes2["default"].oneOf(['primary', 'secondary', 'accent', 'success', 'info', 'warning', 'danger', 'dark', 'light', 'default']),
 	    /**
 	     * @title 是否禁用
 	     * @veIgnore
@@ -7842,16 +7843,20 @@
 	
 	var sizeMap = {
 	    sm: 'sm',
+	    md: 'md',
 	    xg: 'xg',
 	    lg: 'lg'
 	},
 	    colorsMap = {
 	    primary: 'primary',
+	    secondary: 'secondary',
 	    accent: 'accent',
 	    success: 'success',
 	    info: 'info',
 	    warning: 'warning',
-	    danger: 'danger'
+	    danger: 'danger',
+	    dark: 'dark',
+	    light: 'light'
 	},
 	    shapeMap = {
 	    block: 'block',
@@ -7937,10 +7942,6 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactDom = __webpack_require__(12);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
 	var _beeButton = __webpack_require__(82);
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
@@ -7978,11 +7979,6 @@
 	            console.log(v);
 	        };
 	
-	        _this.click = function () {
-	            console.log('-----');
-	            console.log(_reactDom2['default'].findDOMNode(_this.refs.input).value);
-	        };
-	
 	        _this.state = {
 	            value: "test"
 	        };
@@ -7993,21 +7989,13 @@
 	        return _react2['default'].createElement(
 	            'div',
 	            { className: 'demo1' },
-	            _react2['default'].createElement(
-	                'button',
-	                { onClick: this.click },
-	                'click'
-	            ),
 	            _react2['default'].createElement(_src2['default'], {
 	                className: 'demo1-input',
-	                size: 'sm',
-	                'data-a': '2',
-	                ref: 'input',
-	                type: 'search',
 	                value: this.state.value,
 	                onChange: this.onChange,
-	                focusSelect: true,
-	                onSearch: this.onBlur
+	                onBlur: this.onBlur,
+	                size: 'sm',
+	                focusSelect: true
 	            }),
 	            _react2['default'].createElement(_src2['default'], {
 	                className: 'demo1-input',
@@ -9008,6 +8996,8 @@
 	        'div',
 	        {
 	            className: (0, _classnames2["default"])(className, classNames),
+	            onMouseEnter: props.onMouseEnter,
+	            onMouseLeave: props.onMouseLeave,
 	            style: style
 	        },
 	        overlay ? _react2["default"].createElement('div', { className: 'tooltip-arrow', style: {
@@ -9030,11 +9020,27 @@
 	
 	        var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 	
+	        _this.onMouseEnter = function () {
+	            _this.setState({
+	                isHoverShow: true
+	            });
+	        };
+	
+	        _this.onMouseLeave = function () {
+	            _this.setState({
+	                isHoverShow: false
+	            });
+	        };
+	
+	        var initState = {
+	            isHoverShow: false
+	        };
 	        if ('visible' in props) {
-	            _this.state = {
+	            _extends(initState, {
 	                visible: props.visible
-	            };
+	            });
 	        }
+	        _this.state = initState;
 	        return _this;
 	    }
 	
@@ -9050,6 +9056,16 @@
 	            onVisibleChange && onVisibleChange(visible);
 	        }
 	    };
+	
+	    /**
+	     * @desc 鼠标划入时候的事件
+	     */
+	
+	
+	    /**
+	     * @desc 鼠标划出时候的事件
+	     */
+	
 	
 	    Tooltip.prototype.render = function render() {
 	        var _classes,
@@ -9087,6 +9103,8 @@
 	            className: className,
 	            classNames: classNames,
 	            overlay: overlay,
+	            onMouseEnter: this.onMouseEnter,
+	            onMouseLeave: this.onMouseLeave,
 	            style: true,
 	            arrowOffsetTop: true,
 	            arrowOffsetLeft: true
@@ -9099,7 +9117,7 @@
 	            children
 	        ) : _react2["default"].createElement(
 	            _OverlayTrigger2["default"],
-	            _extends({ ref: function ref(_ref2) {
+	            _extends({ isHoverShow: this.state.isHoverShow, ref: function ref(_ref2) {
 	                    return _this2.trigger = _ref2;
 	                }, shouldUpdatePosition: true, placement: placement }, others, { overlay: overlayNode }),
 	            children
@@ -9155,7 +9173,7 @@
 	
 	var _Overlay2 = _interopRequireDefault(_Overlay);
 	
-	var _createChainedFunction = __webpack_require__(115);
+	var _createChainedFunction = __webpack_require__(118);
 	
 	var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
 	
@@ -9309,6 +9327,11 @@
 	        if ('visible' in this.props && prevProps.visible !== this.props.visible) {
 	            this.setState({
 	                show: this.props.visible
+	            });
+	        }
+	        if ('isHoverShow' in this.props && prevProps.isHoverShow !== this.props.isHoverShow) {
+	            this.setState({
+	                show: this.props.isHoverShow
 	            });
 	        }
 	    };
@@ -9800,7 +9823,7 @@
 	
 	var _tinperBeeCore = __webpack_require__(27);
 	
-	var _Fade = __webpack_require__(113);
+	var _Fade = __webpack_require__(116);
 	
 	var _Fade2 = _interopRequireDefault(_Fade);
 	
@@ -9869,7 +9892,12 @@
 	  /**
 	   * Sets the direction of the Overlay.
 	   */
-	  placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left'])
+	  placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
+	
+	  /**
+	   * 当Overlay在placement方向放不下时的第二优先级方向
+	   */
+	  secondPlacement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left'])
 	});
 	
 	var defaultProps = {
@@ -9956,7 +9984,7 @@
 	
 	var _Position2 = _interopRequireDefault(_Position);
 	
-	var _RootCloseWrapper = __webpack_require__(112);
+	var _RootCloseWrapper = __webpack_require__(115);
 	
 	var _RootCloseWrapper2 = _interopRequireDefault(_RootCloseWrapper);
 	
@@ -10091,13 +10119,14 @@
 	        containerPadding = _props2.containerPadding,
 	        target = _props2.target,
 	        placement = _props2.placement,
+	        secondPlacement = _props2.secondPlacement,
 	        shouldUpdatePosition = _props2.shouldUpdatePosition,
 	        rootClose = _props2.rootClose,
 	        positionLeft = _props2.positionLeft,
 	        positionTop = _props2.positionTop,
 	        children = _props2.children,
 	        Transition = _props2.transition,
-	        props = _objectWithoutProperties(_props2, ['container', 'containerPadding', 'target', 'placement', 'shouldUpdatePosition', 'rootClose', 'positionLeft', 'positionTop', 'children', 'transition']);
+	        props = _objectWithoutProperties(_props2, ['container', 'containerPadding', 'target', 'placement', 'secondPlacement', 'shouldUpdatePosition', 'rootClose', 'positionLeft', 'positionTop', 'children', 'transition']);
 	
 	    // Don't un-render the overlay while it's transitioning out.
 	
@@ -10121,6 +10150,7 @@
 	        positionLeft: positionLeft,
 	        positionTop: positionTop,
 	        placement: placement,
+	        secondPlacement: secondPlacement,
 	        shouldUpdatePosition: shouldUpdatePosition },
 	      child
 	    );
@@ -10210,7 +10240,11 @@
 	
 	var _tinperBeeCore = __webpack_require__(27);
 	
-	var _calculatePosition = __webpack_require__(104);
+	var _requestAnimationFrame = __webpack_require__(104);
+	
+	var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
+	
+	var _calculatePosition = __webpack_require__(105);
 	
 	var _calculatePosition2 = _interopRequireDefault(_calculatePosition);
 	
@@ -10221,6 +10255,14 @@
 	var _ownerDocument = __webpack_require__(74);
 	
 	var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
+	
+	var _ownerWindow = __webpack_require__(113);
+	
+	var _ownerWindow2 = _interopRequireDefault(_ownerWindow);
+	
+	var _addEventListener = __webpack_require__(76);
+	
+	var _addEventListener2 = _interopRequireDefault(_addEventListener);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
@@ -10252,6 +10294,12 @@
 	     * 位置设置
 	     */
 	    placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
+	
+	    /**
+	     * 第二优先级位置设置
+	     */
+	    secondPlacement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
+	
 	    /**
 	     * 是否需要更新位置
 	     */
@@ -10289,10 +10337,19 @@
 	        _this.getTarget = _this.getTarget.bind(_this);
 	        _this.maybeUpdatePosition = _this.maybeUpdatePosition.bind(_this);
 	        _this.updatePosition = _this.updatePosition.bind(_this);
+	        _this.onWindowResize = _this.onWindowResize.bind(_this);
 	        return _this;
 	    }
 	
 	    Position.prototype.componentDidMount = function componentDidMount() {
+	        var _this2 = this;
+	
+	        this._isMounted = true;
+	
+	        this._windowResizeListener = (0, _addEventListener2["default"])((0, _ownerWindow2["default"])(this), 'resize', function () {
+	            return _this2.onWindowResize();
+	        });
+	
 	        this.updatePosition(this.getTarget());
 	    };
 	
@@ -10305,6 +10362,14 @@
 	            this.needsFlush = false;
 	
 	            this.maybeUpdatePosition();
+	        }
+	    };
+	
+	    Position.prototype.componentWillUnmount = function componentWillUnmount() {
+	        this._isMounted = false;
+	
+	        if (this._windowResizeListener) {
+	            this._windowResizeListener.remove();
 	        }
 	    };
 	
@@ -10334,11 +10399,27 @@
 	        this.updatePosition(target);
 	    };
 	
+	    Position.prototype.onWindowResize = function onWindowResize() {
+	        var _this3 = this;
+	
+	        (0, _requestAnimationFrame2["default"])(function () {
+	            return _this3.updatePosition(_this3.getTarget());
+	        });
+	    };
+	
 	    /**
 	     * 更新位置
 	     */
 	
 	    Position.prototype.updatePosition = function updatePosition(target) {
+	        var _props = this.props,
+	            placement = _props.placement,
+	            secondPlacement = _props.secondPlacement;
+	
+	
+	        if (!this._isMounted) {
+	            return;
+	        }
 	        this.lastTarget = target;
 	
 	        if (!target) {
@@ -10355,14 +10436,36 @@
 	        var overlay = _reactDom2["default"].findDOMNode(this);
 	        var container = (0, _getContainer2["default"])(this.props.container, (0, _ownerDocument2["default"])(this).body);
 	
-	        this.setState((0, _calculatePosition2["default"])(this.props.placement, overlay, target, container, this.props.containerPadding));
+	        // 若设置了第二渲染位置，placement的优先级是： placement > secondPlacement > placement的反方向
+	        if ("secondPlacement" in this.props && secondPlacement) {
+	            var initPosition = (0, _calculatePosition2["default"])(placement, overlay, target, container, this.props.containerPadding);
+	            if (initPosition.inverseArrow) {
+	                var secondPosition = (0, _calculatePosition2["default"])(secondPlacement, overlay, target, container, this.props.containerPadding);
+	
+	                if (secondPosition.inverseArrow) {
+	                    this.setState(_extends({}, initPosition, {
+	                        renderPlacement: placement
+	                    }));
+	                } else {
+	                    this.setState(_extends({}, secondPosition, {
+	                        renderPlacement: secondPlacement
+	                    }));
+	                }
+	            } else {
+	                this.setState(_extends({}, initPosition, {
+	                    renderPlacement: placement
+	                }));
+	            }
+	        } else {
+	            this.setState((0, _calculatePosition2["default"])(placement, overlay, target, container, this.props.containerPadding));
+	        }
 	    };
 	
 	    Position.prototype.render = function render() {
-	        var _props = this.props,
-	            children = _props.children,
-	            className = _props.className,
-	            props = _objectWithoutProperties(_props, ['children', 'className']);
+	        var _props2 = this.props,
+	            children = _props2.children,
+	            className = _props2.className,
+	            props = _objectWithoutProperties(_props2, ['children', 'className']);
 	
 	        var _state = this.state,
 	            positionLeft = _state.positionLeft,
@@ -10404,6 +10507,65 @@
 /* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	"use strict";
+	
+	var _interopRequireDefault = __webpack_require__(14);
+	
+	exports.__esModule = true;
+	exports.default = void 0;
+	
+	var _inDOM = _interopRequireDefault(__webpack_require__(15));
+	
+	var vendors = ['', 'webkit', 'moz', 'o', 'ms'];
+	var cancel = 'clearTimeout';
+	var raf = fallback;
+	var compatRaf;
+	
+	var getKey = function getKey(vendor, k) {
+	  return vendor + (!vendor ? k : k[0].toUpperCase() + k.substr(1)) + 'AnimationFrame';
+	};
+	
+	if (_inDOM.default) {
+	  vendors.some(function (vendor) {
+	    var rafKey = getKey(vendor, 'request');
+	
+	    if (rafKey in window) {
+	      cancel = getKey(vendor, 'cancel');
+	      return raf = function raf(cb) {
+	        return window[rafKey](cb);
+	      };
+	    }
+	  });
+	}
+	/* https://github.com/component/raf */
+	
+	
+	var prev = new Date().getTime();
+	
+	function fallback(fn) {
+	  var curr = new Date().getTime(),
+	      ms = Math.max(0, 16 - (curr - prev)),
+	      req = setTimeout(fn, ms);
+	  prev = curr;
+	  return req;
+	}
+	
+	compatRaf = function compatRaf(cb) {
+	  return raf(cb);
+	};
+	
+	compatRaf.cancel = function (id) {
+	  window[cancel] && typeof window[cancel] === 'function' && window[cancel](id);
+	};
+	
+	var _default = compatRaf;
+	exports.default = _default;
+	module.exports = exports["default"];
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -10411,15 +10573,15 @@
 	});
 	exports["default"] = calculatePosition;
 	
-	var _offset = __webpack_require__(105);
+	var _offset = __webpack_require__(106);
 	
 	var _offset2 = _interopRequireDefault(_offset);
 	
-	var _position = __webpack_require__(107);
+	var _position = __webpack_require__(108);
 	
 	var _position2 = _interopRequireDefault(_position);
 	
-	var _scrollTop = __webpack_require__(110);
+	var _scrollTop = __webpack_require__(111);
 	
 	var _scrollTop2 = _interopRequireDefault(_scrollTop);
 	
@@ -10577,7 +10739,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10589,7 +10751,7 @@
 	
 	var _contains = _interopRequireDefault(__webpack_require__(98));
 	
-	var _isWindow = _interopRequireDefault(__webpack_require__(106));
+	var _isWindow = _interopRequireDefault(__webpack_require__(107));
 	
 	var _ownerDocument = _interopRequireDefault(__webpack_require__(75));
 	
@@ -10620,7 +10782,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -10635,7 +10797,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10645,15 +10807,15 @@
 	exports.__esModule = true;
 	exports.default = position;
 	
-	var _extends2 = _interopRequireDefault(__webpack_require__(108));
+	var _extends2 = _interopRequireDefault(__webpack_require__(109));
 	
-	var _offset = _interopRequireDefault(__webpack_require__(105));
+	var _offset = _interopRequireDefault(__webpack_require__(106));
 	
-	var _offsetParent = _interopRequireDefault(__webpack_require__(109));
+	var _offsetParent = _interopRequireDefault(__webpack_require__(110));
 	
-	var _scrollTop = _interopRequireDefault(__webpack_require__(110));
+	var _scrollTop = _interopRequireDefault(__webpack_require__(111));
 	
-	var _scrollLeft = _interopRequireDefault(__webpack_require__(111));
+	var _scrollLeft = _interopRequireDefault(__webpack_require__(112));
 	
 	var _style = _interopRequireDefault(__webpack_require__(18));
 	
@@ -10689,7 +10851,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 	function _extends() {
@@ -10713,7 +10875,7 @@
 	module.exports = _extends;
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -10745,27 +10907,6 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	var _interopRequireDefault = __webpack_require__(14);
-	
-	exports.__esModule = true;
-	exports.default = scrollTop;
-	
-	var _isWindow = _interopRequireDefault(__webpack_require__(106));
-	
-	function scrollTop(node, val) {
-	  var win = (0, _isWindow.default)(node);
-	  if (val === undefined) return win ? 'pageYOffset' in win ? win.pageYOffset : win.document.documentElement.scrollTop : node.scrollTop;
-	  if (win) win.scrollTo('pageXOffset' in win ? win.pageXOffset : win.document.documentElement.scrollLeft, val);else node.scrollTop = val;
-	}
-	
-	module.exports = exports["default"];
-
-/***/ }),
 /* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10776,7 +10917,28 @@
 	exports.__esModule = true;
 	exports.default = scrollTop;
 	
-	var _isWindow = _interopRequireDefault(__webpack_require__(106));
+	var _isWindow = _interopRequireDefault(__webpack_require__(107));
+	
+	function scrollTop(node, val) {
+	  var win = (0, _isWindow.default)(node);
+	  if (val === undefined) return win ? 'pageYOffset' in win ? win.pageYOffset : win.document.documentElement.scrollTop : node.scrollTop;
+	  if (win) win.scrollTo('pageXOffset' in win ? win.pageXOffset : win.document.documentElement.scrollLeft, val);else node.scrollTop = val;
+	}
+	
+	module.exports = exports["default"];
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _interopRequireDefault = __webpack_require__(14);
+	
+	exports.__esModule = true;
+	exports.default = scrollTop;
+	
+	var _isWindow = _interopRequireDefault(__webpack_require__(107));
 	
 	function scrollTop(node, val) {
 	  var win = (0, _isWindow.default)(node);
@@ -10787,7 +10949,53 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 112 */
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports["default"] = function (componentOrElement) {
+	  return (0, _ownerWindow2["default"])(_reactDom2["default"].findDOMNode(componentOrElement));
+	};
+	
+	var _reactDom = __webpack_require__(12);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _ownerWindow = __webpack_require__(114);
+	
+	var _ownerWindow2 = _interopRequireDefault(_ownerWindow);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	module.exports = exports['default'];
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _interopRequireDefault = __webpack_require__(14);
+	
+	exports.__esModule = true;
+	exports.default = ownerWindow;
+	
+	var _ownerDocument = _interopRequireDefault(__webpack_require__(75));
+	
+	function ownerWindow(node) {
+	  var doc = (0, _ownerDocument.default)(node);
+	  return doc && doc.defaultView || doc.parentWindow;
+	}
+	
+	module.exports = exports["default"];
+
+/***/ }),
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10949,7 +11157,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 113 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10972,7 +11180,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Transition = __webpack_require__(114);
+	var _Transition = __webpack_require__(117);
 	
 	var _Transition2 = _interopRequireDefault(_Transition);
 	
@@ -11070,7 +11278,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 114 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11419,7 +11627,7 @@
 	exports["default"] = Transition;
 
 /***/ }),
-/* 115 */
+/* 118 */
 /***/ (function(module, exports) {
 
 	'use strict';

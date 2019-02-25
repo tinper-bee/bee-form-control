@@ -39,7 +39,7 @@
   "bee-icon": "^1.0.3",
   "classnames": "^2.2.5",
   "express": "^4.16.3",
-  "tinper-bee-core": "^0.4.1",
+  "tinper-bee-core": "latest",
   "warning": "^3.0.0"
  },
  "peerDependencies": {
