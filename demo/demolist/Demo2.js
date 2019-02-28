@@ -30,7 +30,7 @@ export default class Demo2 extends Component {
     render() {
         return (
             <div className="demo2">
-                <Button colors="primary" onClick={this.onHander}>修改输入框值</Button>
+                <Button colors="dark" onClick={this.onHander}>修改输入框值</Button>
                 <FormControl focusSelect={this.state.select} className="demo2-input" value={this.state.value} onChange={this.onChange}/>
             </div>
 

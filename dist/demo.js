@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(89);var Demo3 = __webpack_require__(90);var Demo4 = __webpack_require__(91);var Demo5 = __webpack_require__(92);var Demo6 = __webpack_require__(93);var Demo7 = __webpack_require__(94);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\r\n * @title 不同size Input\r\n * @description\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (v) => {\r\n        this.setState({value: v});\r\n    }\r\n    onBlur = (v) => {\r\n        console.log(v);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo1\">\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    onBlur={this.onBlur}\r\n                    size=\"sm\"\r\n                    focusSelect={true}\r\n                />\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                />\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    size=\"lg\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": "", "scss_code": ".demo1 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo1-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\r\n * @title 可控 Input\r\n * @description\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"我是这样\",\r\n            select:false\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onHander = () => {\r\n        this.setState({\r\n            value: \"我改变了\",\r\n            select:true\r\n        })\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo2\">\r\n                <Button colors=\"primary\" onClick={this.onHander}>修改输入框值</Button>\r\n                <FormControl focusSelect={this.state.select} className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": "", "scss_code": ".demo2 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo2-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\r\n * @title 获取Input对象句柄\r\n * @description 获取对象句柄，两种方式。\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\nclass Demo3 extends Component {\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onHander = () => {\r\n        this.textInput.input.focus();\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo3\">\r\n                <Button colors=\"primary\" onClick={this.onHander}>获取input对象句柄</Button>\r\n\r\n                <FormControl\r\n                    className=\"demo3-input\"\r\n                    defaultValue={this.state.value}\r\n                    ref={(input) => {this.textInput = input}}\r\n                />\r\n                <FormControl\r\n                    className=\"demo3-input\"\r\n                    defaultValue={this.state.value}\r\n                    ref=\"test\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}\r\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo3-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\r\n * @title 设置文本框焦点事件 autoFocus 属性\r\n * @description 设置文本框焦点事件 autoFocus 属性\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\nclass Demo4 extends Component {\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo4\">\r\n                <FormControl\r\n                    className=\"demo4-input\"\r\n                    //autoFocus\r\n                    defaultValue={this.state.value}\r\n                />\r\n            </div>\r\n        )\r\n    }\r\n}\r\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo4-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\r\n * @title 搜索框\r\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(\"搜索\" + value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo5\">\r\n                <FormControl\r\n                    className=\"demo5-input\"\r\n                    value={this.state.value}\r\n                    onSearch={this.onSearch}\r\n                    onChange={this.onChange}\r\n                    type=\"search\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用", "scss_code": ".demo5 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo5-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo6, null), "title": " 清空按钮", "code": "/**\r\n * @title 清空按钮\r\n * @description 通过设置 showClose 属性，让FormControl组件有清空功能\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo6\">\r\n                <FormControl\r\n                    className=\"demo6-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    showClose\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " 通过设置 showClose 属性，让FormControl组件有清空功能", "scss_code": ".demo6 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo6-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo7, null), "title": " 配合toolTip使用", "code": "/**\r\n * @title 配合toolTip使用\r\n * @description \r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Tooltip, Button } from 'tinper-bee';\r\n\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo7\">\r\n                <Tooltip trigger=\"click\" \r\n                inverse rootClose placement=\"right\" \r\n                overlay={this.state.value}>\r\n                    <FormControl\r\n                        className=\"demo7-input\"\r\n                        value={this.state.value}\r\n                        onChange={this.onChange}\r\n                    />\r\n\t\t\t\t</Tooltip>\r\n               \r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " ", "scss_code": "@import '../../node_modules/bee-tooltip/src/Tooltip.scss';\r\n.demo7 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo7-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}\r\n.u-tooltip .tooltip-inner{\r\n    max-width:unset;\r\n}" }];
+	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(89);var Demo3 = __webpack_require__(90);var Demo4 = __webpack_require__(91);var Demo5 = __webpack_require__(92);var Demo6 = __webpack_require__(93);var Demo7 = __webpack_require__(94);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 不同size Input", "code": "/**\r\n * @title 不同size Input\r\n * @description\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (v) => {\r\n        this.setState({value: v});\r\n    }\r\n    onBlur = (v) => {\r\n        console.log(v);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo1\">\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    onBlur={this.onBlur}\r\n                    size=\"sm\"\r\n                    focusSelect={true}\r\n                />\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                />\r\n                <FormControl\r\n                    className=\"demo1-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    size=\"lg\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": "", "scss_code": ".demo1 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo1-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 可控 Input", "code": "/**\r\n * @title 可控 Input\r\n * @description\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"我是这样\",\r\n            select:false\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onHander = () => {\r\n        this.setState({\r\n            value: \"我改变了\",\r\n            select:true\r\n        })\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo2\">\r\n                <Button colors=\"dark\" onClick={this.onHander}>修改输入框值</Button>\r\n                <FormControl focusSelect={this.state.select} className=\"demo2-input\" value={this.state.value} onChange={this.onChange}/>\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": "", "scss_code": ".demo2 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo2-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 获取Input对象句柄", "code": "/**\r\n * @title 获取Input对象句柄\r\n * @description 获取对象句柄，两种方式。\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\nclass Demo3 extends Component {\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onHander = () => {\r\n        this.textInput.input.focus();\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo3\">\r\n                <Button colors=\"dark\" onClick={this.onHander}>获取input对象句柄</Button>\r\n\r\n                <FormControl\r\n                    className=\"demo3-input\"\r\n                    defaultValue={this.state.value}\r\n                    ref={(input) => {this.textInput = input}}\r\n                />\r\n                <FormControl\r\n                    className=\"demo3-input\"\r\n                    defaultValue={this.state.value}\r\n                    ref=\"test\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}\r\n", "desc": " 获取对象句柄，两种方式。", "scss_code": ".demo3 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo3-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 设置文本框焦点事件 autoFocus 属性", "code": "/**\r\n * @title 设置文本框焦点事件 autoFocus 属性\r\n * @description 设置文本框焦点事件 autoFocus 属性\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\nclass Demo4 extends Component {\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo4\">\r\n                <FormControl\r\n                    className=\"demo4-input\"\r\n                    //autoFocus\r\n                    defaultValue={this.state.value}\r\n                />\r\n            </div>\r\n        )\r\n    }\r\n}\r\n", "desc": " 设置文本框焦点事件 autoFocus 属性", "scss_code": ".demo4 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo4-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo5, null), "title": " 搜索框", "code": "/**\r\n * @title 搜索框\r\n * @description 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(\"搜索\" + value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo5\">\r\n                <FormControl\r\n                    className=\"demo5-input\"\r\n                    value={this.state.value}\r\n                    onSearch={this.onSearch}\r\n                    onChange={this.onChange}\r\n                    type=\"search\"\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " 通过设置type=\"search\"属性，让FormControl组件有搜索功能。type=\"search\"下showClose不可用", "scss_code": ".demo5 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo5-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo6, null), "title": " 清空按钮", "code": "/**\r\n * @title 清空按钮\r\n * @description 通过设置 showClose 属性，让FormControl组件有清空功能\r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Button } from 'tinper-bee';\r\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo6\">\r\n                <FormControl\r\n                    className=\"demo6-input\"\r\n                    value={this.state.value}\r\n                    onChange={this.onChange}\r\n                    showClose\r\n                />\r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " 通过设置 showClose 属性，让FormControl组件有清空功能", "scss_code": ".demo6 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo6-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}" }, { "example": _react2['default'].createElement(Demo7, null), "title": " 配合toolTip使用", "code": "/**\r\n * @title 配合toolTip使用\r\n * @description \r\n */\r\n\r\nimport React, {Component} from 'react';\r\n\nimport { FormControl, Tooltip, Button } from 'tinper-bee';\r\n\n\r\n\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            value: \"test\"\r\n        }\r\n    }\r\n\r\n    onChange = (value) => {\r\n        this.setState({value: value});\r\n    }\r\n\r\n    onSearch = (value) => {\r\n        console.log(value);\r\n    }\r\n\r\n    render() {\r\n        return (\r\n            <div className=\"demo7\">\r\n                <Tooltip trigger=\"click\" \r\n                inverse rootClose placement=\"right\" \r\n                overlay={this.state.value}>\r\n                    <FormControl\r\n                        className=\"demo7-input\"\r\n                        value={this.state.value}\r\n                        onChange={this.onChange}\r\n                    />\r\n\t\t\t\t</Tooltip>\r\n               \r\n            </div>\r\n\r\n        )\r\n    }\r\n}", "desc": " ", "scss_code": "@import '../../node_modules/bee-tooltip/src/Tooltip.scss';\r\n.demo7 {\r\n    padding-bottom: 20px;\r\n    display: block;\r\n    .demo7-input{\r\n        margin-top: 10px;\r\n        width: 200px;\r\n        display: block;\r\n    }\r\n}\r\n.u-tooltip .tooltip-inner{\r\n    max-width:unset;\r\n}" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -2119,7 +2119,10 @@
 	  }
 	
 	  return (0, _createChainableTypeChecker2.default)(allPropTypes);
-	}
+	} /**
+	   * This source code is quoted from rc-util.
+	   * homepage: https://github.com/react-component/util
+	   */
 
 /***/ }),
 /* 29 */
@@ -2139,6 +2142,10 @@
 	 */
 	
 	// Mostly taken from ReactPropTypes.
+	
+	/* This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	
 	function createChainableTypeChecker(validate) {
 	  function checkType(isRequired, props, propName, componentName, location, propFullName) {
@@ -2174,7 +2181,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _react = __webpack_require__(4);
 	
@@ -2218,8 +2229,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var warned = {};
-	
+	var warned = {}; /**
+	                  * This source code is quoted from rc-util.
+	                  * homepage: https://github.com/react-component/util
+	                  */
 	function deprecated(validator, reason) {
 	  return function validate(props, propName, componentName, location, propFullName) {
 	    var componentNameSafe = componentName || '<<anonymous>>';
@@ -2514,7 +2527,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _react = __webpack_require__(4);
 	
@@ -2551,6 +2568,10 @@
 	
 	exports.__esModule = true;
 	exports.default = isRequiredForA11y;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function isRequiredForA11y(validator) {
 	  return function validate(props, propName, componentName, location, propFullName) {
 	    var componentNameSafe = componentName || '<<anonymous>>';
@@ -2576,6 +2597,10 @@
 	
 	exports.__esModule = true;
 	exports.default = splitComponentProps;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function _objectEntries(obj) {
 	  var entries = [];
 	  var keys = Object.keys(obj);
@@ -2618,6 +2643,10 @@
 	'use strict';
 	
 	exports.__esModule = true;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function createChainedFunction() {
 	  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
 	    funcs[_key] = arguments[_key];
@@ -2650,6 +2679,10 @@
 /* 38 */
 /***/ (function(module, exports) {
 
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	'use strict';
 	
 	/**
@@ -3179,6 +3212,10 @@
 	
 	exports.__esModule = true;
 	exports.default = contains;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function contains(root, n) {
 	  var node = n;
 	  while (node) {
@@ -3210,6 +3247,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function addEventListenerWrap(target, eventType, cb) {
 	  /* eslint camelcase: 2 */
 	  var callback = _reactDom2.default.unstable_batchedUpdates ? function run(e) {
@@ -3729,7 +3770,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _Event = __webpack_require__(46);
 	
@@ -3920,6 +3965,10 @@
 	'use strict';
 	
 	exports.__esModule = true;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	var EVENT_NAME_MAP = {
 	  transitionend: {
 	    transition: 'transitionend',
@@ -4233,7 +4282,10 @@
 	    ret.push(c);
 	  });
 	  return ret;
-	}
+	} /**
+	   * This source code is quoted from rc-util.
+	   * homepage: https://github.com/react-component/util
+	   */
 
 /***/ }),
 /* 50 */
@@ -4269,7 +4321,11 @@
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
 	
 	//import isWindow from './isWindow';
 	
@@ -8484,7 +8540,7 @@
 	            { className: 'demo2' },
 	            _react2['default'].createElement(
 	                _beeButton2['default'],
-	                { colors: 'primary', onClick: this.onHander },
+	                { colors: 'dark', onClick: this.onHander },
 	                '\u4FEE\u6539\u8F93\u5165\u6846\u503C'
 	            ),
 	            _react2['default'].createElement(_src2['default'], { focusSelect: this.state.select, className: 'demo2-input', value: this.state.value, onChange: this.onChange })
@@ -8558,7 +8614,7 @@
 	            { className: 'demo3' },
 	            _react2['default'].createElement(
 	                _beeButton2['default'],
-	                { colors: 'primary', onClick: this.onHander },
+	                { colors: 'dark', onClick: this.onHander },
 	                '\u83B7\u53D6input\u5BF9\u8C61\u53E5\u67C4'
 	            ),
 	            _react2['default'].createElement(_src2['default'], {

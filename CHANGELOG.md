@@ -1,3 +1,8 @@
+<a name="1.1.11"></a>
+## [1.1.11](https://github.com/tinper-bee/form-control/compare/v1.1.10...v1.1.11) (2019-02-28)
+
+
+
 <a name="1.1.10"></a>
 ## [1.1.10](https://github.com/tinper-bee/form-control/compare/v1.1.3...v1.1.10) (2019-02-25)
 
