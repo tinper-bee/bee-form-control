@@ -25,8 +25,8 @@
     &::-ms-clear,::-ms-reveal{display:none;}
 }
 .u-form-control[disabled] {
-    background: $form-control-disable-bg-color;
-    border-color: $form-control-disable-border-color;
+    background: $form-control-disable-bg-color;  //#F7F9FB
+    border-color: $form-control-disable-border-color;  //#DFE1E6
     color: $form-control-disable-color;
     cursor: not-allowed;
 }

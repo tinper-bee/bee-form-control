@@ -23,7 +23,7 @@ class Demo3 extends Component {
     render() {
         return (
             <div className="demo3">
-                <Button colors="dark" onClick={this.onHander}>获取input对象句柄</Button>
+                <Button colors="primary" onClick={this.onHander}>获取input对象句柄</Button>
 
                 <FormControl
                     className="demo3-input"
