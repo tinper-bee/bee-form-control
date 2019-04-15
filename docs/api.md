@@ -14,7 +14,7 @@ import { FormControl } from 'tinper-bee';
 or
 
 import FormControl from 'bee-form-control';
-import bee-form-control/build/FormControl.css;
+import 'bee-form-control/build/FormControl.css';
 
 ```
 
