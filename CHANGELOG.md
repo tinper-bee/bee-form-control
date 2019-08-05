@@ -1,10 +1,10 @@
+<a name="2.0.6"></a>
+## [2.0.6](https://github.com/tinper-bee/form-control/compare/v2.0.5...v2.0.6) (2019-08-05)
+
+
+
 <a name="2.0.5"></a>
-## [2.0.5](https://github.com/tinper-bee/form-control/compare/v2.0.4...v2.0.5) (2019-08-02)
-
-
-
-<a name="2.0.4"></a>
-## [2.0.4](https://github.com/tinper-bee/form-control/compare/v2.0.3...v2.0.4) (2019-08-02)
+## [2.0.5](https://github.com/tinper-bee/form-control/compare/v2.0.3...v2.0.5) (2019-08-02)
 
 
 
