@@ -61,16 +61,15 @@ class FormControl extends React.Component {
         const now = new Date().getTime()
         if (now - this.lastScrollCall < this.props.debounceDelay) return
         this.lastScrollCall = now
-        setTimeout(() => {
-            const {onChange} = this.props;
-            let value = this.input.value;
-            this.setState({
-                showClose:true
-            })
-            if (onChange) {
-                onChange(value,e);
-            }
+        
+        const {onChange} = this.props;
+        let value = this.input.value;
+        this.setState({
+            showClose:true
         })
+        if (onChange) {
+            onChange(value,e);
+        }
     }
 
     clearValue = () => {
