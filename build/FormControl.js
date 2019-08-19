@@ -79,17 +79,16 @@ var FormControl = function (_React$Component) {
             var now = new Date().getTime();
             if (now - _this.lastScrollCall < _this.props.debounceDelay) return;
             _this.lastScrollCall = now;
-            setTimeout(function () {
-                var onChange = _this.props.onChange;
 
-                var value = _this.input.value;
-                _this.setState({
-                    showClose: true
-                });
-                if (onChange) {
-                    onChange(value, e);
-                }
+            var onChange = _this.props.onChange;
+
+            var value = _this.input.value;
+            _this.setState({
+                showClose: true
             });
+            if (onChange) {
+                onChange(value, e);
+            }
         };
 
         _this.clearValue = function () {
