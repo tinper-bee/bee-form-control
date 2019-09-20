@@ -50,8 +50,7 @@ var defaultProps = {
     componentClass: 'input',
     clsPrefix: 'u-form-control',
     type: 'text',
-    size: 'md',
-    debounceDelay: 0
+    size: 'md'
 };
 
 var FormControl = function (_React$Component) {
@@ -76,8 +75,11 @@ var FormControl = function (_React$Component) {
         };
 
         _this.handleChange = function (e) {
+            var _this$props$debounceD = _this.props.debounceDelay,
+                debounceDelay = _this$props$debounceD === undefined ? 0 : _this$props$debounceD;
+
             var now = new Date().getTime();
-            if (now - _this.lastScrollCall < _this.props.debounceDelay) return;
+            if (now - _this.lastScrollCall < debounceDelay) return;
             _this.lastScrollCall = now;
 
             var onChange = _this.props.onChange;

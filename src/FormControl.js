@@ -23,7 +23,6 @@ const defaultProps = {
     clsPrefix: 'u-form-control',
     type: 'text',
     size: 'md',
-    debounceDelay:0
 };
 
 
@@ -58,8 +57,9 @@ class FormControl extends React.Component {
     }
 
     handleChange = (e) => {
+        let { debounceDelay=0 } = this.props;
         const now = new Date().getTime()
-        if (now - this.lastScrollCall < this.props.debounceDelay) return
+        if (now - this.lastScrollCall < debounceDelay) return
         this.lastScrollCall = now
         
         const {onChange} = this.props;
