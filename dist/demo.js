@@ -34375,16 +34375,17 @@
 	        };
 	
 	        _this.handleChange = function (e) {
+	            var _this$props$debounceD = _this.props.debounceDelay,
+	                debounceDelay = _this$props$debounceD === undefined ? 0 : _this$props$debounceD;
+	
 	            var now = new Date().getTime();
-	            if (now - _this.lastScrollCall < _this.props.debounceDelay) return;
+	            if (now - _this.lastScrollCall < debounceDelay) return;
 	            _this.lastScrollCall = now;
 	
 	            var onChange = _this.props.onChange;
 	
 	            var value = _this.input.value;
-	            _this.setState({
-	                showClose: true
-	            });
+	
 	            if (onChange) {
 	                onChange(value, e);
 	            }
@@ -34395,8 +34396,7 @@
 	
 	            _this.setState({
 	                showSearch: true,
-	                value: "",
-	                showClose: false
+	                value: ""
 	            });
 	            if (onChange) {
 	                onChange("");
@@ -34490,7 +34490,7 @@
 	                _react2['default'].createElement(
 	                    'div',
 	                    { className: clsPrefix + '-suffix' },
-	                    _this.state.showClose ? _react2['default'].createElement(_beeIcon2['default'], { onClick: _this.clearValue, type: 'uf-close-c' }) : ''
+	                    value ? _react2['default'].createElement(_beeIcon2['default'], { onClick: _this.clearValue, type: 'uf-close-c' }) : ''
 	                )
 	            ) : _react2['default'].createElement(Component, _extends({}, others, {
 	                type: type,
@@ -34553,8 +34553,7 @@
 	
 	        _this.state = {
 	            showSearch: !props.value,
-	            value: props.value == null ? "" : props.value,
-	            showClose: false
+	            value: props.value == null ? "" : props.value
 	        };
 	        _this.input = {};
 	        return _this;
