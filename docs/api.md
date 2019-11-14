@@ -35,6 +35,8 @@ import 'bee-form-control/build/FormControl.css';
 |onSearch|input type="search" 回车和点击搜索按钮的回调|func|-|
 |showClose|是否显示清空按钮|bool|-|
 |focusSelect|设置当focus的时候是否选择内容|bool|false|
+|prefix|设置前缀。默认宽度 30px，可通过复写样式更改|node/string|-|
+|suffix|设置后缀。默认宽度 30px，可通过复写样式更改|node/string|-|
 
 ## 注意事项
 
