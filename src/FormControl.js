@@ -44,7 +44,7 @@ class FormControl extends React.Component {
     }
 
     componentWillReceiveProps(nextProp) {
-        if ("value" in nextProps) {
+        if ("value" in nextProp) {
             if (nextProp.value !== this.state.value) {
                 this.setState({value: nextProp.value});
             }
