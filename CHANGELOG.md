@@ -1,3 +1,18 @@
+<a name="2.0.12"></a>
+## [2.0.12](https://github.com/tinper-bee/form-control/compare/v2.0.11...v2.0.12) (2020-03-20)
+
+
+### Bug Fixes
+
+* **bee-form-control:** componentWillReceiveProps value判断 ([5574583](https://github.com/tinper-bee/form-control/commit/5574583))
+
+
+### Features
+
+* **bee-form-control:** 清空按钮不触发blur ([3257de9](https://github.com/tinper-bee/form-control/commit/3257de9))
+
+
+
 <a name="2.0.11"></a>
 ## [2.0.11](https://github.com/tinper-bee/form-control/compare/v2.0.10...v2.0.11) (2020-01-14)
 
