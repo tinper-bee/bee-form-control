@@ -144,6 +144,8 @@ var _initialiseProps = function _initialiseProps() {
         if (onChange) {
             onChange("");
         }
+        _this2.blurTime && clearTimeout(_this2.blurTime);
+        _this2.blurTime = null;
         _this2.input.focus();
     };
 
@@ -173,7 +175,10 @@ var _initialiseProps = function _initialiseProps() {
 
 
         if (onBlur) {
-            onBlur(value, e);
+            _this2.blurTime && clearTimeout(_this2.blurTime);
+            _this2.blurTime = setTimeout(function () {
+                onBlur(value, e);
+            }, 100);
         }
     };
 

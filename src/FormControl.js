@@ -88,6 +88,8 @@ class FormControl extends React.Component {
         if (onChange) {
             onChange("");
         }
+        this.blurTime&&clearTimeout(this.blurTime);
+        this.blurTime=null;
         this.input.focus();
     }
 
@@ -109,7 +111,10 @@ class FormControl extends React.Component {
         const { onBlur } = this.props;
 
         if(onBlur){
-            onBlur(value, e);
+            this.blurTime&&clearTimeout(this.blurTime);
+            this.blurTime = setTimeout(() => {
+                onBlur(value, e);
+            }, 100);
         }
     }
 
