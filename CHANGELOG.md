@@ -1,3 +1,13 @@
+<a name="2.0.13"></a>
+## [2.0.13](https://github.com/tinper-bee/form-control/compare/v2.0.12...v2.0.13) (2020-03-21)
+
+
+### Bug Fixes
+
+* **bee-form-control:** onBlur e对象 ([3d25082](https://github.com/tinper-bee/form-control/commit/3d25082))
+
+
+
 <a name="2.0.12"></a>
 ## [2.0.12](https://github.com/tinper-bee/form-control/compare/v2.0.11...v2.0.12) (2020-03-20)
 
