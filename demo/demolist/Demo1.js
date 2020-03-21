@@ -18,7 +18,7 @@ export default class Demo1 extends Component {
     onChange = (v) => {
         this.setState({value: v});
     }
-    onBlur = (v) => {
+    onBlur = (v,e) => {
         console.log(v);
     }
 

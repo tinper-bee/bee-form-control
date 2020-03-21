@@ -173,11 +173,11 @@ var _initialiseProps = function _initialiseProps() {
         var value = _this2.state.value;
         var onBlur = _this2.props.onBlur;
 
-
+        var _e = _extends({}, e);
         if (onBlur) {
             _this2.blurTime && clearTimeout(_this2.blurTime);
             _this2.blurTime = setTimeout(function () {
-                onBlur(value, e);
+                onBlur(value, _e);
             }, 100);
         }
     };
