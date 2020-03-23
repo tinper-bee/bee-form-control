@@ -1,3 +1,13 @@
+<a name="2.0.14"></a>
+## [2.0.14](https://github.com/tinper-bee/form-control/compare/v2.0.13...v2.0.14) (2020-03-23)
+
+
+### Bug Fixes
+
+* **bee-form-control:** 清空按钮触发onChange时,没有事件对象 ([ce35509](https://github.com/tinper-bee/form-control/commit/ce35509))
+
+
+
 <a name="2.0.13"></a>
 ## [2.0.13](https://github.com/tinper-bee/form-control/compare/v2.0.12...v2.0.13) (2020-03-21)
 
