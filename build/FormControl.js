@@ -141,8 +141,9 @@ var _initialiseProps = function _initialiseProps() {
             showSearch: true,
             value: ""
         });
+        _this2.e.target.value = "";
         if (onChange) {
-            onChange("");
+            onChange("", _this2.e);
         }
         _this2.blurTime && clearTimeout(_this2.blurTime);
         _this2.blurTime = null;
@@ -174,6 +175,7 @@ var _initialiseProps = function _initialiseProps() {
         var onBlur = _this2.props.onBlur;
 
         var _e = _extends({}, e);
+        _this2.e = _e;
         if (onBlur) {
             _this2.blurTime && clearTimeout(_this2.blurTime);
             _this2.blurTime = setTimeout(function () {

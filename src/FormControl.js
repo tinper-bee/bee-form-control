@@ -85,8 +85,9 @@ class FormControl extends React.Component {
             showSearch: true,
             value: "",
         });
+        this.e.target.value = "";
         if (onChange) {
-            onChange("");
+            onChange("",this.e);
         }
         this.blurTime&&clearTimeout(this.blurTime);
         this.blurTime=null;
@@ -110,6 +111,7 @@ class FormControl extends React.Component {
         const { value } = this.state;
         const { onBlur } = this.props;
         let _e = Object.assign({}, e);
+        this.e = _e;
         if(onBlur){
             this.blurTime&&clearTimeout(this.blurTime);
             this.blurTime = setTimeout(() => {
