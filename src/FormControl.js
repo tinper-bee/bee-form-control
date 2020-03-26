@@ -80,7 +80,7 @@ class FormControl extends React.Component {
     }
 
     clearValue = () => {
-        const {onChange} = this.props;
+        const { onChange,showClose } = this.props;
         this.setState({
             showSearch: true,
             value: "",
@@ -89,8 +89,10 @@ class FormControl extends React.Component {
         if (onChange) {
             onChange("",this.e);
         }
-        this.blurTime&&clearTimeout(this.blurTime);
-        this.blurTime=null;
+        if(showClose){
+            this.blurTime&&clearTimeout(this.blurTime);
+            this.blurTime=null;
+        }
         this.input.focus();
     }
 
@@ -109,14 +111,18 @@ class FormControl extends React.Component {
     }
     handleBlur = (e) => {
         const { value } = this.state;
-        const { onBlur } = this.props;
+        const { onBlur,showClose } = this.props;
         let _e = Object.assign({}, e);
         this.e = _e;
         if(onBlur){
-            this.blurTime&&clearTimeout(this.blurTime);
-            this.blurTime = setTimeout(() => {
-                onBlur(value, _e);
-            }, 100);
+            if(showClose){
+                this.blurTime&&clearTimeout(this.blurTime);
+                this.blurTime = setTimeout(() => {
+                    onBlur(value, _e);
+                }, 100);
+            }else{
+                 onBlur(value, _e);
+            }
         }
     }
 
