@@ -1,3 +1,13 @@
+<a name="2.0.15"></a>
+## [2.0.15](https://github.com/tinper-bee/form-control/compare/v2.0.14...v2.0.15) (2020-03-26)
+
+
+### Features
+
+* **bee-form-control:** 在showClose时候加onBlur的延迟 ([c42dbd6](https://github.com/tinper-bee/form-control/commit/c42dbd6))
+
+
+
 <a name="2.0.14"></a>
 ## [2.0.14](https://github.com/tinper-bee/form-control/compare/v2.0.13...v2.0.14) (2020-03-23)
 
