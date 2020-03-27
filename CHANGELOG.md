@@ -1,5 +1,15 @@
+<a name="2.0.17"></a>
+## [2.0.17](https://github.com/tinper-bee/form-control/compare/v2.0.16...v2.0.17) (2020-03-27)
+
+
+
 <a name="2.0.16"></a>
 ## [2.0.16](https://github.com/tinper-bee/form-control/compare/v2.0.15...v2.0.16) (2020-03-27)
+
+
+### Features
+
+* **bee-form-control:** 清空按钮放大,有可能会点不到 ([ae4a423](https://github.com/tinper-bee/form-control/commit/ae4a423))
 
 
 
