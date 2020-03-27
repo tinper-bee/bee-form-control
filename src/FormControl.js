@@ -85,7 +85,7 @@ class FormControl extends React.Component {
             showSearch: true,
             value: "",
         });
-        this.e.target.value = "";
+        if(this.e&&this.e.target)this.e.target.value = "";
         if (onChange) {
             onChange("",this.e);
         }
@@ -187,10 +187,8 @@ class FormControl extends React.Component {
                         className={classnames(classNames)}
                     />
                     {
-                        showClose?<div className={`${clsPrefix}-suffix`}>
-                                        {
-                                            value ? <Icon onClick={this.clearValue} type="uf-close-c"/>:''
-                                        }
+                        showClose&&value?<div className={`${clsPrefix}-suffix has-close`} onClick={this.clearValue}>
+                                         <Icon type="uf-close-c"/>
                                     </div>:''
                     }
                     {

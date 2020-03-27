@@ -143,7 +143,7 @@ var _initialiseProps = function _initialiseProps() {
             showSearch: true,
             value: ""
         });
-        _this2.e.target.value = "";
+        if (_this2.e && _this2.e.target) _this2.e.target.value = "";
         if (onChange) {
             onChange("", _this2.e);
         }
@@ -258,10 +258,10 @@ var _initialiseProps = function _initialiseProps() {
                     onFocus: _this2.handleFocus,
                     className: (0, _classnames2["default"])(classNames)
                 })),
-                showClose ? _react2["default"].createElement(
+                showClose && value ? _react2["default"].createElement(
                     'div',
-                    { className: clsPrefix + '-suffix' },
-                    value ? _react2["default"].createElement(_beeIcon2["default"], { onClick: _this2.clearValue, type: 'uf-close-c' }) : ''
+                    { className: clsPrefix + '-suffix has-close', onClick: _this2.clearValue },
+                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-close-c' })
                 ) : '',
                 suffix ? _react2["default"].createElement(
                     'span',
