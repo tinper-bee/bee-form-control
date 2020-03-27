@@ -32,6 +32,7 @@ export default class Demo1 extends Component {
                     onBlur={this.onBlur}
                     size="sm"
                     focusSelect={true}
+                    showClose={true}
                 />
                 <FormControl
                     className="demo1-input"

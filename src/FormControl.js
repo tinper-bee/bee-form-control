@@ -119,7 +119,7 @@ class FormControl extends React.Component {
                 this.blurTime&&clearTimeout(this.blurTime);
                 this.blurTime = setTimeout(() => {
                     onBlur(value, _e);
-                }, 100);
+                }, 150);
             }else{
                  onBlur(value, _e);
             }
