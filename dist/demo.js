@@ -7719,6 +7719,12 @@
 	
 	var deselectCurrent = __webpack_require__(81);
 	
+	var clipboardToIE11Formatting = {
+	  "text/plain": "Text",
+	  "text/html": "Url",
+	  "default": "Text"
+	}
+	
 	var defaultMessage = "Copy to clipboard: #{key}, Enter";
 	
 	function format(message) {
@@ -7763,8 +7769,20 @@
 	      e.stopPropagation();
 	      if (options.format) {
 	        e.preventDefault();
-	        e.clipboardData.clearData();
-	        e.clipboardData.setData(options.format, text);
+	        if (typeof e.clipboardData === "undefined") { // IE 11
+	          debug && console.warn("unable to use e.clipboardData");
+	          debug && console.warn("trying IE specific stuff");
+	          window.clipboardData.clearData();
+	          var format = clipboardToIE11Formatting[options.format] || clipboardToIE11Formatting["default"]
+	          window.clipboardData.setData(format, text);
+	        } else { // all other browsers
+	          e.clipboardData.clearData();
+	          e.clipboardData.setData(options.format, text);
+	        }
+	      }
+	      if (options.onCopy) {
+	        e.preventDefault();
+	        options.onCopy(e.clipboardData);
 	      }
 	    });
 	
@@ -7783,6 +7801,7 @@
 	    debug && console.warn("trying IE specific stuff");
 	    try {
 	      window.clipboardData.setData(options.format || "text", text);
+	      options.onCopy && options.onCopy(window.clipboardData);
 	      success = true;
 	    } catch (err) {
 	      debug && console.error("unable to copy using clipboardData: ", err);
@@ -34497,7 +34516,7 @@
 	                _this2.blurTime && clearTimeout(_this2.blurTime);
 	                _this2.blurTime = setTimeout(function () {
 	                    onBlur(value, _e);
-	                }, 100);
+	                }, 150);
 	            } else {
 	                onBlur(value, _e);
 	            }

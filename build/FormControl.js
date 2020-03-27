@@ -187,7 +187,7 @@ var _initialiseProps = function _initialiseProps() {
                 _this2.blurTime && clearTimeout(_this2.blurTime);
                 _this2.blurTime = setTimeout(function () {
                     onBlur(value, _e);
-                }, 100);
+                }, 150);
             } else {
                 onBlur(value, _e);
             }
