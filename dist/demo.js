@@ -7719,6 +7719,12 @@
 	
 	var deselectCurrent = __webpack_require__(81);
 	
+	var clipboardToIE11Formatting = {
+	  "text/plain": "Text",
+	  "text/html": "Url",
+	  "default": "Text"
+	}
+	
 	var defaultMessage = "Copy to clipboard: #{key}, Enter";
 	
 	function format(message) {
@@ -7763,8 +7769,20 @@
 	      e.stopPropagation();
 	      if (options.format) {
 	        e.preventDefault();
-	        e.clipboardData.clearData();
-	        e.clipboardData.setData(options.format, text);
+	        if (typeof e.clipboardData === "undefined") { // IE 11
+	          debug && console.warn("unable to use e.clipboardData");
+	          debug && console.warn("trying IE specific stuff");
+	          window.clipboardData.clearData();
+	          var format = clipboardToIE11Formatting[options.format] || clipboardToIE11Formatting["default"]
+	          window.clipboardData.setData(format, text);
+	        } else { // all other browsers
+	          e.clipboardData.clearData();
+	          e.clipboardData.setData(options.format, text);
+	        }
+	      }
+	      if (options.onCopy) {
+	        e.preventDefault();
+	        options.onCopy(e.clipboardData);
 	      }
 	    });
 	
@@ -7783,6 +7801,7 @@
 	    debug && console.warn("trying IE specific stuff");
 	    try {
 	      window.clipboardData.setData(options.format || "text", text);
+	      options.onCopy && options.onCopy(window.clipboardData);
 	      success = true;
 	    } catch (err) {
 	      debug && console.error("unable to copy using clipboardData: ", err);
@@ -34386,6 +34405,7 @@
 	            value: value
 	        };
 	        _this.input = {};
+	        _this.clickClearBtn = false;
 	        return _this;
 	    }
 	
@@ -34493,11 +34513,9 @@
 	        var _e = _extends({}, e);
 	        _this2.e = _e;
 	        if (onBlur) {
-	            if (showClose) {
-	                _this2.blurTime && clearTimeout(_this2.blurTime);
-	                _this2.blurTime = setTimeout(function () {
-	                    onBlur(value, _e);
-	                }, 150);
+	            if (showClose && _this2.clickClearBtn) {
+	                _this2.clickClearBtn = false;
+	                onBlur(value, _e, true);
 	            } else {
 	                onBlur(value, _e);
 	            }
@@ -34514,6 +34532,10 @@
 	        if (onFocus) {
 	            onFocus(value, e);
 	        }
+	    };
+	
+	    this.onClearBtnMouseDown = function () {
+	        _this2.clickClearBtn = true;
 	    };
 	
 	    this.renderInput = function () {
@@ -34570,7 +34592,7 @@
 	                })),
 	                showClose && value ? _react2['default'].createElement(
 	                    'div',
-	                    { className: clsPrefix + '-suffix has-close', onClick: _this2.clearValue },
+	                    { className: clsPrefix + '-suffix has-close', onMouseDown: _this2.onClearBtnMouseDown, onClick: _this2.clearValue },
 	                    _react2['default'].createElement(_beeIcon2['default'], { type: 'uf-close-c' })
 	                ) : '',
 	                suffix ? _react2['default'].createElement(

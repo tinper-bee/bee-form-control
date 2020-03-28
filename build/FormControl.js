@@ -76,6 +76,7 @@ var FormControl = function (_React$Component) {
             value: value
         };
         _this.input = {};
+        _this.clickClearBtn = false;
         return _this;
     }
 
@@ -183,11 +184,9 @@ var _initialiseProps = function _initialiseProps() {
         var _e = _extends({}, e);
         _this2.e = _e;
         if (onBlur) {
-            if (showClose) {
-                _this2.blurTime && clearTimeout(_this2.blurTime);
-                _this2.blurTime = setTimeout(function () {
-                    onBlur(value, _e);
-                }, 150);
+            if (showClose && _this2.clickClearBtn) {
+                _this2.clickClearBtn = false;
+                onBlur(value, _e, true);
             } else {
                 onBlur(value, _e);
             }
@@ -204,6 +203,10 @@ var _initialiseProps = function _initialiseProps() {
         if (onFocus) {
             onFocus(value, e);
         }
+    };
+
+    this.onClearBtnMouseDown = function () {
+        _this2.clickClearBtn = true;
     };
 
     this.renderInput = function () {
@@ -260,7 +263,7 @@ var _initialiseProps = function _initialiseProps() {
                 })),
                 showClose && value ? _react2["default"].createElement(
                     'div',
-                    { className: clsPrefix + '-suffix has-close', onClick: _this2.clearValue },
+                    { className: clsPrefix + '-suffix has-close', onMouseDown: _this2.onClearBtnMouseDown, onClick: _this2.clearValue },
                     _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-close-c' })
                 ) : '',
                 suffix ? _react2["default"].createElement(

@@ -41,6 +41,7 @@ class FormControl extends React.Component {
             value: value,
         }
         this.input = {};
+        this.clickClearBtn = false;
     }
 
     componentWillReceiveProps(nextProp) {
@@ -115,11 +116,9 @@ class FormControl extends React.Component {
         let _e = Object.assign({}, e);
         this.e = _e;
         if(onBlur){
-            if(showClose){
-                this.blurTime&&clearTimeout(this.blurTime);
-                this.blurTime = setTimeout(() => {
-                    onBlur(value, _e);
-                }, 150);
+            if(showClose && this.clickClearBtn){
+                this.clickClearBtn = false;
+                onBlur(value, _e, true);
             }else{
                  onBlur(value, _e);
             }
@@ -135,6 +134,10 @@ class FormControl extends React.Component {
         if(onFocus){
             onFocus(value, e);
         }
+    }
+
+    onClearBtnMouseDown = () => {
+        this.clickClearBtn = true;
     }
 
     renderInput = () => {
@@ -187,7 +190,7 @@ class FormControl extends React.Component {
                         className={classnames(classNames)}
                     />
                     {
-                        showClose&&value?<div className={`${clsPrefix}-suffix has-close`} onClick={this.clearValue}>
+                        showClose&&value?<div className={`${clsPrefix}-suffix has-close`} onMouseDown={this.onClearBtnMouseDown} onClick={this.clearValue}>
                                          <Icon type="uf-close-c"/>
                                     </div>:''
                     }
