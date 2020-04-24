@@ -1,3 +1,13 @@
+## [2.0.19](https://github.com/tinper-bee/form-control/compare/v2.0.17...v2.0.19) (2020-04-24)
+
+
+### Bug Fixes
+
+* blur回调增加参数，判断是否为清空操作 ([62ed3f3](https://github.com/tinper-bee/form-control/commit/62ed3f3fec58010df1c1139417e70999935cfe5d))
+* 自动化 ([ae44701](https://github.com/tinper-bee/form-control/commit/ae44701c38d872c3f6991b525e9d9f28e63fc7be))
+
+
+
 <a name="2.0.18"></a>
 ## [2.0.18](https://github.com/tinper-bee/form-control/compare/v2.0.16...v2.0.18) (2020-03-28)
 
