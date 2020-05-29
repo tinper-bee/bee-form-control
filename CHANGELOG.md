@@ -1,3 +1,12 @@
+## [2.0.20](https://github.com/tinper-bee/form-control/compare/v2.0.19...v2.0.20) (2020-05-29)
+
+
+### Features
+
+* maxLength ([e832e80](https://github.com/tinper-bee/form-control/commit/e832e80235b2d3d45d3e6862cdfbadc2b1fdbc92))
+
+
+
 ## [2.0.19](https://github.com/tinper-bee/form-control/compare/v2.0.17...v2.0.19) (2020-04-24)
 
 
