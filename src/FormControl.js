@@ -33,7 +33,7 @@ function fixControlledValue(value) {
     return value;
 }
 let cutValue=(value,maxLength)=>{
-    if(maxLength){
+    if(maxLength&&value){
         value=value.toString().substring(0,maxLength);
     }
     return value;
