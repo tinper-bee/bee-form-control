@@ -1,3 +1,12 @@
+## [2.0.21](https://github.com/tinper-bee/form-control/compare/v2.0.20...v2.0.21) (2020-06-02)
+
+
+### Bug Fixes
+
+* value为空 ([d0b11f5](https://github.com/tinper-bee/form-control/commit/d0b11f5e29c73d72bba1a18f00d804be47af9830))
+
+
+
 ## [2.0.20](https://github.com/tinper-bee/form-control/compare/v2.0.19...v2.0.20) (2020-05-29)
 
 
