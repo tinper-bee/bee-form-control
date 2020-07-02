@@ -34371,7 +34371,7 @@
 	    return value;
 	}
 	var cutValue = function cutValue(value, maxLength) {
-	    if (maxLength) {
+	    if (maxLength && value) {
 	        value = value.toString().substring(0, maxLength);
 	    }
 	    return value;
@@ -34401,7 +34401,7 @@
 	        if ("value" in nextProp) {
 	            if (nextProp.value !== this.state.value) {
 	                this.setState({
-	                    value: cutValue(nextProp.value, nextProp.maxLength)
+	                    value: nextProp.value
 	                });
 	            }
 	        }
@@ -34578,7 +34578,8 @@
 	                    onChange: _this2.handleChange,
 	                    onBlur: _this2.handleBlur,
 	                    onFocus: _this2.handleFocus,
-	                    className: (0, _classnames2['default'])(classNames)
+	                    className: (0, _classnames2['default'])(classNames),
+	                    maxLength: _this2.props.maxLength
 	                })),
 	                showClose && value ? _react2['default'].createElement(
 	                    'div',
@@ -34601,7 +34602,8 @@
 	                onChange: _this2.handleChange,
 	                onBlur: _this2.handleBlur,
 	                onFocus: _this2.handleFocus,
-	                className: (0, _classnames2['default'])(classNames)
+	                className: (0, _classnames2['default'])(classNames),
+	                maxLength: _this2.props.maxLength
 	            }));
 	        }
 	    };
@@ -34642,7 +34644,8 @@
 	                    onKeyDown: _this2.handleKeyDown,
 	                    onBlur: _this2.handleBlur,
 	                    onFocus: _this2.handleFocus,
-	                    className: (0, _classnames2['default'])(clsPrefix, classes)
+	                    className: (0, _classnames2['default'])(clsPrefix, classes),
+	                    maxLength: _this2.props.maxLength
 	                })),
 	                _react2['default'].createElement(
 	                    'div',

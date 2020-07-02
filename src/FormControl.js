@@ -57,7 +57,7 @@ class FormControl extends React.Component {
         if ("value" in nextProp) {
             if (nextProp.value !== this.state.value) {
                 this.setState({
-                    value: cutValue(nextProp.value,nextProp.maxLength)
+                    value: nextProp.value
                 });
             }
         }
@@ -199,6 +199,7 @@ class FormControl extends React.Component {
                         onBlur={this.handleBlur}
                         onFocus={this.handleFocus}
                         className={classnames(classNames)}
+                        maxLength={this.props.maxLength}
                     />
                     {
                         showClose&&value?<div className={`${clsPrefix}-suffix has-close`} onMouseDown={this.onClearBtnMouseDown} onClick={this.clearValue}>
@@ -221,6 +222,7 @@ class FormControl extends React.Component {
                     onBlur={this.handleBlur}
                     onFocus={this.handleFocus}
                     className={classnames(classNames)}
+                    maxLength={this.props.maxLength}
                 />
         }
         
@@ -260,6 +262,7 @@ class FormControl extends React.Component {
                         onBlur={this.handleBlur}
                         onFocus={this.handleFocus}
                         className={classnames(clsPrefix, classes)}
+                        maxLength={this.props.maxLength}
                     />
                     <div className={`${clsPrefix}-suffix`}>
                         <Icon type="uf-search" onClick={this.handleSearch}/>

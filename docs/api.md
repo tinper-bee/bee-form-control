@@ -37,7 +37,7 @@ import 'bee-form-control/build/FormControl.css';
 |focusSelect|设置当focus的时候是否选择内容|bool|false|
 |prefix|设置前缀。默认宽度 30px，可通过复写样式更改|node/string|-|
 |suffix|设置后缀。默认宽度 30px，可通过复写样式更改|node/string|-|
-|maxLength|设置最大长度|number|-|
+|maxLength|设置最大长度；注：如果非首次渲染更新input的value的时候，不会自动截断value，需在设置value之前将value值手动截断|number|-|
 
 ## 注意事项
 
