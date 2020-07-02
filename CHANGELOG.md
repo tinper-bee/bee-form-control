@@ -1,3 +1,12 @@
+## [2.0.22](https://github.com/tinper-bee/form-control/compare/v2.0.21...v2.0.22) (2020-07-02)
+
+
+### Bug Fixes
+
+* 最大长度无法输入中文bug ([3639189](https://github.com/tinper-bee/form-control/commit/3639189cbaf8e4109591d0bac99b58d5124c61cf))
+
+
+
 ## [2.0.21](https://github.com/tinper-bee/form-control/compare/v2.0.20...v2.0.21) (2020-06-02)
 
 
