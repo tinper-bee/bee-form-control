@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classnames from 'classnames';
 import Icon from 'bee-icon';
 import PropTypes from  'prop-types';
+import TextArea from 'rc-textarea'
 
 const propTypes = {
     componentClass: PropTypes.oneOfType([
@@ -82,7 +83,7 @@ class FormControl extends React.Component {
         this.lastScrollCall = now
 
         const {onChange} = this.props;
-        let value = this.input.value;
+        let value = this.input.value || e.target.value;
         if (!('value' in this.props)) {
             this.setState({ value });
         }
@@ -152,8 +153,8 @@ class FormControl extends React.Component {
     }
 
     renderInput = () => {
+        let { componentClass: Component } = this.props;
         const {
-            componentClass: Component,
             type,
             className,
             size,
@@ -173,6 +174,9 @@ class FormControl extends React.Component {
         let classes = {};
         if (size) {
             classes[`${size}`] = true;
+        }
+        if (Component === 'textarea') {
+            Component = TextArea
         }
         
 
