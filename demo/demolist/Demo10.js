@@ -7,6 +7,12 @@ import React, {Component} from 'react';
 import FormControl from '../../src';
 
 export default class Demo10 extends Component {
+    onPressEnter = (e) => {
+        console.log('按下回车', e)
+    }
+    onResize = ({ width, height }) => {
+        console.log('onResize', width, height)
+    }
     render() {
         return (
             <div className="demo1">
@@ -20,6 +26,8 @@ export default class Demo10 extends Component {
                     componentClass="textarea"
                     placeholder="Controlled autosize"
                     autoSize={{ minRows: 3, maxRows: 5 }}
+                    onPressEnter={this.onPressEnter}
+                    onResize={this.onResize}
                 />
             </div>
         )
